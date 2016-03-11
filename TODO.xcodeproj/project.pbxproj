@@ -14,6 +14,8 @@
 		FFE38D7E1C9302070045F8D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE38D7C1C9302070045F8D1 /* LaunchScreen.storyboard */; };
 		FFE38D891C9302070045F8D1 /* TODOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38D881C9302070045F8D1 /* TODOTests.swift */; };
 		FFE38D941C9302070045F8D1 /* TODOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38D931C9302070045F8D1 /* TODOUITests.swift */; };
+		FFE38DA61C9305570045F8D1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE38DA21C9305450045F8D1 /* RxCocoa.framework */; };
+		FFE38DA81C93075B0045F8D1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE38DA71C93075B0045F8D1 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		FFE38D8F1C9302070045F8D1 /* TODOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TODOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE38D931C9302070045F8D1 /* TODOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOUITests.swift; sourceTree = "<group>"; };
 		FFE38D951C9302070045F8D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFE38DA21C9305450045F8D1 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		FFE38DA71C93075B0045F8D1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFE38DA81C93075B0045F8D1 /* RxSwift.framework in Frameworks */,
+				FFE38DA61C9305570045F8D1 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +83,8 @@
 		FFE38D671C9302070045F8D1 = {
 			isa = PBXGroup;
 			children = (
+				FFE38DA71C93075B0045F8D1 /* RxSwift.framework */,
+				FFE38DA21C9305450045F8D1 /* RxCocoa.framework */,
 				FFE38D711C9302070045F8D1 /* Products */,
 				FFE38D721C9302070045F8D1 /* TODO */,
 				FFE38D871C9302070045F8D1 /* TODOTests */,
@@ -135,6 +143,7 @@
 				FFE38D6C1C9302070045F8D1 /* Sources */,
 				FFE38D6D1C9302070045F8D1 /* Frameworks */,
 				FFE38D6E1C9302070045F8D1 /* Resources */,
+				FFE38DA11C9304250045F8D1 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -250,6 +259,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FFE38DA11C9304250045F8D1 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FFE38D6C1C9302070045F8D1 /* Sources */ = {
@@ -401,6 +429,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TODO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.gomi.TODO;
@@ -412,6 +444,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TODO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.gomi.TODO;
