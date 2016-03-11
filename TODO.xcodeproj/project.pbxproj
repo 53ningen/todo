@@ -16,6 +16,7 @@
 		FFE38D941C9302070045F8D1 /* TODOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38D931C9302070045F8D1 /* TODOUITests.swift */; };
 		FFE38DA61C9305570045F8D1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE38DA21C9305450045F8D1 /* RxCocoa.framework */; };
 		FFE38DA81C93075B0045F8D1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE38DA71C93075B0045F8D1 /* RxSwift.framework */; };
+		FFE38DAC1C9308D80045F8D1 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38DAB1C9308D70045F8D1 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		FFE38D951C9302070045F8D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFE38DA21C9305450045F8D1 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		FFE38DA71C93075B0045F8D1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		FFE38DAB1C9308D70045F8D1 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +85,12 @@
 		FFE38D671C9302070045F8D1 = {
 			isa = PBXGroup;
 			children = (
-				FFE38DA71C93075B0045F8D1 /* RxSwift.framework */,
-				FFE38DA21C9305450045F8D1 /* RxCocoa.framework */,
 				FFE38D711C9302070045F8D1 /* Products */,
 				FFE38D721C9302070045F8D1 /* TODO */,
 				FFE38D871C9302070045F8D1 /* TODOTests */,
 				FFE38D921C9302070045F8D1 /* TODOUITests */,
+				FFE38DA21C9305450045F8D1 /* RxCocoa.framework */,
+				FFE38DA71C93075B0045F8D1 /* RxSwift.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +107,8 @@
 		FFE38D721C9302070045F8D1 /* TODO */ = {
 			isa = PBXGroup;
 			children = (
+				FFE38DA91C9307C00045F8D1 /* Application */,
+				FFE38DAA1C93089C0045F8D1 /* Domain */,
 				FFE38D731C9302070045F8D1 /* AppDelegate.swift */,
 				FFE38D7A1C9302070045F8D1 /* Assets.xcassets */,
 				FFE38D7F1C9302070045F8D1 /* Info.plist */,
@@ -131,6 +135,21 @@
 				FFE38D931C9302070045F8D1 /* TODOUITests.swift */,
 			);
 			path = TODOUITests;
+			sourceTree = "<group>";
+		};
+		FFE38DA91C9307C00045F8D1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FFE38DAA1C93089C0045F8D1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FFE38DAB1C9308D70045F8D1 /* Common.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +305,7 @@
 			files = (
 				FFE38D761C9302070045F8D1 /* ViewController.swift in Sources */,
 				FFE38D741C9302070045F8D1 /* AppDelegate.swift in Sources */,
+				FFE38DAC1C9308D80045F8D1 /* Common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
