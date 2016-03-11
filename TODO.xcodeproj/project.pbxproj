@@ -17,6 +17,8 @@
 		FFE38DA61C9305570045F8D1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE38DA21C9305450045F8D1 /* RxCocoa.framework */; };
 		FFE38DA81C93075B0045F8D1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE38DA71C93075B0045F8D1 /* RxSwift.framework */; };
 		FFE38DAC1C9308D80045F8D1 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38DAB1C9308D70045F8D1 /* Common.swift */; };
+		FFE38DAF1C930CE70045F8D1 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38DAE1C930CE70045F8D1 /* TodoItem.swift */; };
+		FFE38DB31C9312300045F8D1 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38DB21C9312300045F8D1 /* Aliases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		FFE38DA21C9305450045F8D1 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		FFE38DA71C93075B0045F8D1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		FFE38DAB1C9308D70045F8D1 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		FFE38DAE1C930CE70045F8D1 /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		FFE38DB21C9312300045F8D1 /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 		FFE38D721C9302070045F8D1 /* TODO */ = {
 			isa = PBXGroup;
 			children = (
+				FFE38DB01C9311FA0045F8D1 /* Infrastructure */,
 				FFE38DA91C9307C00045F8D1 /* Application */,
 				FFE38DAA1C93089C0045F8D1 /* Domain */,
 				FFE38D731C9302070045F8D1 /* AppDelegate.swift */,
@@ -147,9 +152,34 @@
 		FFE38DAA1C93089C0045F8D1 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				FFE38DAD1C930CBF0045F8D1 /* Entity */,
 				FFE38DAB1C9308D70045F8D1 /* Common.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		FFE38DAD1C930CBF0045F8D1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				FFE38DAE1C930CE70045F8D1 /* TodoItem.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		FFE38DB01C9311FA0045F8D1 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				FFE38DB11C9312050045F8D1 /* Util */,
+			);
+			name = Infrastructure;
+			sourceTree = "<group>";
+		};
+		FFE38DB11C9312050045F8D1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FFE38DB21C9312300045F8D1 /* Aliases.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,8 +333,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFE38DB31C9312300045F8D1 /* Aliases.swift in Sources */,
 				FFE38D761C9302070045F8D1 /* ViewController.swift in Sources */,
 				FFE38D741C9302070045F8D1 /* AppDelegate.swift in Sources */,
+				FFE38DAF1C930CE70045F8D1 /* TodoItem.swift in Sources */,
 				FFE38DAC1C9308D80045F8D1 /* Common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
