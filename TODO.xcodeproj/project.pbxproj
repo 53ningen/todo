@@ -111,15 +111,12 @@
 		FFE38D721C9302070045F8D1 /* TODO */ = {
 			isa = PBXGroup;
 			children = (
-				FFE38DB01C9311FA0045F8D1 /* Infrastructure */,
 				FFE38DA91C9307C00045F8D1 /* Application */,
 				FFE38DAA1C93089C0045F8D1 /* Domain */,
+				FFE38DB01C9311FA0045F8D1 /* Infrastructure */,
+				FFE38DB41C9698D00045F8D1 /* UI */,
 				FFE38D731C9302070045F8D1 /* AppDelegate.swift */,
-				FFE38D7A1C9302070045F8D1 /* Assets.xcassets */,
 				FFE38D7F1C9302070045F8D1 /* Info.plist */,
-				FFE38D7C1C9302070045F8D1 /* LaunchScreen.storyboard */,
-				FFE38D771C9302070045F8D1 /* Main.storyboard */,
-				FFE38D751C9302070045F8D1 /* ViewController.swift */,
 			);
 			path = TODO;
 			sourceTree = "<group>";
@@ -163,7 +160,7 @@
 			children = (
 				FFE38DAE1C930CE70045F8D1 /* TodoItem.swift */,
 			);
-			name = Entity;
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		FFE38DB01C9311FA0045F8D1 /* Infrastructure */ = {
@@ -171,7 +168,7 @@
 			children = (
 				FFE38DB11C9312050045F8D1 /* Util */,
 			);
-			name = Infrastructure;
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		FFE38DB11C9312050045F8D1 /* Util */ = {
@@ -179,7 +176,26 @@
 			children = (
 				FFE38DB21C9312300045F8D1 /* Aliases.swift */,
 			);
-			name = Util;
+			path = Util;
+			sourceTree = "<group>";
+		};
+		FFE38DB41C9698D00045F8D1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FFE38DB51C9698E90045F8D1 /* Main */,
+				FFE38D7A1C9302070045F8D1 /* Assets.xcassets */,
+				FFE38D7C1C9302070045F8D1 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FFE38DB51C9698E90045F8D1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FFE38D771C9302070045F8D1 /* Main.storyboard */,
+				FFE38D751C9302070045F8D1 /* ViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
