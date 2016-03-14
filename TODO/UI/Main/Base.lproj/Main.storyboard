@@ -25,9 +25,9 @@
                                 <rect key="frame" x="0.0" y="687" width="414" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem systemItem="favorites" id="0KE-v3-hjH"/>
-                                    <tabBarItem systemItem="mostRecent" id="RTv-MH-3ZZ"/>
-                                    <tabBarItem systemItem="more" id="qBW-8R-i8J"/>
+                                    <tabBarItem title="Issues" image="icon_issue" id="0KE-v3-hjH"/>
+                                    <tabBarItem title="Labels" image="icon_label" id="RTv-MH-3ZZ"/>
+                                    <tabBarItem title="Milestones" image="icon_milestone" id="qBW-8R-i8J"/>
                                 </items>
                             </tabBar>
                         </subviews>
@@ -52,7 +52,6 @@
         <!--Navigation Controller-->
         <scene sceneID="efS-jI-ve9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g8Z-yf-sol" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="MainNavigation" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i2o-GF-fIz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -65,8 +64,14 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fRn-EV-x8g"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g8Z-yf-sol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="888" y="661"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_issue" width="36" height="36"/>
+        <image name="icon_label" width="36" height="36"/>
+        <image name="icon_milestone" width="36" height="36"/>
+    </resources>
 </document>

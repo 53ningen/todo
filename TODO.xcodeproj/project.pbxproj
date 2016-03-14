@@ -61,6 +61,8 @@
 		FFE38DB21C9312300045F8D1 /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
 		FFF8606C1C96BF1F00C16794 /* UIUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		FFF8606F1C96C21900C16794 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FFF860711C96CF4500C16794 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		FFF860721C96D40300C16794 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,8 @@
 		FFE38D671C9302070045F8D1 = {
 			isa = PBXGroup;
 			children = (
+				FFF860721C96D40300C16794 /* README.md */,
+				FFF860711C96CF4500C16794 /* LICENSE */,
 				FFE38D711C9302070045F8D1 /* Products */,
 				FFE38D721C9302070045F8D1 /* TODO */,
 				FFE38D871C9302070045F8D1 /* TODOTests */,
