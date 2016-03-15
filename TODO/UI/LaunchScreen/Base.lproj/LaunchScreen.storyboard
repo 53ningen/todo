@@ -14,14 +14,39 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_issue" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-tR-31f">
+                                <rect key="frame" x="187" y="348" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="6lz-Tp-9iJ"/>
+                                    <constraint firstAttribute="height" constant="40" id="LKO-EH-Rh7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issues" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifi-Oz-LDR">
+                                <rect key="frame" x="183" y="408" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9647059440612793" green="0.93725496530532837" blue="0.86274516582489014" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="k0p-tR-31f" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3LY-VI-QlF"/>
+                            <constraint firstItem="ifi-Oz-LDR" firstAttribute="top" secondItem="k0p-tR-31f" secondAttribute="bottom" constant="20" id="ApA-YR-eDN"/>
+                            <constraint firstItem="ifi-Oz-LDR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Dl5-VT-HYj"/>
+                            <constraint firstItem="k0p-tR-31f" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="IH9-kL-SFM"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_issue" width="36" height="36"/>
+    </resources>
 </document>
