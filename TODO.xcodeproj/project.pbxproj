@@ -23,6 +23,10 @@
 		FFF860751C96D7FE00C16794 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF860741C96D7FE00C16794 /* Label.swift */; };
 		FFF860771C96D9EF00C16794 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF860761C96D9EF00C16794 /* Milestone.swift */; };
 		FFF860791C96DEEA00C16794 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF860781C96DEEA00C16794 /* Issue.swift */; };
+		FFF8607E1C97B06300C16794 /* IssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF8607D1C97B06300C16794 /* IssueCell.xib */; };
+		FFF860801C97B68600C16794 /* IssueCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8607F1C97B68600C16794 /* IssueCellView.swift */; };
+		FFF860841C97B95F00C16794 /* LabelCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF860821C97B95F00C16794 /* LabelCellView.swift */; };
+		FFF860851C97B95F00C16794 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF860831C97B95F00C16794 /* LabelCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		FFF860741C96D7FE00C16794 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		FFF860761C96D9EF00C16794 /* Milestone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 		FFF860781C96DEEA00C16794 /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		FFF8607D1C97B06300C16794 /* IssueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueCell.xib; sourceTree = "<group>"; };
+		FFF8607F1C97B68600C16794 /* IssueCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueCellView.swift; sourceTree = "<group>"; };
+		FFF860821C97B95F00C16794 /* LabelCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCellView.swift; sourceTree = "<group>"; };
+		FFF860831C97B95F00C16794 /* LabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +204,8 @@
 		FFE38DB41C9698D00045F8D1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FFF8607A1C97AFE000C16794 /* Issues */,
+				FFF860811C97B94400C16794 /* Labels */,
 				FFF8606E1C96C1FB00C16794 /* LaunchScreen */,
 				FFE38DB51C9698E90045F8D1 /* Main */,
 				FFE38D7A1C9302070045F8D1 /* Assets.xcassets */,
@@ -220,6 +230,24 @@
 				FFE38D7C1C9302070045F8D1 /* LaunchScreen.storyboard */,
 			);
 			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		FFF8607A1C97AFE000C16794 /* Issues */ = {
+			isa = PBXGroup;
+			children = (
+				FFF8607D1C97B06300C16794 /* IssueCell.xib */,
+				FFF8607F1C97B68600C16794 /* IssueCellView.swift */,
+			);
+			path = Issues;
+			sourceTree = "<group>";
+		};
+		FFF860811C97B94400C16794 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				FFF860831C97B95F00C16794 /* LabelCell.xib */,
+				FFF860821C97B95F00C16794 /* LabelCellView.swift */,
+			);
+			path = Labels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,8 +356,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFE38D7E1C9302070045F8D1 /* LaunchScreen.storyboard in Resources */,
+				FFF860851C97B95F00C16794 /* LabelCell.xib in Resources */,
 				FFE38D7B1C9302070045F8D1 /* Assets.xcassets in Resources */,
 				FFE38D791C9302070045F8D1 /* Main.storyboard in Resources */,
+				FFF8607E1C97B06300C16794 /* IssueCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +409,8 @@
 				FFE38D741C9302070045F8D1 /* AppDelegate.swift in Sources */,
 				FFF8606D1C96BF1F00C16794 /* UIUtils.swift in Sources */,
 				FFF860791C96DEEA00C16794 /* Issue.swift in Sources */,
+				FFF860841C97B95F00C16794 /* LabelCellView.swift in Sources */,
+				FFF860801C97B68600C16794 /* IssueCellView.swift in Sources */,
 				FFF860701C96C21900C16794 /* BaseViewController.swift in Sources */,
 				FFF860751C96D7FE00C16794 /* Label.swift in Sources */,
 				FFE38DAC1C9308D80045F8D1 /* Common.swift in Sources */,
