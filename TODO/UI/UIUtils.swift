@@ -15,7 +15,6 @@ extension NSObject {
     
 }
 
-
 extension UITableViewCell {
     
     static func getUINib() -> UINib {
@@ -32,6 +31,14 @@ extension UITableView {
     
     func registerNib(cls: UITableViewCell.Type) {
         registerNib(cls.getUINib(), forCellReuseIdentifier: cls.cellReuseIdentifier)
+    }
+    
+}
+
+extension UIViewController {
+    
+    static func of<T: UIViewController>(cls: T.Type) -> T {
+        return UIStoryboard(name: cls.getClassName(), bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier(cls.getClassName()) as! T
     }
     
 }
