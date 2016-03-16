@@ -26,8 +26,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
                                     <tabBarItem title="Issues" image="icon_issue" id="0KE-v3-hjH"/>
-                                    <tabBarItem title="Labels" image="icon_label" id="RTv-MH-3ZZ"/>
-                                    <tabBarItem title="Milestones" image="icon_milestone" id="qBW-8R-i8J"/>
+                                    <tabBarItem tag="1" title="Labels" image="icon_label" id="RTv-MH-3ZZ"/>
+                                    <tabBarItem tag="2" title="Milestones" image="icon_milestone" id="qBW-8R-i8J"/>
                                 </items>
                             </tabBar>
                         </subviews>
@@ -44,6 +44,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Jgq-jb-4Qn"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="issuesItem" destination="0KE-v3-hjH" id="9oP-6M-uM0"/>
+                        <outlet property="labelsItem" destination="RTv-MH-3ZZ" id="6UV-u1-IwU"/>
+                        <outlet property="mainTabBar" destination="Bge-NB-PSP" id="REn-hv-o9Y"/>
+                        <outlet property="milestonesItem" destination="qBW-8R-i8J" id="zL1-WH-Xix"/>
+                        <outlet property="tableView" destination="Sle-WZ-SUJ" id="GDc-kg-hal"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

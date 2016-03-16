@@ -204,8 +204,6 @@
 		FFE38DB41C9698D00045F8D1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				FFF8607A1C97AFE000C16794 /* Issues */,
-				FFF860811C97B94400C16794 /* Labels */,
 				FFF8606E1C96C1FB00C16794 /* LaunchScreen */,
 				FFE38DB51C9698E90045F8D1 /* Main */,
 				FFE38D7A1C9302070045F8D1 /* Assets.xcassets */,
@@ -218,6 +216,10 @@
 		FFE38DB51C9698E90045F8D1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FFF8607D1C97B06300C16794 /* IssueCell.xib */,
+				FFF8607F1C97B68600C16794 /* IssueCellView.swift */,
+				FFF860831C97B95F00C16794 /* LabelCell.xib */,
+				FFF860821C97B95F00C16794 /* LabelCellView.swift */,
 				FFE38D771C9302070045F8D1 /* Main.storyboard */,
 				FFE38D751C9302070045F8D1 /* MainViewController.swift */,
 			);
@@ -230,24 +232,6 @@
 				FFE38D7C1C9302070045F8D1 /* LaunchScreen.storyboard */,
 			);
 			path = LaunchScreen;
-			sourceTree = "<group>";
-		};
-		FFF8607A1C97AFE000C16794 /* Issues */ = {
-			isa = PBXGroup;
-			children = (
-				FFF8607D1C97B06300C16794 /* IssueCell.xib */,
-				FFF8607F1C97B68600C16794 /* IssueCellView.swift */,
-			);
-			path = Issues;
-			sourceTree = "<group>";
-		};
-		FFF860811C97B94400C16794 /* Labels */ = {
-			isa = PBXGroup;
-			children = (
-				FFF860831C97B95F00C16794 /* LabelCell.xib */,
-				FFF860821C97B95F00C16794 /* LabelCellView.swift */,
-			);
-			path = Labels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
