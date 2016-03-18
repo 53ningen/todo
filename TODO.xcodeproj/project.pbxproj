@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF0DED961C99562100B8FE77 /* MainViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED951C99562100B8FE77 /* MainViewState.swift */; };
 		FF0DED981C998B1200B8FE77 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED971C998B1200B8FE77 /* UIState.swift */; };
-		FF33831F1C990BB300D73743 /* IssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33831E1C990BB300D73743 /* IssueViewController.swift */; };
-		FF3383211C990BDE00D73743 /* IssueViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3383201C990BDE00D73743 /* IssueViewController.storyboard */; };
+		FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */; };
+		FF33831F1C990BB300D73743 /* IssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33831E1C990BB300D73743 /* IssuesViewController.swift */; };
+		FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */; };
+		FFA390651C9C1969000A0CA4 /* LabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */; };
 		FFE38D741C9302070045F8D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38D731C9302070045F8D1 /* AppDelegate.swift */; };
-		FFE38D761C9302070045F8D1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38D751C9302070045F8D1 /* MainViewController.swift */; };
 		FFE38D791C9302070045F8D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE38D771C9302070045F8D1 /* Main.storyboard */; };
 		FFE38D7B1C9302070045F8D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE38D7A1C9302070045F8D1 /* Assets.xcassets */; };
 		FFE38D7E1C9302070045F8D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE38D7C1C9302070045F8D1 /* LaunchScreen.storyboard */; };
@@ -51,13 +51,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FF0DED951C99562100B8FE77 /* MainViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewState.swift; sourceTree = "<group>"; };
 		FF0DED971C998B1200B8FE77 /* UIState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
-		FF33831E1C990BB300D73743 /* IssueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueViewController.swift; sourceTree = "<group>"; };
-		FF3383201C990BDE00D73743 /* IssueViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IssueViewController.storyboard; sourceTree = "<group>"; };
+		FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		FF33831E1C990BB300D73743 /* IssuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewController.swift; sourceTree = "<group>"; };
+		FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestonesViewController.swift; sourceTree = "<group>"; };
+		FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsViewController.swift; sourceTree = "<group>"; };
 		FFE38D701C9302070045F8D1 /* TODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE38D731C9302070045F8D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FFE38D751C9302070045F8D1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FFE38D781C9302070045F8D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFE38D7A1C9302070045F8D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFE38D7D1C9302070045F8D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,13 +112,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FF33831D1C990BA600D73743 /* Issue */ = {
+		FF33831D1C990BA600D73743 /* Issues */ = {
 			isa = PBXGroup;
 			children = (
-				FF3383201C990BDE00D73743 /* IssueViewController.storyboard */,
-				FF33831E1C990BB300D73743 /* IssueViewController.swift */,
+				FFF8607F1C97B68600C16794 /* IssueCellView.swift */,
+				FFF8607D1C97B06300C16794 /* IssueCellView.xib */,
+				FF33831E1C990BB300D73743 /* IssuesViewController.swift */,
 			);
-			path = Issue;
+			path = Issues;
+			sourceTree = "<group>";
+		};
+		FFA3905F1C9C111D000A0CA4 /* Milestones */ = {
+			isa = PBXGroup;
+			children = (
+				FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */,
+			);
+			path = Milestones;
+			sourceTree = "<group>";
+		};
+		FFA390601C9C1133000A0CA4 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				FFF860821C97B95F00C16794 /* LabelCellView.swift */,
+				FFF860831C97B95F00C16794 /* LabelCellView.xib */,
+				FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */,
+			);
+			path = Labels;
 			sourceTree = "<group>";
 		};
 		FFE38D671C9302070045F8D1 = {
@@ -221,11 +240,11 @@
 		FFE38DB41C9698D00045F8D1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				FF33831D1C990BA600D73743 /* Issue */,
 				FFF8606E1C96C1FB00C16794 /* LaunchScreen */,
 				FFE38DB51C9698E90045F8D1 /* Main */,
 				FFE38D7A1C9302070045F8D1 /* Assets.xcassets */,
 				FFF8606F1C96C21900C16794 /* BaseViewController.swift */,
+				FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */,
 				FF0DED971C998B1200B8FE77 /* UIState.swift */,
 				FFF8606C1C96BF1F00C16794 /* UIUtils.swift */,
 			);
@@ -235,13 +254,10 @@
 		FFE38DB51C9698E90045F8D1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FFF8607F1C97B68600C16794 /* IssueCellView.swift */,
-				FFF8607D1C97B06300C16794 /* IssueCellView.xib */,
-				FFF860821C97B95F00C16794 /* LabelCellView.swift */,
-				FFF860831C97B95F00C16794 /* LabelCellView.xib */,
+				FF33831D1C990BA600D73743 /* Issues */,
+				FFA390601C9C1133000A0CA4 /* Labels */,
+				FFA3905F1C9C111D000A0CA4 /* Milestones */,
 				FFE38D771C9302070045F8D1 /* Main.storyboard */,
-				FFE38D751C9302070045F8D1 /* MainViewController.swift */,
-				FF0DED951C99562100B8FE77 /* MainViewState.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -363,7 +379,6 @@
 				FFF860851C97B95F00C16794 /* LabelCellView.xib in Resources */,
 				FFE38D7B1C9302070045F8D1 /* Assets.xcassets in Resources */,
 				FFE38D791C9302070045F8D1 /* Main.storyboard in Resources */,
-				FF3383211C990BDE00D73743 /* IssueViewController.storyboard in Resources */,
 				FFF8607E1C97B06300C16794 /* IssueCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,15 +423,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF33831F1C990BB300D73743 /* IssueViewController.swift in Sources */,
+				FF33831F1C990BB300D73743 /* IssuesViewController.swift in Sources */,
 				FFF860771C96D9EF00C16794 /* Milestone.swift in Sources */,
 				FFE38DB31C9312300045F8D1 /* Aliases.swift in Sources */,
-				FFE38D761C9302070045F8D1 /* MainViewController.swift in Sources */,
+				FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */,
 				FFE38D741C9302070045F8D1 /* AppDelegate.swift in Sources */,
 				FFF8606D1C96BF1F00C16794 /* UIUtils.swift in Sources */,
 				FF0DED981C998B1200B8FE77 /* UIState.swift in Sources */,
+				FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */,
 				FFF860791C96DEEA00C16794 /* Issue.swift in Sources */,
-				FF0DED961C99562100B8FE77 /* MainViewState.swift in Sources */,
+				FFA390651C9C1969000A0CA4 /* LabelsViewController.swift in Sources */,
 				FFF860841C97B95F00C16794 /* LabelCellView.swift in Sources */,
 				FFF860801C97B68600C16794 /* IssueCellView.swift in Sources */,
 				FFF860701C96C21900C16794 /* BaseViewController.swift in Sources */,
