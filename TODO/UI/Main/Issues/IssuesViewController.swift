@@ -1,6 +1,12 @@
 import UIKit
+import RxSwift
 
 final class IssuesViewController: BaseTableViewController {
+    
+    private let viewModel: Variable<IssuesViewModel> = Variable<IssuesViewModel>(IssuesViewModel.getInstance)
+    
+    private var issues: [Issue] { return viewModel.value.issues }
+    private var isUpToDate: Bool { return viewModel.value.isUpToDate }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,14 +22,19 @@ final class IssuesViewController: BaseTableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel.asObservable()
+            .subscribeNext { _ in }
+            .addDisposableTo(disposeBag)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return issues.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier(IssueCellView.cellReuseIdentifier, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(IssueCellView.cellReuseIdentifier, forIndexPath: indexPath)
+        (cell as? IssueCellView)?.bind(issues[indexPath.row])
+        return cell
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -39,7 +50,7 @@ final class IssuesViewController: BaseTableViewController {
     }
     
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return FooterCellView.updatingView()
+        return isUpToDate ? FooterCellView.upToDateView() : FooterCellView.updatingView()
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {}

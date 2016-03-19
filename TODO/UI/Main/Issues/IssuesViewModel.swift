@@ -11,4 +11,8 @@ final class IssuesViewModel {
         self.isUpToDate = isUpToDate
     }
     
+    static var getInstance: IssuesViewModel {
+        return IssuesViewModel(issues: [], isUpToDate: false)
+    }
+    
 }
