@@ -60,8 +60,9 @@
 		FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestonesViewController.swift; sourceTree = "<group>"; };
 		FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsViewController.swift; sourceTree = "<group>"; };
 		FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewModel.swift; sourceTree = "<group>"; };
-		FFA390681C9C2527000A0CA4 /* FooterCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FooterCellView.swift; path = TODO/UI/FooterCellView.swift; sourceTree = SOURCE_ROOT; };
+		FFA390681C9C2527000A0CA4 /* FooterCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterCellView.swift; sourceTree = "<group>"; };
 		FFA3906B1C9C254F000A0CA4 /* FooterCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterCellView.xib; sourceTree = "<group>"; };
+		FFA3906D1C9D07E0000A0CA4 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		FFE38D701C9302070045F8D1 /* TODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE38D731C9302070045F8D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFE38D781C9302070045F8D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,7 +154,7 @@
 				FFA390681C9C2527000A0CA4 /* FooterCellView.swift */,
 				FFA3906B1C9C254F000A0CA4 /* FooterCellView.xib */,
 			);
-			name = Shared;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		FFE38D671C9302070045F8D1 = {
@@ -163,6 +164,7 @@
 				FFE38D721C9302070045F8D1 /* TODO */,
 				FFE38D871C9302070045F8D1 /* TODOTests */,
 				FFE38D921C9302070045F8D1 /* TODOUITests */,
+				FFA3906D1C9D07E0000A0CA4 /* Cartfile */,
 				FFF860711C96CF4500C16794 /* LICENSE */,
 				FFF860721C96D40300C16794 /* README.md */,
 				FFE38DA21C9305450045F8D1 /* RxCocoa.framework */,
@@ -256,9 +258,9 @@
 		FFE38DB41C9698D00045F8D1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				FFA3906A1C9C252D000A0CA4 /* Shared */,
 				FFF8606E1C96C1FB00C16794 /* LaunchScreen */,
 				FFE38DB51C9698E90045F8D1 /* Main */,
+				FFA3906A1C9C252D000A0CA4 /* Shared */,
 				FFE38D7A1C9302070045F8D1 /* Assets.xcassets */,
 				FFF8606F1C96C21900C16794 /* BaseViewController.swift */,
 				FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */,
