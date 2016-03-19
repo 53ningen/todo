@@ -1,5 +1,5 @@
 import UIKit
 
-final class MilestonesViewController: BaseViewController {
-
+final class MilestonesViewController: BaseTableViewController {
+    
 }

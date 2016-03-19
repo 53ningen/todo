@@ -15,11 +15,19 @@ extension NSObject {
     
 }
 
-extension UITableViewCell {
+extension UIView {
     
     static func getUINib() -> UINib {
-        return UINib(nibName: cellReuseIdentifier, bundle: NSBundle.mainBundle())
+        return UINib(nibName: getClassName(), bundle: NSBundle.mainBundle())
     }
+    
+    static func getInstance<T: UIView>(t: T.Type) -> T? {
+        return T.getUINib().instantiateWithOwner(nil, options: nil).first as? T
+    }
+    
+}
+
+extension UITableViewCell {
     
     static var cellReuseIdentifier: String {
         return self.getClassName()
