@@ -54,11 +54,12 @@ public final class Milestone: Entity, Equatable {
 
 public enum MilestoneState {
     case Open
-    case Closed(closedAt: Date)
+    case Closed
     
-    public var getClosedAt: Date? {
-        switch self {
-        case .Closed(let date): return date
+    public static func of(rawValue: String) -> MilestoneState? {
+        switch rawValue {
+        case "open": return .Open
+        case "closed": return .Closed
         default: return nil
         }
     }
@@ -68,7 +69,7 @@ extension MilestoneState: Equatable {}
 public func ==(lhs: MilestoneState, rhs: MilestoneState) -> Bool {
     switch (lhs, rhs) {
     case (.Open, .Open): return true
-    case (.Closed(let l), .Closed(closedAt: let r)): return l == r
+    case (.Closed, .Closed): return true
     default: return false
     }
 }

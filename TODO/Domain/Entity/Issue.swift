@@ -59,6 +59,16 @@ public final class Issue: Entity, Equatable {
 public enum IssueState {
     case Open
     case Closed(closedAt: Date)
+    
+    public static func of(rawValue: String, closedAt: Date?) -> IssueState? {
+        if rawValue == "open" {
+            return .Open
+        } else if rawValue == "closed" {
+            return closedAt.map { .Closed(closedAt: $0) }
+        } else {
+            return nil
+        }
+    }
 }
 
 extension IssueState: Equatable {}
