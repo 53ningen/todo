@@ -55,6 +55,7 @@ public final class Issue: Entity, Equatable {
     
 }
 
+/// Issueの状況
 public enum IssueState {
     case Open
     case Closed(closedAt: Date)
@@ -67,4 +68,12 @@ public func ==(lhs: IssueState, rhs: IssueState) -> Bool {
     case (.Closed(let l), .Closed(closedAt: let r)): return l == r
     default: return false
     }
+}
+
+/// Issueのソート条件
+public enum IssueSort {
+    case CreatedAtDesc
+    case CreatedAtAsc
+    case UpdatedAtDesc
+    case UpdatedAtAsc
 }

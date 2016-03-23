@@ -21,6 +21,9 @@
 		FFA390781C9D0F73000A0CA4 /* RealmCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390771C9D0F73000A0CA4 /* RealmCommon.swift */; };
 		FFA3907A1C9D0FE0000A0CA4 /* LabelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390791C9D0FE0000A0CA4 /* LabelObject.swift */; };
 		FFA3907C1C9D1018000A0CA4 /* MilestoneObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA3907B1C9D1018000A0CA4 /* MilestoneObject.swift */; };
+		FFA390881CA263CE000A0CA4 /* IssueRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390871CA263CE000A0CA4 /* IssueRepository.swift */; };
+		FFA3908A1CA26505000A0CA4 /* LabelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390891CA26505000A0CA4 /* LabelRepository.swift */; };
+		FFA3908C1CA26556000A0CA4 /* MilestoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA3908B1CA26556000A0CA4 /* MilestoneRepository.swift */; };
 		FFE38D741C9302070045F8D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38D731C9302070045F8D1 /* AppDelegate.swift */; };
 		FFE38D791C9302070045F8D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE38D771C9302070045F8D1 /* Main.storyboard */; };
 		FFE38D7B1C9302070045F8D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE38D7A1C9302070045F8D1 /* Assets.xcassets */; };
@@ -75,6 +78,9 @@
 		FFA390771C9D0F73000A0CA4 /* RealmCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCommon.swift; sourceTree = "<group>"; };
 		FFA390791C9D0FE0000A0CA4 /* LabelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelObject.swift; sourceTree = "<group>"; };
 		FFA3907B1C9D1018000A0CA4 /* MilestoneObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestoneObject.swift; sourceTree = "<group>"; };
+		FFA390871CA263CE000A0CA4 /* IssueRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueRepository.swift; sourceTree = "<group>"; };
+		FFA390891CA26505000A0CA4 /* LabelRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelRepository.swift; sourceTree = "<group>"; };
+		FFA3908B1CA26556000A0CA4 /* MilestoneRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestoneRepository.swift; sourceTree = "<group>"; };
 		FFE38D701C9302070045F8D1 /* TODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE38D731C9302070045F8D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFE38D781C9302070045F8D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -190,6 +196,16 @@
 			path = Objects;
 			sourceTree = "<group>";
 		};
+		FFA390861CA263C1000A0CA4 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FFA390871CA263CE000A0CA4 /* IssueRepository.swift */,
+				FFA390891CA26505000A0CA4 /* LabelRepository.swift */,
+				FFA3908B1CA26556000A0CA4 /* MilestoneRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		FFE38D671C9302070045F8D1 = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				FFE38DAD1C930CBF0045F8D1 /* Entity */,
+				FFA390861CA263C1000A0CA4 /* Repository */,
 				FFE38DB21C9312300045F8D1 /* Aliases.swift */,
 				FFE38DAB1C9308D70045F8D1 /* Common.swift */,
 			);
@@ -466,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF33831F1C990BB300D73743 /* IssuesViewController.swift in Sources */,
+				FFA3908A1CA26505000A0CA4 /* LabelRepository.swift in Sources */,
 				FFF860771C96D9EF00C16794 /* Milestone.swift in Sources */,
 				FFE38DB31C9312300045F8D1 /* Aliases.swift in Sources */,
 				FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */,
@@ -476,10 +494,12 @@
 				FFA3907C1C9D1018000A0CA4 /* MilestoneObject.swift in Sources */,
 				FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */,
 				FFA390671C9C1A73000A0CA4 /* IssuesViewModel.swift in Sources */,
+				FFA3908C1CA26556000A0CA4 /* MilestoneRepository.swift in Sources */,
 				FFA390781C9D0F73000A0CA4 /* RealmCommon.swift in Sources */,
 				FFA3907A1C9D0FE0000A0CA4 /* LabelObject.swift in Sources */,
 				FFF860791C96DEEA00C16794 /* Issue.swift in Sources */,
 				FFA390651C9C1969000A0CA4 /* LabelsViewController.swift in Sources */,
+				FFA390881CA263CE000A0CA4 /* IssueRepository.swift in Sources */,
 				FFA390721C9D0DE5000A0CA4 /* IssueObject.swift in Sources */,
 				FFF860841C97B95F00C16794 /* LabelCellView.swift in Sources */,
 				FFF860801C97B68600C16794 /* IssueCellView.swift in Sources */,
