@@ -11,5 +11,14 @@ class IssueObject: Object {
     dynamic var locked: Bool = false
     dynamic var createdAt: RealmDate = 0
     dynamic var updatedAt: RealmDate = 0
+    
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    override static func indexedProperties() -> [String] {
+        return ["id", "title"]
+    }
 
 }

@@ -11,4 +11,13 @@ class MilestoneObject: Object {
     dynamic var updatedAt: RealmDate = 0
     dynamic var dueOn: RealmDate = 0
     
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    override static func indexedProperties() -> [String] {
+        return ["id"]
+    }
+    
 }
