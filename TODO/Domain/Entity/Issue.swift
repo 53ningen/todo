@@ -60,6 +60,20 @@ public enum IssueState {
     case Open
     case Closed(closedAt: Date)
     
+    public var rawValue: String {
+        switch self {
+        case .Open: return "open"
+        case .Closed(closedAt: _): return "closed"
+        }
+    }
+    
+    public var closedAt: Date? {
+        switch self {
+        case .Open: return nil
+        case .Closed(closedAt: let date): return date
+        }
+    }
+    
     public static func of(rawValue: String, closedAt: Date?) -> IssueState? {
         if rawValue == "open" {
             return .Open

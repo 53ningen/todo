@@ -5,6 +5,14 @@ public class IssueRepositoryOnRealm: IssueRepository {
     
     private let realm: Realm = try! Realm()
     
+    private var nextId: String {
+        if let id = (realm.objects(IssueObject).last.flatMap { Int($0.id) }) {
+            return String(id + 1)
+        } else {
+            return "1"
+        }
+    }
+    
     public func findById(id: Id<Issue>) -> Issue? {
         return realm.objectForPrimaryKey(IssueObject.self, key: id.value)?.toIssue
     }
@@ -16,6 +24,28 @@ public class IssueRepositoryOnRealm: IssueRepository {
     public func findByKeyword(keyword: String) -> [Issue] {
         let pred = NSPredicate(format: "title CONTAINS '%@' OR desc CONTAINS '%@'", keyword, keyword)
         return realm.objects(IssueObject).filter(pred).flatMap { $0.toIssue }
+    }
+    
+    public func add(info: IssueInfo) {
+        try! realm.write {
+            realm.add(IssueObject.of(nextId, info: info))
+        }
+    }
+    
+    public func open(id: Id<Issue>) {
+        try! realm.write {
+            if let obj = realm.objectForPrimaryKey(IssueObject.self, key: id.value) {
+                obj.open()
+            }
+        }
+    }
+    
+    public func close(id: Id<Issue>) {
+        try! realm.write {
+            if let obj = realm.objectForPrimaryKey(IssueObject.self, key: id.value) {
+                obj.close(Int64(NSDate().timeIntervalSince1970))
+            }
+        }
     }
     
 }
