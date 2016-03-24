@@ -4,8 +4,10 @@ import RealmSwift
 class LabelObject: Object {
     
     dynamic var id: String = ""
-    dynamic var color: Int8 = 0x000000
-    
+    dynamic var r: Int = 0
+    dynamic var g: Int = 0
+    dynamic var b: Int = 0
+    dynamic var a: Int = 0
     
     override static func primaryKey() -> String? {
         return "id"

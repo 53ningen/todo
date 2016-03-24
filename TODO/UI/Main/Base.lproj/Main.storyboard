@@ -93,6 +93,9 @@
                     <navigationItem key="navigationItem" id="Rde-y8-TlD">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2pO-An-HMn"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="createNewButton" destination="2pO-An-HMn" id="E0o-sE-jsw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pN-gk-jpZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

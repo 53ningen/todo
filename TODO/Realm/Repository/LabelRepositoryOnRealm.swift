@@ -17,7 +17,7 @@ public class LabelRepositoryOnRealm: LabelRepository {
 extension LabelObject {
 
     var toLabel: Label? {
-        return Label(id: Id<Label>(value: id), info: LabelInfo(color: color))
+        return Label(id: Id<Label>(value: id), info: LabelInfo(color: (r: r, g: g, b: b, a: a)))
     }
     
 }

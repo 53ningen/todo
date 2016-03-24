@@ -2,6 +2,8 @@ import UIKit
 
 final class LabelsViewController: BaseTableViewController {
     
+    @IBOutlet weak var createNewButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(LabelCellView.self)
@@ -16,7 +18,14 @@ final class LabelsViewController: BaseTableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        subscribeEvents()
         tableView.reloadData()
+    }
+    
+    private func subscribeEvents() {
+        createNewButton.rx_tap.single()
+            .subscribeNext { [weak self] _ in  self?.presentViewController(UIViewController.of(AddLabelViewController.self), animated: true, completion: nil) }
+            .addDisposableTo(disposeBag)
     }
     
     // DataSource

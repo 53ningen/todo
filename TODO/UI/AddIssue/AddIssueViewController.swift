@@ -5,7 +5,6 @@ final class AddIssueViewController: BaseViewController {
     
     private let viewModel: AddIssueViewModel = AddIssueViewModel()
     
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var selectLabelsButton: UIButton!
@@ -21,6 +20,10 @@ final class AddIssueViewController: BaseViewController {
             $0.roundedCorners(5)
             $0.border(1, color: UIColor.borderColor.CGColor)
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         bind()
         subscribeEvents()
     }

@@ -149,7 +149,6 @@
                     <connections>
                         <outlet property="cancelButton" destination="FvT-wG-XXd" id="p5Y-7D-OQE"/>
                         <outlet property="descriptionTextView" destination="2Bf-sV-ajR" id="qZ9-Fe-pUm"/>
-                        <outlet property="scrollView" destination="doS-sb-HqH" id="VU2-kT-X9D"/>
                         <outlet property="selectLabelsButton" destination="0MP-XU-oRi" id="6KP-uD-4Eg"/>
                         <outlet property="selectMilestoneButton" destination="PCr-7E-zV3" id="kdQ-Wd-Lm9"/>
                         <outlet property="submitButton" destination="RhI-xI-Xd4" id="uFH-ce-HBI"/>
