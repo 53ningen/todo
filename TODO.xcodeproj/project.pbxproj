@@ -18,6 +18,7 @@
 		FF58D4451CA42EB600D58B26 /* AddMilestoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D4441CA42EB600D58B26 /* AddMilestoneViewController.swift */; };
 		FF58D4471CA42EE700D58B26 /* AddMilestoneViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58D4461CA42EE700D58B26 /* AddMilestoneViewController.storyboard */; };
 		FF58D4491CA4339300D58B26 /* AddMilestoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D4481CA4339300D58B26 /* AddMilestoneViewModel.swift */; };
+		FF58D44C1CA46A5700D58B26 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D44B1CA46A5700D58B26 /* SettingsViewController.swift */; };
 		FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */; };
 		FFA390651C9C1969000A0CA4 /* LabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */; };
 		FFA390671C9C1A73000A0CA4 /* IssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */; };
@@ -91,6 +92,7 @@
 		FF58D4441CA42EB600D58B26 /* AddMilestoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMilestoneViewController.swift; sourceTree = "<group>"; };
 		FF58D4461CA42EE700D58B26 /* AddMilestoneViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddMilestoneViewController.storyboard; sourceTree = "<group>"; };
 		FF58D4481CA4339300D58B26 /* AddMilestoneViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMilestoneViewModel.swift; sourceTree = "<group>"; };
+		FF58D44B1CA46A5700D58B26 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestonesViewController.swift; sourceTree = "<group>"; };
 		FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsViewController.swift; sourceTree = "<group>"; };
 		FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewModel.swift; sourceTree = "<group>"; };
@@ -202,6 +204,14 @@
 				FF58D4481CA4339300D58B26 /* AddMilestoneViewModel.swift */,
 			);
 			path = AddMilestone;
+			sourceTree = "<group>";
+		};
+		FF58D44A1CA46A4800D58B26 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FF58D44B1CA46A5700D58B26 /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		FFA3905F1C9C111D000A0CA4 /* Milestones */ = {
@@ -412,6 +422,7 @@
 				FF33831D1C990BA600D73743 /* Issues */,
 				FFA390601C9C1133000A0CA4 /* Labels */,
 				FFA3905F1C9C111D000A0CA4 /* Milestones */,
+				FF58D44A1CA46A4800D58B26 /* Settings */,
 				FFE38D771C9302070045F8D1 /* Main.storyboard */,
 			);
 			path = Main;
@@ -591,6 +602,7 @@
 				FF58D43E1CA41BBF00D58B26 /* AddLabelViewController.swift in Sources */,
 				FFA3908A1CA26505000A0CA4 /* LabelRepository.swift in Sources */,
 				FFF860771C96D9EF00C16794 /* Milestone.swift in Sources */,
+				FF58D44C1CA46A5700D58B26 /* SettingsViewController.swift in Sources */,
 				FFA390961CA28866000A0CA4 /* IssueViewController.swift in Sources */,
 				FFE38DB31C9312300045F8D1 /* Aliases.swift in Sources */,
 				FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */,
