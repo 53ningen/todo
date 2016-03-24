@@ -155,6 +155,9 @@
                     <navigationItem key="navigationItem" id="Qwn-sB-WFH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xt8-94-X36"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="createNewButton" destination="Xt8-94-X36" id="E25-yV-7RX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioN-ZR-HHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

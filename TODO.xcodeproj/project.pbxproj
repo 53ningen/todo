@@ -15,6 +15,9 @@
 		FF58D43E1CA41BBF00D58B26 /* AddLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D43D1CA41BBF00D58B26 /* AddLabelViewController.swift */; };
 		FF58D4401CA41BFC00D58B26 /* AddLabelViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58D43F1CA41BFC00D58B26 /* AddLabelViewController.storyboard */; };
 		FF58D4421CA41EB300D58B26 /* AddLabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D4411CA41EB300D58B26 /* AddLabelViewModel.swift */; };
+		FF58D4451CA42EB600D58B26 /* AddMilestoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D4441CA42EB600D58B26 /* AddMilestoneViewController.swift */; };
+		FF58D4471CA42EE700D58B26 /* AddMilestoneViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58D4461CA42EE700D58B26 /* AddMilestoneViewController.storyboard */; };
+		FF58D4491CA4339300D58B26 /* AddMilestoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D4481CA4339300D58B26 /* AddMilestoneViewModel.swift */; };
 		FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */; };
 		FFA390651C9C1969000A0CA4 /* LabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */; };
 		FFA390671C9C1A73000A0CA4 /* IssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */; };
@@ -85,6 +88,9 @@
 		FF58D43D1CA41BBF00D58B26 /* AddLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLabelViewController.swift; sourceTree = "<group>"; };
 		FF58D43F1CA41BFC00D58B26 /* AddLabelViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddLabelViewController.storyboard; sourceTree = "<group>"; };
 		FF58D4411CA41EB300D58B26 /* AddLabelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLabelViewModel.swift; sourceTree = "<group>"; };
+		FF58D4441CA42EB600D58B26 /* AddMilestoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMilestoneViewController.swift; sourceTree = "<group>"; };
+		FF58D4461CA42EE700D58B26 /* AddMilestoneViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddMilestoneViewController.storyboard; sourceTree = "<group>"; };
+		FF58D4481CA4339300D58B26 /* AddMilestoneViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMilestoneViewModel.swift; sourceTree = "<group>"; };
 		FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestonesViewController.swift; sourceTree = "<group>"; };
 		FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsViewController.swift; sourceTree = "<group>"; };
 		FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewModel.swift; sourceTree = "<group>"; };
@@ -186,6 +192,16 @@
 				FF58D4411CA41EB300D58B26 /* AddLabelViewModel.swift */,
 			);
 			path = AddLabel;
+			sourceTree = "<group>";
+		};
+		FF58D4431CA42EA300D58B26 /* AddMilestone */ = {
+			isa = PBXGroup;
+			children = (
+				FF58D4461CA42EE700D58B26 /* AddMilestoneViewController.storyboard */,
+				FF58D4441CA42EB600D58B26 /* AddMilestoneViewController.swift */,
+				FF58D4481CA4339300D58B26 /* AddMilestoneViewModel.swift */,
+			);
+			path = AddMilestone;
 			sourceTree = "<group>";
 		};
 		FFA3905F1C9C111D000A0CA4 /* Milestones */ = {
@@ -376,6 +392,7 @@
 			children = (
 				FFA3909E1CA2C34A000A0CA4 /* AddIssue */,
 				FF58D43C1CA41B7800D58B26 /* AddLabel */,
+				FF58D4431CA42EA300D58B26 /* AddMilestone */,
 				FFA390941CA28854000A0CA4 /* Issue */,
 				FFF8606E1C96C1FB00C16794 /* LaunchScreen */,
 				FFE38DB51C9698E90045F8D1 /* Main */,
@@ -522,6 +539,7 @@
 				FFE38D791C9302070045F8D1 /* Main.storyboard in Resources */,
 				FFF8607E1C97B06300C16794 /* IssueCellView.xib in Resources */,
 				FF58D4401CA41BFC00D58B26 /* AddLabelViewController.storyboard in Resources */,
+				FF58D4471CA42EE700D58B26 /* AddMilestoneViewController.storyboard in Resources */,
 				FFA3906C1C9C254F000A0CA4 /* FooterCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,6 +603,7 @@
 				FF0DED981C998B1200B8FE77 /* UIState.swift in Sources */,
 				FFA3907C1C9D1018000A0CA4 /* MilestoneObject.swift in Sources */,
 				FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */,
+				FF58D4491CA4339300D58B26 /* AddMilestoneViewModel.swift in Sources */,
 				FFA390911CA26B1B000A0CA4 /* LabelRepositoryOnRealm.swift in Sources */,
 				FF58D4391CA40DED00D58B26 /* AddIssueViewModel.swift in Sources */,
 				FFA390671C9C1A73000A0CA4 /* IssuesViewModel.swift in Sources */,
@@ -598,6 +617,7 @@
 				FFA3908F1CA266FB000A0CA4 /* IssueRepositoryOnRealm.swift in Sources */,
 				FF58D4421CA41EB300D58B26 /* AddLabelViewModel.swift in Sources */,
 				FFA390721C9D0DE5000A0CA4 /* IssueObject.swift in Sources */,
+				FF58D4451CA42EB600D58B26 /* AddMilestoneViewController.swift in Sources */,
 				FFF860841C97B95F00C16794 /* LabelCellView.swift in Sources */,
 				FFF860801C97B68600C16794 /* IssueCellView.swift in Sources */,
 				FFF860701C96C21900C16794 /* BaseViewController.swift in Sources */,
