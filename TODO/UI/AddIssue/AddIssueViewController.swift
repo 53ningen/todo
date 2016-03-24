@@ -10,14 +10,14 @@ final class AddIssueViewController: BaseViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var selectLabelsButton: UIButton!
     @IBOutlet weak var selectMilestoneButton: UIButton!
-    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var submitButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // View の 初期化
-        [titleTextField, descriptionTextView, selectMilestoneButton, selectLabelsButton, submitButton].forEach {
+        [titleTextField, descriptionTextView, selectMilestoneButton, selectLabelsButton].forEach {
             $0.roundedCorners(5)
             $0.border(1, color: UIColor.borderColor.CGColor)
         }

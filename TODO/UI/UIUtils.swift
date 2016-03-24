@@ -67,4 +67,12 @@ extension UIColor {
         return UIColor(red: 178/255, green: 178/255, blue: 178/255, alpha: 1)
     }
     
+    static var themeColor: UIColor {
+        return UIColor(red: 96/255, green: 94/255, blue: 86/255, alpha: 1)
+    }
+    
+    static var themeColorHighlighted: UIColor {
+        return UIColor(red: 76/255, green: 74/255, blue: 66/255, alpha: 1)
+    }
+    
 }
