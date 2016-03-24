@@ -64,7 +64,7 @@ extension UIViewController {
 extension UIColor {
     
     static var borderColor: UIColor {
-        return UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        return UIColor(red: 178/255, green: 178/255, blue: 178/255, alpha: 1)
     }
     
 }

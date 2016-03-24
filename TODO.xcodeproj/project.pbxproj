@@ -10,6 +10,8 @@
 		FF0DED981C998B1200B8FE77 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED971C998B1200B8FE77 /* UIState.swift */; };
 		FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */; };
 		FF33831F1C990BB300D73743 /* IssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33831E1C990BB300D73743 /* IssuesViewController.swift */; };
+		FF58D4391CA40DED00D58B26 /* AddIssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D4381CA40DED00D58B26 /* AddIssueViewModel.swift */; };
+		FF58D43B1CA4128A00D58B26 /* UIButtonPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D43A1CA4128A00D58B26 /* UIButtonPlus.swift */; };
 		FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */; };
 		FFA390651C9C1969000A0CA4 /* LabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */; };
 		FFA390671C9C1A73000A0CA4 /* IssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */; };
@@ -75,6 +77,8 @@
 		FF0DED971C998B1200B8FE77 /* UIState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		FF33831E1C990BB300D73743 /* IssuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewController.swift; sourceTree = "<group>"; };
+		FF58D4381CA40DED00D58B26 /* AddIssueViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIssueViewModel.swift; sourceTree = "<group>"; };
+		FF58D43A1CA4128A00D58B26 /* UIButtonPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonPlus.swift; sourceTree = "<group>"; };
 		FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestonesViewController.swift; sourceTree = "<group>"; };
 		FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsViewController.swift; sourceTree = "<group>"; };
 		FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewModel.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 			children = (
 				FFA390681C9C2527000A0CA4 /* FooterCellView.swift */,
 				FFA3906B1C9C254F000A0CA4 /* FooterCellView.xib */,
+				FF58D43A1CA4128A00D58B26 /* UIButtonPlus.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			children = (
 				FFA3909F1CA2C35E000A0CA4 /* AddIssueViewController.storyboard */,
 				FFA390A11CA2C385000A0CA4 /* AddIssueViewController.swift */,
+				FF58D4381CA40DED00D58B26 /* AddIssueViewModel.swift */,
 			);
 			path = AddIssue;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 				FFA390961CA28866000A0CA4 /* IssueViewController.swift in Sources */,
 				FFE38DB31C9312300045F8D1 /* Aliases.swift in Sources */,
 				FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */,
+				FF58D43B1CA4128A00D58B26 /* UIButtonPlus.swift in Sources */,
 				FFA3909D1CA295DD000A0CA4 /* OptinalExtensions.swift in Sources */,
 				FFE38D741C9302070045F8D1 /* AppDelegate.swift in Sources */,
 				FFA390A21CA2C385000A0CA4 /* AddIssueViewController.swift in Sources */,
@@ -560,6 +567,7 @@
 				FFA3907C1C9D1018000A0CA4 /* MilestoneObject.swift in Sources */,
 				FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */,
 				FFA390911CA26B1B000A0CA4 /* LabelRepositoryOnRealm.swift in Sources */,
+				FF58D4391CA40DED00D58B26 /* AddIssueViewModel.swift in Sources */,
 				FFA390671C9C1A73000A0CA4 /* IssuesViewModel.swift in Sources */,
 				FFA3909B1CA294C0000A0CA4 /* ArrayExtensions.swift in Sources */,
 				FFA3908C1CA26556000A0CA4 /* MilestoneRepository.swift in Sources */,
