@@ -57,8 +57,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ZiL-xX-mrf">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Bdn-rG-p1T">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Open"/>
+                                <segment title="Closed"/>
+                            </segments>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="p1Z-3a-AfS"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="createNewButton" destination="p1Z-3a-AfS" id="eF7-Gz-WcN"/>
+                        <outlet property="segmentedControl" destination="Bdn-rG-p1T" id="2sh-bW-pBj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w9k-Jl-hyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

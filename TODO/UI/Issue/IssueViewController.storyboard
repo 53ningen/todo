@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wXD-ai-Vfy">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Issue View Controller-->
+        <scene sceneID="veN-i4-Uyt">
+            <objects>
+                <viewController storyboardIdentifier="IssueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wXD-ai-Vfy" customClass="IssueViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="COx-Aj-O6B"/>
+                        <viewControllerLayoutGuide type="bottom" id="PkW-dI-b5t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IWz-WP-b2J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18r-m1-d2G">
+                                <rect key="frame" x="20" y="40" width="47" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issueのタイトルがここに入ります" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBG-zF-am9">
+                                <rect key="frame" x="20" y="60" width="307" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="18r-m1-d2G" firstAttribute="leading" secondItem="IWz-WP-b2J" secondAttribute="leading" constant="20" id="DJ6-fv-kAv"/>
+                            <constraint firstItem="qBG-zF-am9" firstAttribute="leading" secondItem="IWz-WP-b2J" secondAttribute="leading" constant="20" id="Ms0-S3-163"/>
+                            <constraint firstItem="qBG-zF-am9" firstAttribute="top" secondItem="18r-m1-d2G" secondAttribute="bottom" id="U4a-2k-BPc"/>
+                            <constraint firstItem="18r-m1-d2G" firstAttribute="top" secondItem="COx-Aj-O6B" secondAttribute="bottom" constant="20" id="kOy-Lj-Xv8"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="idLabel" destination="18r-m1-d2G" id="8pY-z4-mAK"/>
+                        <outlet property="titleLabel" destination="qBG-zF-am9" id="NoP-wn-a6R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dp1-Yd-jFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="808" y="502"/>
+        </scene>
+    </scenes>
+</document>

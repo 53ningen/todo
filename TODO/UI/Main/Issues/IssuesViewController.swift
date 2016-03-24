@@ -1,7 +1,11 @@
 import UIKit
 import RxSwift
+import RxCocoa
 
 final class IssuesViewController: BaseTableViewController {
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var createNewButton: UIBarButtonItem!
     
     private let viewModel: Variable<IssuesViewModel> = Variable<IssuesViewModel>(IssuesViewModel.getInstance)
     
@@ -22,18 +26,40 @@ final class IssuesViewController: BaseTableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.asObservable()
+        bind()
+        subscribeEvents()
+    }
+    
+    private func bind() {
+        let observable = viewModel.asObservable().shareReplay(1)
+        observable.map { $0.segment.rawValue }.bindTo(segmentedControl.rx_value).addDisposableTo(disposeBag)
+    }
+    
+    private func subscribeEvents() {
+        tableView.rx_itemSelected.single()
+            .subscribeNext { [weak self] _ in
+                let vc = UIViewController.of(IssueViewController.self)
+                vc.hidesBottomBarWhenPushed = true
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+            .addDisposableTo(disposeBag)
+        createNewButton.rx_tap.single()
+            .subscribeNext { [weak self] _ in  self?.presentViewController(UIViewController.of(AddIssueViewController.self), animated: true, completion: nil) }
+            .addDisposableTo(disposeBag)
+        segmentedControl.rx_value
             .subscribeNext { _ in }
             .addDisposableTo(disposeBag)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return issues.count
+        return 10
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(IssueCellView.cellReuseIdentifier, forIndexPath: indexPath)
-        (cell as? IssueCellView)?.bind(issues[indexPath.row])
+        issues.safeIndex(indexPath.row).forEach {
+            (cell as? IssueCellView)?.bind($0)
+        }
         return cell
     }
     

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fhF-Hb-1x2">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Add Issue View Controller-->
+        <scene sceneID="NdE-eF-bU3">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DBn-jp-QMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="AddIssueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fhF-Hb-1x2" customClass="AddIssueViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ah6-uo-UZh"/>
+                        <viewControllerLayoutGuide type="bottom" id="NFq-8e-nns"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kko-nn-VVM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GHb-ak-zPi">
+                                <rect key="frame" x="20" y="134" width="374" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="5Og-Ee-Nvm"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfk-6B-M3x">
+                                <rect key="frame" x="20" y="304" width="374" height="35"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="be4-4L-81U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Select labels"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osx-RH-LSh">
+                                <rect key="frame" x="20" y="359" width="374" height="35"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="IUZ-6v-GV0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Select milestone"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKW-X2-8yL">
+                                <rect key="frame" x="20" y="414" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.41960784313725491" green="0.80000000000000004" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="g21-Ig-lPy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Submit new issue">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9gC-gk-GY3">
+                                <rect key="frame" x="20" y="84" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hdt-EX-KLH">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Submit new issue" id="gXl-N1-7BG">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="FvT-wG-XXd"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="gfk-6B-M3x" firstAttribute="top" secondItem="GHb-ak-zPi" secondAttribute="bottom" constant="20" id="29e-WY-Tt5"/>
+                            <constraint firstAttribute="trailing" secondItem="Hdt-EX-KLH" secondAttribute="trailing" id="5Yi-MY-bul"/>
+                            <constraint firstItem="9gC-gk-GY3" firstAttribute="top" secondItem="Hdt-EX-KLH" secondAttribute="bottom" constant="20" id="7aV-xp-6B0"/>
+                            <constraint firstItem="Hdt-EX-KLH" firstAttribute="leading" secondItem="Kko-nn-VVM" secondAttribute="leading" id="J7J-wS-TcG"/>
+                            <constraint firstItem="GHb-ak-zPi" firstAttribute="top" secondItem="9gC-gk-GY3" secondAttribute="bottom" constant="20" id="JJQ-5i-BGL"/>
+                            <constraint firstAttribute="trailing" secondItem="9gC-gk-GY3" secondAttribute="trailing" constant="20" id="KgY-Lb-zwR"/>
+                            <constraint firstItem="Hdt-EX-KLH" firstAttribute="top" secondItem="ah6-uo-UZh" secondAttribute="bottom" id="MBv-pG-Xi2"/>
+                            <constraint firstItem="9gC-gk-GY3" firstAttribute="leading" secondItem="Kko-nn-VVM" secondAttribute="leading" constant="20" id="TA8-EU-TGE"/>
+                            <constraint firstItem="BKW-X2-8yL" firstAttribute="leading" secondItem="Kko-nn-VVM" secondAttribute="leading" constant="20" id="WZn-08-1b1"/>
+                            <constraint firstAttribute="trailing" secondItem="osx-RH-LSh" secondAttribute="trailing" constant="20" id="YTu-L7-bn1"/>
+                            <constraint firstItem="osx-RH-LSh" firstAttribute="top" secondItem="gfk-6B-M3x" secondAttribute="bottom" constant="20" id="ai3-Ln-WtO"/>
+                            <constraint firstItem="gfk-6B-M3x" firstAttribute="leading" secondItem="Kko-nn-VVM" secondAttribute="leading" constant="20" id="bnk-rS-Kfn"/>
+                            <constraint firstItem="BKW-X2-8yL" firstAttribute="top" secondItem="osx-RH-LSh" secondAttribute="bottom" constant="20" id="e3J-Le-Auk"/>
+                            <constraint firstAttribute="trailing" secondItem="gfk-6B-M3x" secondAttribute="trailing" constant="20" id="iMP-A3-Y2e"/>
+                            <constraint firstItem="GHb-ak-zPi" firstAttribute="leading" secondItem="Kko-nn-VVM" secondAttribute="leading" constant="20" id="oiJ-Gd-cEa"/>
+                            <constraint firstItem="osx-RH-LSh" firstAttribute="leading" secondItem="Kko-nn-VVM" secondAttribute="leading" constant="20" id="qUE-Wc-AI9"/>
+                            <constraint firstAttribute="trailing" secondItem="BKW-X2-8yL" secondAttribute="trailing" constant="20" id="xGQ-My-03j"/>
+                            <constraint firstAttribute="trailing" secondItem="GHb-ak-zPi" secondAttribute="trailing" constant="20" id="yGX-DA-DcD"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="zpb-7l-pDF" appends="YES" id="fyS-AP-6oq"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="FvT-wG-XXd" id="p5Y-7D-OQE"/>
+                        <outlet property="descriptionTextView" destination="GHb-ak-zPi" id="YEH-fQ-TUO"/>
+                        <outlet property="selectLabelsButton" destination="gfk-6B-M3x" id="7NJ-Ee-d3z"/>
+                        <outlet property="selectMilestoneButton" destination="osx-RH-LSh" id="ueU-1L-0ad"/>
+                        <outlet property="submitButton" destination="BKW-X2-8yL" id="SiN-PB-fVh"/>
+                        <outlet property="tapGestureRecognizer" destination="zpb-7l-pDF" id="M9g-h7-YMP"/>
+                        <outlet property="titleTextField" destination="9gC-gk-GY3" id="XlP-D9-hbo"/>
+                    </connections>
+                </viewController>
+                <tapGestureRecognizer id="zpb-7l-pDF"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="494"/>
+        </scene>
+    </scenes>
+</document>
