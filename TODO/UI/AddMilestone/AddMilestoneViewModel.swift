@@ -10,7 +10,8 @@ final class AddMilestoneViewModel {
     func submit() {
         let now: Date = Int64(NSDate().timeIntervalSince1970)
         let dueOn: Date = Int64(self.dueOn.value.timeIntervalSince1970)
-        _ = MilestoneInfo(title: title.value, state: .Open, description: desc.value, createdAt: now, updatedAt: now, dueOn: dueOn)
+        let info = MilestoneInfo(state: .Open, description: desc.value, createdAt: now, updatedAt: now, dueOn: dueOn)
+        _ = Milestone(id: Id<Milestone>(value: title.value), info: info)
     }
     
 }

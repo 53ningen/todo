@@ -2,15 +2,13 @@
 
 public final class MilestoneInfo: EntityInfo {
     
-    public let title: String
     public let state: MilestoneState
     public let description: String
     public let createdAt: Date
     public let updatedAt: Date
     public let dueOn: Date
     
-    public init(title: String, state: MilestoneState, description: String, createdAt: Date, updatedAt: Date, dueOn: Date) {
-        self.title = title
+    public init(state: MilestoneState, description: String, createdAt: Date, updatedAt: Date, dueOn: Date) {
         self.state = state
         self.description = description
         self.createdAt = createdAt
@@ -22,8 +20,7 @@ public final class MilestoneInfo: EntityInfo {
 
 extension MilestoneInfo: Equatable {}
 public func ==(lhs: MilestoneInfo, rhs: MilestoneInfo) -> Bool {
-    return lhs.title == rhs.title
-        && lhs.state == rhs.state
+    return lhs.state == rhs.state
         && lhs.description == rhs.description
         && lhs.createdAt == rhs.createdAt
         && lhs.updatedAt == rhs.updatedAt
