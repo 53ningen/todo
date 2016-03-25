@@ -2,6 +2,8 @@ import UIKit
 
 final class LabelsViewController: BaseTableViewController {
     
+    private let viewModel: LabelsViewModel = LabelsViewModel()
+    
     @IBOutlet weak var createNewButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -18,8 +20,13 @@ final class LabelsViewController: BaseTableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        bind()
         subscribeEvents()
-        tableView.reloadData()
+        viewModel.updateLabels()
+    }
+    
+    private func bind() {
+        viewModel.labels.asObservable().map { _ in () }.subscribeNext(tableView.reloadData).addDisposableTo(disposeBag)
     }
     
     private func subscribeEvents() {
@@ -30,16 +37,15 @@ final class LabelsViewController: BaseTableViewController {
     
     // DataSource
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return viewModel.labels.value.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier(LabelCellView.cellReuseIdentifier, forIndexPath: indexPath)
-    }
-    
-    // Delegate
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 1 // table上部の余白を消すため
+        let cell = tableView.dequeueReusableCellWithIdentifier(LabelCellView.cellReuseIdentifier, forIndexPath: indexPath)
+        viewModel.labels.value.safeIndex(indexPath.row).forEach {
+            (cell as? LabelCellView)?.bind($0)
+        }
+        return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

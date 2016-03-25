@@ -23,6 +23,7 @@
 		FF58D4531CA4704D00D58B26 /* LicensesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58D4521CA4704D00D58B26 /* LicensesViewController.storyboard */; };
 		FF58D4551CA4711F00D58B26 /* LICENSES in Resources */ = {isa = PBXBuildFile; fileRef = FF58D4541CA4711F00D58B26 /* LICENSES */; };
 		FF58D45E1CA5555800D58B26 /* AppModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D45D1CA5555800D58B26 /* AppModules.swift */; };
+		FF8325181CA5CC690028167B /* LabelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8325171CA5CC690028167B /* LabelsViewModel.swift */; };
 		FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */; };
 		FFA390651C9C1969000A0CA4 /* LabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */; };
 		FFA390671C9C1A73000A0CA4 /* IssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */; };
@@ -101,6 +102,7 @@
 		FF58D4521CA4704D00D58B26 /* LicensesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LicensesViewController.storyboard; sourceTree = "<group>"; };
 		FF58D4541CA4711F00D58B26 /* LICENSES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSES; sourceTree = "<group>"; };
 		FF58D45D1CA5555800D58B26 /* AppModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppModules.swift; path = ../../../../../Documents/AppModules.swift; sourceTree = "<group>"; };
+		FF8325171CA5CC690028167B /* LabelsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsViewModel.swift; sourceTree = "<group>"; };
 		FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestonesViewController.swift; sourceTree = "<group>"; };
 		FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsViewController.swift; sourceTree = "<group>"; };
 		FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewModel.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				FFF860821C97B95F00C16794 /* LabelCellView.swift */,
 				FFF860831C97B95F00C16794 /* LabelCellView.xib */,
 				FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */,
+				FF8325171CA5CC690028167B /* LabelsViewModel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF33831F1C990BB300D73743 /* IssuesViewController.swift in Sources */,
+				FF8325181CA5CC690028167B /* LabelsViewModel.swift in Sources */,
 				FFA390931CA26D98000A0CA4 /* MilestoneRepositoryOnRealm.swift in Sources */,
 				FF58D43E1CA41BBF00D58B26 /* AddLabelViewController.swift in Sources */,
 				FFA3908A1CA26505000A0CA4 /* LabelRepository.swift in Sources */,
