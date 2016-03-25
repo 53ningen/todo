@@ -15,6 +15,7 @@ final class SettingsViewController: BaseTableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         switch indexPath {
         case SettingsViewItem.Licenses.indexPath:
             let vc = UIViewController.of(LicensesViewController.self)
