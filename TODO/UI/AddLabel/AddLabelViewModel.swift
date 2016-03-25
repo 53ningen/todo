@@ -2,6 +2,8 @@ import RxSwift
 
 final class AddLabelViewModel {
     
+    private lazy var labelRepository: LabelRepository = AppModules.labelRepository
+    
     let name: Variable<String> = Variable<String>("")
     let color: Variable<Color> = Variable<Color>((127, 127, 127, 1))
     
@@ -21,7 +23,8 @@ final class AddLabelViewModel {
     
     func submit() {
         let info = LabelInfo(color: color.value)
-        _ = Label(id: Id<Label>(value: name.value), info: info)
+        let label = Label(id: Id<Label>(value: name.value), info: info)
+        labelRepository.add(label)
     }
     
 }

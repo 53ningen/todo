@@ -40,10 +40,15 @@ final class AddLabelViewController: BaseViewController {
     }
     
     private func subscribeEvents() {
+        addButton.rx_tap
+            .subscribeNext { [weak self] _ in
+                self?.viewModel.submit()
+                self?.dismissViewControllerAnimated(true, completion: nil)
+            }
+            .addDisposableTo(disposeBag)
         rSlider.rx_value.subscribeNext { [weak self] r in self?.viewModel.nextColor(r, g: nil, b: nil) }.addDisposableTo(disposeBag)
         gSlider.rx_value.subscribeNext { [weak self] g in self?.viewModel.nextColor(nil, g: g, b: nil) }.addDisposableTo(disposeBag)
         bSlider.rx_value.subscribeNext { [weak self] b in self?.viewModel.nextColor(nil, g: nil, b: b) }.addDisposableTo(disposeBag)
-        addButton.rx_tap.subscribeNext { [weak self] _ in self?.dismissViewControllerAnimated(true, completion: self?.viewModel.submit)}.addDisposableTo(disposeBag)
         cancelButton.rx_tap.subscribeNext { [weak self] _ in self?.dismissViewControllerAnimated(true, completion: nil) }.addDisposableTo(disposeBag)
     }
     
