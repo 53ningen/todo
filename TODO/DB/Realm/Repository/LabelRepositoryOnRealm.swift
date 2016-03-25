@@ -12,6 +12,12 @@ public class LabelRepositoryOnRealm: LabelRepository {
         return realm.objects(LabelObject).flatMap { $0.toLabel }
     }
     
+    public func add(label: Label) {
+        try! realm.write {
+            realm.add(LabelObject.of(label.id, info: label.info))
+        }
+    }
+    
 }
 
 extension LabelObject {

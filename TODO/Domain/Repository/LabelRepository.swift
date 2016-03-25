@@ -7,4 +7,7 @@ public protocol LabelRepository {
     /// Labelの全件取得
     func findAll() -> [Label]
     
+    /// Labelの追加
+    func add(label: Label)
+    
 }
