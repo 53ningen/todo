@@ -14,6 +14,12 @@ final class AddLabelViewController: BaseViewController {
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        colorView.roundedCorners(5)
+        colorView.border(1, color: UIColor.borderColor.CGColor)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         bind()
