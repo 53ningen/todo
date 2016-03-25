@@ -6,6 +6,9 @@ public protocol IssueRepository {
     
     /// Issueを全件取得する
     func findAll() -> [Issue]
+    
+    /// Issueの状態を指定して全件取得する
+    func findAll(state: IssueState) -> [Issue]
 
     /// タイトル、説明文からキーワード検索でIssueを探す
     func findByKeyword(keyword: String) -> [Issue]

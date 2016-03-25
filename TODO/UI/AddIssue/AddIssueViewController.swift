@@ -39,7 +39,10 @@ final class AddIssueViewController: BaseViewController {
             }
             .addDisposableTo(disposeBag)
         submitButton.rx_tap.single()
-            .subscribeNext { [weak self] _ in self?.dismissViewControllerAnimated(true, completion: self?.viewModel.submit) }
+            .subscribeNext { [weak self] _ in
+                self?.viewModel.submit()
+                self?.dismissViewControllerAnimated(true, completion: nil)
+            }
             .addDisposableTo(disposeBag)
     }
     

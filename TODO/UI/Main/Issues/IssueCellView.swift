@@ -8,7 +8,7 @@ final class IssueCellView: UITableViewCell {
     
     func bind(issue: Issue) {
         titleLabel.text = issue.info.title
-        dataLabel.text = "#3 opened on 27 Dec 2014"
+        dataLabel.text = "#\(issue.id.value) opened on \(issue.info.createdAt.formattedString)"
         milestoneLabel.text = issue.info.milestone?.id.value
     }
 

@@ -1,22 +1,22 @@
+import RxSwift
 
 final class IssuesViewModel {
+    
+    private lazy var issueRepository: IssueRepository = AppModules.issueRepository
 
-    /// 表示しているIssueを格納する
-    let issues: [Issue]
-    /// Issueをすべて取得しおえてるかどうか
-    let isUpToDate: Bool
-    /// 表示したいIssueの状態
-    let segment: Segment
-    enum Segment: Int { case Open = 0, Closed = 1 }
+    let issues: Variable<[Issue]> = Variable<[Issue]>([])
+    let segment: Variable<IssueState> = Variable<IssueState>(.Open)
     
-    init(issues: [Issue], isUpToDate: Bool, segment: Segment) {
-        self.issues = issues
-        self.isUpToDate = isUpToDate
-        self.segment = segment
+    func updateIssues() {
+        issues.value = issueRepository.findAll(segment.value)
     }
     
-    static var getInstance: IssuesViewModel {
-        return IssuesViewModel(issues: [], isUpToDate: false, segment: .Open)
-    }
+    func toggleIssueState(id: Id<Issue>) {
+        switch segment.value {
+        case .Open: issueRepository.close(id)
+        case .Closed(closedAt: _): issueRepository.open(id)
+        }
+        updateIssues()
+    }    
     
 }

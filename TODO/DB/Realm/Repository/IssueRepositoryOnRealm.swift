@@ -21,6 +21,11 @@ public class IssueRepositoryOnRealm: IssueRepository {
         return realm.objects(IssueObject).flatMap { $0.toIssue }
     }
     
+    public func findAll(state: IssueState) -> [Issue] {
+        let pred = NSPredicate(format: "state == %@", state.rawValue)
+        return realm.objects(IssueObject).filter(pred).flatMap { $0.toIssue }
+    }
+    
     public func findByKeyword(keyword: String) -> [Issue] {
         let pred = NSPredicate(format: "title CONTAINS '%@' OR desc CONTAINS '%@'", keyword, keyword)
         return realm.objects(IssueObject).filter(pred).flatMap { $0.toIssue }
@@ -30,6 +35,7 @@ public class IssueRepositoryOnRealm: IssueRepository {
         try! realm.write {
             realm.add(IssueObject.of(nextId, info: info))
         }
+        NSLog("[issue] add \(info.title)")
     }
     
     public func open(id: Id<Issue>) {

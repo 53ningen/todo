@@ -76,3 +76,14 @@ extension UIColor {
     }
     
 }
+
+extension Date {
+    
+    var formattedString: String {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        formatter.timeStyle = .NoStyle
+        return formatter.stringFromDate(NSDate(timeIntervalSince1970: Double(self)))
+    }
+    
+}

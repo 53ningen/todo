@@ -22,6 +22,7 @@
 		FF58D4511CA4701E00D58B26 /* LicensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D4501CA4701E00D58B26 /* LicensesViewController.swift */; };
 		FF58D4531CA4704D00D58B26 /* LicensesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58D4521CA4704D00D58B26 /* LicensesViewController.storyboard */; };
 		FF58D4551CA4711F00D58B26 /* LICENSES in Resources */ = {isa = PBXBuildFile; fileRef = FF58D4541CA4711F00D58B26 /* LICENSES */; };
+		FF58D45E1CA5555800D58B26 /* AppModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D45D1CA5555800D58B26 /* AppModules.swift */; };
 		FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */; };
 		FFA390651C9C1969000A0CA4 /* LabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */; };
 		FFA390671C9C1A73000A0CA4 /* IssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */; };
@@ -99,6 +100,7 @@
 		FF58D4501CA4701E00D58B26 /* LicensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensesViewController.swift; sourceTree = "<group>"; };
 		FF58D4521CA4704D00D58B26 /* LicensesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LicensesViewController.storyboard; sourceTree = "<group>"; };
 		FF58D4541CA4711F00D58B26 /* LICENSES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSES; sourceTree = "<group>"; };
+		FF58D45D1CA5555800D58B26 /* AppModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppModules.swift; path = ../../../../../Documents/AppModules.swift; sourceTree = "<group>"; };
 		FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestonesViewController.swift; sourceTree = "<group>"; };
 		FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsViewController.swift; sourceTree = "<group>"; };
 		FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewModel.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 		FFE38DA91C9307C00045F8D1 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				FF58D45D1CA5555800D58B26 /* AppModules.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				FFF860841C97B95F00C16794 /* LabelCellView.swift in Sources */,
 				FFF860801C97B68600C16794 /* IssueCellView.swift in Sources */,
 				FFF860701C96C21900C16794 /* BaseViewController.swift in Sources */,
+				FF58D45E1CA5555800D58B26 /* AppModules.swift in Sources */,
 				FFF860751C96D7FE00C16794 /* Label.swift in Sources */,
 				FFE38DAC1C9308D80045F8D1 /* Common.swift in Sources */,
 			);
