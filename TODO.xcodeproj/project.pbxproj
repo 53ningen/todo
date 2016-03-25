@@ -229,6 +229,16 @@
 			path = Licenses;
 			sourceTree = "<group>";
 		};
+		FF58D4561CA5410200D58B26 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				FFA390701C9D0DC4000A0CA4 /* Objects */,
+				FFA3908D1CA266E6000A0CA4 /* Repository */,
+				FFA390771C9D0F73000A0CA4 /* RealmCommon.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		FFA3905F1C9C111D000A0CA4 /* Milestones */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,14 +267,12 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		FFA3906F1C9D0D10000A0CA4 /* Realm */ = {
+		FFA3906F1C9D0D10000A0CA4 /* DB */ = {
 			isa = PBXGroup;
 			children = (
-				FFA390701C9D0DC4000A0CA4 /* Objects */,
-				FFA3908D1CA266E6000A0CA4 /* Repository */,
-				FFA390771C9D0F73000A0CA4 /* RealmCommon.swift */,
+				FF58D4561CA5410200D58B26 /* Realm */,
 			);
-			path = Realm;
+			path = DB;
 			sourceTree = "<group>";
 		};
 		FFA390701C9D0DC4000A0CA4 /* Objects */ = {
@@ -356,8 +364,8 @@
 			isa = PBXGroup;
 			children = (
 				FFE38DA91C9307C00045F8D1 /* Application */,
+				FFA3906F1C9D0D10000A0CA4 /* DB */,
 				FFE38DAA1C93089C0045F8D1 /* Domain */,
-				FFA3906F1C9D0D10000A0CA4 /* Realm */,
 				FFE38DB41C9698D00045F8D1 /* UI */,
 				FFA390991CA294A5000A0CA4 /* Utils */,
 				FFE38D731C9302070045F8D1 /* AppDelegate.swift */,
