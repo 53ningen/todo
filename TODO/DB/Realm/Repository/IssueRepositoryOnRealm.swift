@@ -69,6 +69,12 @@ public class IssueRepositoryOnRealm: IssueRepository {
         }
     }
     
+    public func deleteAll() {
+        try! realm.write {
+            realm.deleteAll()
+        }
+    }
+    
 }
 
 extension IssueObject {

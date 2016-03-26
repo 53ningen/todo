@@ -6,5 +6,5 @@ public protocol MilestoneRepository {
     
     /// Milestoneの全件取得
     func findAll() -> [Milestone]
-    
+        
 }

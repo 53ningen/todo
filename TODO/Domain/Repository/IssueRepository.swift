@@ -24,5 +24,5 @@ public protocol IssueRepository {
     
     /// Issueを追加する
     func open(id: Id<Issue>)
-    
+
 }
