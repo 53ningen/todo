@@ -10,6 +10,9 @@
 		FF0DED981C998B1200B8FE77 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED971C998B1200B8FE77 /* UIState.swift */; };
 		FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */; };
 		FF33831F1C990BB300D73743 /* IssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33831E1C990BB300D73743 /* IssuesViewController.swift */; };
+		FF45B7411CA643F000BAD306 /* SelectLabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF45B7401CA643F000BAD306 /* SelectLabelsViewController.swift */; };
+		FF45B7431CA6442F00BAD306 /* SelectLabelsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF45B7421CA6442F00BAD306 /* SelectLabelsViewController.storyboard */; };
+		FF45B7451CA644AA00BAD306 /* SelectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF45B7441CA644AA00BAD306 /* SelectViewModel.swift */; };
 		FF58D4391CA40DED00D58B26 /* AddIssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D4381CA40DED00D58B26 /* AddIssueViewModel.swift */; };
 		FF58D43B1CA4128A00D58B26 /* UIButtonPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D43A1CA4128A00D58B26 /* UIButtonPlus.swift */; };
 		FF58D43E1CA41BBF00D58B26 /* AddLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D43D1CA41BBF00D58B26 /* AddLabelViewController.swift */; };
@@ -23,6 +26,7 @@
 		FF58D4531CA4704D00D58B26 /* LicensesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58D4521CA4704D00D58B26 /* LicensesViewController.storyboard */; };
 		FF58D4551CA4711F00D58B26 /* LICENSES in Resources */ = {isa = PBXBuildFile; fileRef = FF58D4541CA4711F00D58B26 /* LICENSES */; };
 		FF58D45E1CA5555800D58B26 /* AppModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D45D1CA5555800D58B26 /* AppModules.swift */; };
+		FF5B22361CA659ED005572DE /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B22351CA659ED005572DE /* Controllers.swift */; };
 		FF8325181CA5CC690028167B /* LabelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8325171CA5CC690028167B /* LabelsViewModel.swift */; };
 		FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */; };
 		FFA390651C9C1969000A0CA4 /* LabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */; };
@@ -89,6 +93,9 @@
 		FF0DED971C998B1200B8FE77 /* UIState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		FF33831E1C990BB300D73743 /* IssuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewController.swift; sourceTree = "<group>"; };
+		FF45B7401CA643F000BAD306 /* SelectLabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLabelsViewController.swift; sourceTree = "<group>"; };
+		FF45B7421CA6442F00BAD306 /* SelectLabelsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectLabelsViewController.storyboard; sourceTree = "<group>"; };
+		FF45B7441CA644AA00BAD306 /* SelectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewModel.swift; sourceTree = "<group>"; };
 		FF58D4381CA40DED00D58B26 /* AddIssueViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIssueViewModel.swift; sourceTree = "<group>"; };
 		FF58D43A1CA4128A00D58B26 /* UIButtonPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonPlus.swift; sourceTree = "<group>"; };
 		FF58D43D1CA41BBF00D58B26 /* AddLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLabelViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +109,7 @@
 		FF58D4521CA4704D00D58B26 /* LicensesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LicensesViewController.storyboard; sourceTree = "<group>"; };
 		FF58D4541CA4711F00D58B26 /* LICENSES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSES; sourceTree = "<group>"; };
 		FF58D45D1CA5555800D58B26 /* AppModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppModules.swift; path = ../../../../../Documents/AppModules.swift; sourceTree = "<group>"; };
+		FF5B22351CA659ED005572DE /* Controllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
 		FF8325171CA5CC690028167B /* LabelsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsViewModel.swift; sourceTree = "<group>"; };
 		FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestonesViewController.swift; sourceTree = "<group>"; };
 		FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +202,16 @@
 				FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */,
 			);
 			path = Issues;
+			sourceTree = "<group>";
+		};
+		FF45B73F1CA643DC00BAD306 /* SelectLabels */ = {
+			isa = PBXGroup;
+			children = (
+				FF45B7421CA6442F00BAD306 /* SelectLabelsViewController.storyboard */,
+				FF45B7401CA643F000BAD306 /* SelectLabelsViewController.swift */,
+				FF45B7441CA644AA00BAD306 /* SelectViewModel.swift */,
+			);
+			path = SelectLabels;
 			sourceTree = "<group>";
 		};
 		FF58D43C1CA41B7800D58B26 /* AddLabel */ = {
@@ -437,9 +455,11 @@
 				FFF8606E1C96C1FB00C16794 /* LaunchScreen */,
 				FF58D44F1CA46FFF00D58B26 /* Licenses */,
 				FFE38DB51C9698E90045F8D1 /* Main */,
+				FF45B73F1CA643DC00BAD306 /* SelectLabels */,
 				FFA3906A1C9C252D000A0CA4 /* Shared */,
 				FFE38D7A1C9302070045F8D1 /* Assets.xcassets */,
 				FFF8606F1C96C21900C16794 /* BaseViewController.swift */,
+				FF5B22351CA659ED005572DE /* Controllers.swift */,
 				FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */,
 				FF0DED971C998B1200B8FE77 /* UIState.swift */,
 				FFF8606C1C96BF1F00C16794 /* UIUtils.swift */,
@@ -582,6 +602,7 @@
 				FFE38D791C9302070045F8D1 /* Main.storyboard in Resources */,
 				FFF8607E1C97B06300C16794 /* IssueCellView.xib in Resources */,
 				FF58D4401CA41BFC00D58B26 /* AddLabelViewController.storyboard in Resources */,
+				FF45B7431CA6442F00BAD306 /* SelectLabelsViewController.storyboard in Resources */,
 				FF58D4471CA42EE700D58B26 /* AddMilestoneViewController.storyboard in Resources */,
 				FF58D4551CA4711F00D58B26 /* LICENSES in Resources */,
 				FFA3906C1C9C254F000A0CA4 /* FooterCellView.xib in Resources */,
@@ -641,6 +662,7 @@
 				FFA390961CA28866000A0CA4 /* IssueViewController.swift in Sources */,
 				FFE38DB31C9312300045F8D1 /* Aliases.swift in Sources */,
 				FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */,
+				FF45B7451CA644AA00BAD306 /* SelectViewModel.swift in Sources */,
 				FF58D43B1CA4128A00D58B26 /* UIButtonPlus.swift in Sources */,
 				FFA3909D1CA295DD000A0CA4 /* OptinalExtensions.swift in Sources */,
 				FFE38D741C9302070045F8D1 /* AppDelegate.swift in Sources */,
@@ -648,6 +670,7 @@
 				FFA390691C9C2527000A0CA4 /* FooterCellView.swift in Sources */,
 				FFF8606D1C96BF1F00C16794 /* UIUtils.swift in Sources */,
 				FF0DED981C998B1200B8FE77 /* UIState.swift in Sources */,
+				FF5B22361CA659ED005572DE /* Controllers.swift in Sources */,
 				FFA3907C1C9D1018000A0CA4 /* MilestoneObject.swift in Sources */,
 				FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */,
 				FF58D4491CA4339300D58B26 /* AddMilestoneViewModel.swift in Sources */,
@@ -668,6 +691,7 @@
 				FFF860841C97B95F00C16794 /* LabelCellView.swift in Sources */,
 				FFF860801C97B68600C16794 /* IssueCellView.swift in Sources */,
 				FFF860701C96C21900C16794 /* BaseViewController.swift in Sources */,
+				FF45B7411CA643F000BAD306 /* SelectLabelsViewController.swift in Sources */,
 				FF58D45E1CA5555800D58B26 /* AppModules.swift in Sources */,
 				FFF860751C96D7FE00C16794 /* Label.swift in Sources */,
 				FFE38DAC1C9308D80045F8D1 /* Common.swift in Sources */,

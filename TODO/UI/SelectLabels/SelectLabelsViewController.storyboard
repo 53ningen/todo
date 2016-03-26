@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="725-yu-HKo">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Select Labels View Controller-->
+        <scene sceneID="xGr-OI-2mH">
+            <objects>
+                <viewController storyboardIdentifier="SelectLabelsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="725-yu-HKo" customClass="SelectLabelsViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Akl-Kj-pOd"/>
+                        <viewControllerLayoutGuide type="bottom" id="qWX-jt-oDf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="txx-rw-TPm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUV-6n-bAj">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Select labels" id="Cuh-F0-acd">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="GCf-bP-hJ4"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ILq-T2-24C">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="BUV-6n-bAj" firstAttribute="leading" secondItem="txx-rw-TPm" secondAttribute="leading" id="4JK-cL-Cep"/>
+                            <constraint firstItem="qWX-jt-oDf" firstAttribute="top" secondItem="ILq-T2-24C" secondAttribute="bottom" id="7dS-th-45M"/>
+                            <constraint firstAttribute="trailing" secondItem="ILq-T2-24C" secondAttribute="trailing" id="NtV-La-a0f"/>
+                            <constraint firstItem="BUV-6n-bAj" firstAttribute="top" secondItem="Akl-Kj-pOd" secondAttribute="bottom" id="i2i-1u-sUV"/>
+                            <constraint firstAttribute="trailing" secondItem="BUV-6n-bAj" secondAttribute="trailing" id="p8m-u4-56O"/>
+                            <constraint firstItem="ILq-T2-24C" firstAttribute="top" secondItem="BUV-6n-bAj" secondAttribute="bottom" id="pPC-fh-iHE"/>
+                            <constraint firstItem="ILq-T2-24C" firstAttribute="leading" secondItem="txx-rw-TPm" secondAttribute="leading" id="ptr-SS-Auo"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="doneButton" destination="GCf-bP-hJ4" id="vG1-3U-FRa"/>
+                        <outlet property="tableView" destination="ILq-T2-24C" id="3fU-bR-dZe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F13-gG-4rk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="405" y="-88"/>
+        </scene>
+    </scenes>
+</document>

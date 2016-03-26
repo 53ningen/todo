@@ -38,6 +38,14 @@ final class AddIssueViewController: BaseViewController {
                 self?.descriptionTextView.resignFirstResponder()
             }
             .addDisposableTo(disposeBag)
+        selectLabelsButton.rx_tap
+            .subscribeNext { [weak self] _ in
+                self.forEach {
+                    let vc = Controllers.selectLabelsViewController($0.viewModel.labels)
+                    $0.presentViewController(vc, animated: true, completion: nil)
+                }
+            }
+            .addDisposableTo(disposeBag)
         submitButton.rx_tap.single()
             .subscribeNext { [weak self] _ in
                 self?.viewModel.submit()
