@@ -65,7 +65,16 @@ final class MainLabelsViewController: BaseTableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {}
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        return [UITableViewRowAction(style: .Default, title: "delete", handler: { _ in })]
+        return [UITableViewRowAction(style: .Default, title: "delete", handler: { _ in
+            let alert = UIAlertController(title: "Delete a label", message: "Once you delete a label, there is no going back. Please be certain.", preferredStyle: .Alert)
+            let ok = UIAlertAction(title: "OK", style: .Default, handler: { _ in
+                self.viewModel.labels.value.safeIndex(indexPath.item).map { $0.id }.forEach(self.viewModel.remove)
+            })
+            let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            alert.addAction(cancel)
+            alert.addAction(ok)
+            self.presentViewController(alert, animated: true, completion: nil)
+        })]
     }
 
 }

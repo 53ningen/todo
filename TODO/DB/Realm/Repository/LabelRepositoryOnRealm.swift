@@ -18,6 +18,14 @@ public class LabelRepositoryOnRealm: LabelRepository {
         }
     }
     
+    public func remove(id: Id<Label>) {
+        try! realm.write {
+            realm.objectForPrimaryKey(LabelObject.self, key: id.value).forEach {
+                self.realm.delete($0)
+            }
+        }
+    }
+    
 }
 
 extension LabelObject {

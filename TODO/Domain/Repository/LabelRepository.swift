@@ -10,4 +10,7 @@ public protocol LabelRepository {
     /// Labelの追加
     func add(label: Label)
     
+    /// Labelの削除
+    func remove(id: Id<Label>)
+    
 }

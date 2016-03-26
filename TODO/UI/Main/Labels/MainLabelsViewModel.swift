@@ -9,5 +9,10 @@ final class MainLabelsViewModel {
     func updateLabels() {
         labels.value = labelRepository.findAll()
     }
-        
+    
+    func remove(id: Id<Label>) {
+        labelRepository.remove(id)
+        updateLabels()
+    }
+    
 }

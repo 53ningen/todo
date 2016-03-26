@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Issue View Controller-->
@@ -23,15 +24,16 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issueのタイトルがここに入ります" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBG-zF-am9">
-                                <rect key="frame" x="20" y="60" width="307" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issueのタイトルがここに入ります/Issueのタイトルがここに入ります/Issueのタイトルがここに入ります/Issueのタイトルがここに入ります/" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBG-zF-am9">
+                                <rect key="frame" x="20" y="60" width="354" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="qBG-zF-am9" secondAttribute="trailing" constant="20" id="3Lg-fq-slX"/>
                             <constraint firstItem="18r-m1-d2G" firstAttribute="leading" secondItem="IWz-WP-b2J" secondAttribute="leading" constant="20" id="DJ6-fv-kAv"/>
                             <constraint firstItem="qBG-zF-am9" firstAttribute="leading" secondItem="IWz-WP-b2J" secondAttribute="leading" constant="20" id="Ms0-S3-163"/>
                             <constraint firstItem="qBG-zF-am9" firstAttribute="top" secondItem="18r-m1-d2G" secondAttribute="bottom" id="U4a-2k-BPc"/>
