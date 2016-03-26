@@ -28,3 +28,19 @@ public final class Label: Entity, Equatable {
     }
     
 }
+
+extension Label: CustomDebugStringConvertible {
+
+    public var debugDescription: String {
+        return "Label{id:\(id.value),info:{\(info.debugDescription)}}"
+    }
+
+}
+
+extension LabelInfo: CustomDebugStringConvertible {
+    
+    public var debugDescription: String {
+        return "\(color)"
+    }
+    
+}

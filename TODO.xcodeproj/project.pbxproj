@@ -51,6 +51,9 @@
 		FFA3909D1CA295DD000A0CA4 /* OptinalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA3909C1CA295DD000A0CA4 /* OptinalExtensions.swift */; };
 		FFA390A01CA2C35E000A0CA4 /* AddIssueViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA3909F1CA2C35E000A0CA4 /* AddIssueViewController.storyboard */; };
 		FFA390A21CA2C385000A0CA4 /* AddIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390A11CA2C385000A0CA4 /* AddIssueViewController.swift */; };
+		FFCF38DD1CA6740D00DECC7A /* IssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF38DC1CA6740D00DECC7A /* IssuesViewController.swift */; };
+		FFCF38DF1CA6743400DECC7A /* IssuesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCF38DE1CA6743400DECC7A /* IssuesViewController.storyboard */; };
+		FFCF38E11CA6749E00DECC7A /* IssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF38E01CA6749E00DECC7A /* IssuesViewModel.swift */; };
 		FFE38D741C9302070045F8D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38D731C9302070045F8D1 /* AppDelegate.swift */; };
 		FFE38D791C9302070045F8D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE38D771C9302070045F8D1 /* Main.storyboard */; };
 		FFE38D7B1C9302070045F8D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE38D7A1C9302070045F8D1 /* Assets.xcassets */; };
@@ -135,6 +138,9 @@
 		FFA3909C1CA295DD000A0CA4 /* OptinalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptinalExtensions.swift; sourceTree = "<group>"; };
 		FFA3909F1CA2C35E000A0CA4 /* AddIssueViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddIssueViewController.storyboard; sourceTree = "<group>"; };
 		FFA390A11CA2C385000A0CA4 /* AddIssueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIssueViewController.swift; sourceTree = "<group>"; };
+		FFCF38DC1CA6740D00DECC7A /* IssuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewController.swift; sourceTree = "<group>"; };
+		FFCF38DE1CA6743400DECC7A /* IssuesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IssuesViewController.storyboard; sourceTree = "<group>"; };
+		FFCF38E01CA6749E00DECC7A /* IssuesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewModel.swift; sourceTree = "<group>"; };
 		FFE38D701C9302070045F8D1 /* TODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE38D731C9302070045F8D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFE38D781C9302070045F8D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -356,6 +362,16 @@
 			path = AddIssue;
 			sourceTree = "<group>";
 		};
+		FFCF38DB1CA673FE00DECC7A /* Issues */ = {
+			isa = PBXGroup;
+			children = (
+				FFCF38DE1CA6743400DECC7A /* IssuesViewController.storyboard */,
+				FFCF38DC1CA6740D00DECC7A /* IssuesViewController.swift */,
+				FFCF38E01CA6749E00DECC7A /* IssuesViewModel.swift */,
+			);
+			path = Issues;
+			sourceTree = "<group>";
+		};
 		FFE38D671C9302070045F8D1 = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +468,7 @@
 				FF58D43C1CA41B7800D58B26 /* AddLabel */,
 				FF58D4431CA42EA300D58B26 /* AddMilestone */,
 				FFA390941CA28854000A0CA4 /* Issue */,
+				FFCF38DB1CA673FE00DECC7A /* Issues */,
 				FFF8606E1C96C1FB00C16794 /* LaunchScreen */,
 				FF58D44F1CA46FFF00D58B26 /* Licenses */,
 				FFE38DB51C9698E90045F8D1 /* Main */,
@@ -606,6 +623,7 @@
 				FF58D4471CA42EE700D58B26 /* AddMilestoneViewController.storyboard in Resources */,
 				FF58D4551CA4711F00D58B26 /* LICENSES in Resources */,
 				FFA3906C1C9C254F000A0CA4 /* FooterCellView.xib in Resources */,
+				FFCF38DF1CA6743400DECC7A /* IssuesViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +699,7 @@
 				FFA3908C1CA26556000A0CA4 /* MilestoneRepository.swift in Sources */,
 				FFA390781C9D0F73000A0CA4 /* RealmCommon.swift in Sources */,
 				FFA3907A1C9D0FE0000A0CA4 /* LabelObject.swift in Sources */,
+				FFCF38DD1CA6740D00DECC7A /* IssuesViewController.swift in Sources */,
 				FFF860791C96DEEA00C16794 /* Issue.swift in Sources */,
 				FFA390651C9C1969000A0CA4 /* MainLabelsViewController.swift in Sources */,
 				FFA390881CA263CE000A0CA4 /* IssueRepository.swift in Sources */,
@@ -694,6 +713,7 @@
 				FF45B7411CA643F000BAD306 /* SelectLabelsViewController.swift in Sources */,
 				FF58D45E1CA5555800D58B26 /* AppModules.swift in Sources */,
 				FFF860751C96D7FE00C16794 /* Label.swift in Sources */,
+				FFCF38E11CA6749E00DECC7A /* IssuesViewModel.swift in Sources */,
 				FFE38DAC1C9308D80045F8D1 /* Common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

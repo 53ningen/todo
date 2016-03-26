@@ -31,7 +31,17 @@ final class MainLabelsViewController: BaseTableViewController {
     
     private func subscribeEvents() {
         createNewButton.rx_tap.single()
-            .subscribeNext { [weak self] _ in  self?.presentViewController(UIViewController.of(AddLabelViewController.self), animated: true, completion: nil) }
+            .subscribeNext { [weak self] _ in self?.presentViewController(UIViewController.of(AddLabelViewController.self), animated: true, completion: nil) }
+            .addDisposableTo(disposeBag)
+        tableView.rx_itemSelected
+            .subscribeNext { [weak self] indexPath in
+                if let label = self?.viewModel.labels.value.safeIndex(indexPath.item) {
+                    let vc = UIViewController.of(IssuesViewController.self)
+                    vc.setViewModel(IssuesViewModel(query: IssuesQuery.LabelQuery(label: label)))
+                    self?.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
             .addDisposableTo(disposeBag)
     }
     

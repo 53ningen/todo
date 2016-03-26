@@ -8,7 +8,10 @@ class LabelObject: Object {
     dynamic var g: Int = 0
     dynamic var b: Int = 0
     dynamic var a: Int = 1
-    
+    var issues: [IssueObject] {
+        return linkingObjects(IssueObject.self, forProperty: "labels")
+    }
+
     static func of(id: Id<Label>, info: LabelInfo) -> LabelObject {
         let object = LabelObject()
         object.id = id.value

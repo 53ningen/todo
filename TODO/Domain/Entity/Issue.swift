@@ -55,6 +55,22 @@ public final class Issue: Entity, Equatable {
     
 }
 
+extension Issue: CustomDebugStringConvertible {
+    
+    public var debugDescription: String {
+        return "Issue{id:\(id.value),info:{\(info.debugDescription)}}"
+    }
+    
+}
+
+extension IssueInfo: CustomDebugStringConvertible {
+    
+    public var debugDescription: String {
+        return "title:\(title),state:\(state.rawValue),labels:\(labels),milestone:\(milestone),locked:\(locked),createdAt:\(createdAt),updatedAt:\(updatedAt)"
+    }
+    
+}
+
 /// Issueの状況
 public enum IssueState {
     case Open

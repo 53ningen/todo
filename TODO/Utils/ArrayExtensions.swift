@@ -7,7 +7,7 @@ extension Array {
     }
     
     func safeIndex(index: Int) -> Element? {
-        return index < self.count ? self[index] : nil
+        return index >= 0 && index < self.count ? self[index] : nil
     }
     
     func any(p: Element -> Bool) -> Bool {

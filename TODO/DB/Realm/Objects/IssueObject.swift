@@ -18,7 +18,9 @@ class IssueObject: Object {
         obj.id = id
         obj.title = info.title
         obj.state = info.state.rawValue
-        obj.labels.appendContentsOf([])
+        let labelObjs = info.labels
+            .flatMap { (try! Realm()).objectForPrimaryKey(LabelObject.self, key: $0.id.value) }
+        obj.labels.appendContentsOf(labelObjs)
         obj.milestone = nil
         obj.locked = info.locked
         obj.createdAt = info.createdAt
