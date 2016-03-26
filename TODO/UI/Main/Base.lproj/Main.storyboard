@@ -38,7 +38,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Sat-Tb-6QE" kind="relationship" relationship="rootViewController" id="3El-V4-1D1"/>
+                        <segue destination="mpb-0W-Jn7" kind="relationship" relationship="rootViewController" id="DXx-zc-vTI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJe-qt-poA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -46,36 +46,60 @@
             <point key="canvasLocation" x="2647" y="94"/>
         </scene>
         <!--Main Issues View Controller-->
-        <scene sceneID="KXa-uh-4cj">
+        <scene sceneID="ygd-D2-K7V">
             <objects>
-                <tableViewController id="Sat-Tb-6QE" customClass="MainIssuesViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="8xL-mA-l9Q">
+                <viewController storyboardIdentifier="MainIssuesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mpb-0W-Jn7" customClass="MainIssuesViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W7r-jT-oSO"/>
+                        <viewControllerLayoutGuide type="bottom" id="z8V-X5-XnU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NCU-bN-h9N">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <outlet property="dataSource" destination="Sat-Tb-6QE" id="HAo-6k-X9s"/>
-                            <outlet property="delegate" destination="Sat-Tb-6QE" id="ysp-IB-iE2"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="ZiL-xX-mrf">
-                        <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Bdn-rG-p1T">
-                            <rect key="frame" x="180" y="7" width="240" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Open"/>
-                                <segment title="Closed"/>
-                            </segments>
-                        </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="p1Z-3a-AfS"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cuv-Rx-PN5">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="JbE-is-m7d">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="LvR-BQ-wf4">
+                                            <rect key="frame" x="180" y="7.5" width="240" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Open"/>
+                                                <segment title="Closed"/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Sww-PI-ThR">
+                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sww-PI-ThR" firstAttribute="top" secondItem="Cuv-Rx-PN5" secondAttribute="bottom" id="0TB-Vh-Qmw"/>
+                            <constraint firstItem="Cuv-Rx-PN5" firstAttribute="top" secondItem="W7r-jT-oSO" secondAttribute="bottom" id="3av-cd-5GS"/>
+                            <constraint firstItem="Sww-PI-ThR" firstAttribute="leading" secondItem="NCU-bN-h9N" secondAttribute="leading" id="aXr-aG-NVP"/>
+                            <constraint firstItem="z8V-X5-XnU" firstAttribute="top" secondItem="Sww-PI-ThR" secondAttribute="bottom" id="eki-wv-TKK"/>
+                            <constraint firstAttribute="trailing" secondItem="Cuv-Rx-PN5" secondAttribute="trailing" id="kHq-7m-TNI"/>
+                            <constraint firstAttribute="trailing" secondItem="Sww-PI-ThR" secondAttribute="trailing" id="mCJ-bQ-OnM"/>
+                            <constraint firstItem="Cuv-Rx-PN5" firstAttribute="leading" secondItem="NCU-bN-h9N" secondAttribute="leading" id="zj0-TY-QbH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="egh-fX-DEb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZU6-DT-rfX"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="createNewButton" destination="p1Z-3a-AfS" id="eF7-Gz-WcN"/>
-                        <outlet property="segmentedControl" destination="Bdn-rG-p1T" id="2sh-bW-pBj"/>
+                        <outlet property="createNewButton" destination="ZU6-DT-rfX" id="VDu-Ug-wTE"/>
+                        <outlet property="segmentedControl" destination="LvR-BQ-wf4" id="65l-5K-3yn"/>
+                        <outlet property="tableView" destination="Sww-PI-ThR" id="Fro-mu-MuY"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w9k-Jl-hyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvr-o5-0UJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3459" y="94"/>
         </scene>
@@ -199,7 +223,7 @@
                                         <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hK5-63-gYX" id="wsq-2s-55O">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete all data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3k-cU-hms">
