@@ -46,10 +46,12 @@ final class MainMilestonesViewController: BaseViewController {
         segmentedControl.rx_value.map { _ in () }.subscribeNext(viewModel.updateMilestones).addDisposableTo(disposeBag)
         tableView.rx_itemSelected.single()
             .subscribeNext { [weak self] indexPath in
-                let vc = UIViewController.of(IssueViewController.self)
-                vc.hidesBottomBarWhenPushed = true
-                self?.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-                self?.navigationController?.pushViewController(vc, animated: true)
+                if let milestone = self?.viewModel.milestones.value.safeIndex(indexPath.item) {
+                    let vc = UIViewController.of(IssuesViewController.self)
+                    vc.setViewModel(IssuesViewModel(query: IssuesQuery.MilestoneQuery(milestone: milestone)))
+                    self?.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
             }
             .addDisposableTo(disposeBag)
         createNewButton.rx_tap.single()

@@ -32,31 +32,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYa-bJ-JHD">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="465"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="581"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title (required)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NbT-NI-gNV">
                                                         <rect key="frame" x="20" y="40" width="374" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCr-7E-zV3" customClass="UIButtonPlus" customModule="TODO" customModuleProvider="target">
-                                                        <rect key="frame" x="20" y="365" width="374" height="60"/>
-                                                        <color key="backgroundColor" red="0.96470588235294119" green="0.93725490196078431" blue="0.86274509803921573" alpha="1" colorSpace="deviceRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="SuI-cb-kGq"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <state key="normal" title="Select milestone"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
-                                                                <color key="value" red="0.8862745098" green="0.85882352939999995" blue="0.7843137255" alpha="1" colorSpace="deviceRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="defaultBackgroundColor">
-                                                                <color key="value" red="0.96470588239999999" green="0.93725490199999995" blue="0.86274509799999999" alpha="1" colorSpace="deviceRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MP-XU-oRi" customClass="UIButtonPlus" customModule="TODO" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="285" width="374" height="60"/>
                                                         <color key="backgroundColor" red="0.96470594409999999" green="0.93725496529999996" blue="0.86274516580000005" alpha="1" colorSpace="deviceRGB"/>
@@ -90,22 +72,37 @@
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLI-Cv-vpw">
+                                                        <rect key="frame" x="0.0" y="365" width="414" height="216"/>
+                                                        <subviews>
+                                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSQ-MQ-LIT">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                                            </pickerView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="xSQ-MQ-LIT" secondAttribute="bottom" id="9pC-z6-Yt0"/>
+                                                            <constraint firstAttribute="trailing" secondItem="xSQ-MQ-LIT" secondAttribute="trailing" id="BF8-sm-hUr"/>
+                                                            <constraint firstItem="xSQ-MQ-LIT" firstAttribute="leading" secondItem="mLI-Cv-vpw" secondAttribute="leading" id="G92-ds-qf5"/>
+                                                            <constraint firstItem="xSQ-MQ-LIT" firstAttribute="top" secondItem="mLI-Cv-vpw" secondAttribute="top" id="Y1Z-2C-5So"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="NbT-NI-gNV" firstAttribute="top" secondItem="xYa-bJ-JHD" secondAttribute="top" constant="40" id="6c0-Gj-YCO"/>
                                                     <constraint firstItem="NbT-NI-gNV" firstAttribute="leading" secondItem="xYa-bJ-JHD" secondAttribute="leading" constant="20" id="7Ow-so-I4U"/>
+                                                    <constraint firstItem="mLI-Cv-vpw" firstAttribute="top" secondItem="0MP-XU-oRi" secondAttribute="bottom" constant="20" id="Dfi-aT-84R"/>
                                                     <constraint firstAttribute="trailing" secondItem="NbT-NI-gNV" secondAttribute="trailing" constant="20" id="HbE-Uc-CaU"/>
+                                                    <constraint firstItem="mLI-Cv-vpw" firstAttribute="leading" secondItem="xYa-bJ-JHD" secondAttribute="leading" id="JT5-gL-W51"/>
                                                     <constraint firstItem="MvB-Jf-LmW" firstAttribute="leading" secondItem="xYa-bJ-JHD" secondAttribute="leading" constant="20" id="LIK-FL-dSs"/>
-                                                    <constraint firstItem="PCr-7E-zV3" firstAttribute="leading" secondItem="xYa-bJ-JHD" secondAttribute="leading" constant="20" id="PfS-rF-F11"/>
                                                     <constraint firstAttribute="trailing" secondItem="0MP-XU-oRi" secondAttribute="trailing" constant="20" id="PjQ-Zt-zSC"/>
-                                                    <constraint firstItem="PCr-7E-zV3" firstAttribute="top" secondItem="0MP-XU-oRi" secondAttribute="bottom" constant="20" id="SP4-H3-GD6"/>
                                                     <constraint firstAttribute="trailing" secondItem="2Bf-sV-ajR" secondAttribute="trailing" constant="20" id="VVQ-E5-qbz"/>
                                                     <constraint firstItem="0MP-XU-oRi" firstAttribute="top" secondItem="2Bf-sV-ajR" secondAttribute="bottom" constant="20" id="bjG-mG-RuC"/>
                                                     <constraint firstItem="MvB-Jf-LmW" firstAttribute="top" secondItem="NbT-NI-gNV" secondAttribute="bottom" constant="20" id="blK-z7-U8I"/>
+                                                    <constraint firstAttribute="bottom" secondItem="mLI-Cv-vpw" secondAttribute="bottom" id="exg-ab-lpO"/>
                                                     <constraint firstItem="2Bf-sV-ajR" firstAttribute="top" secondItem="MvB-Jf-LmW" secondAttribute="bottom" constant="5" id="jNz-ST-3Ix"/>
                                                     <constraint firstItem="0MP-XU-oRi" firstAttribute="leading" secondItem="xYa-bJ-JHD" secondAttribute="leading" constant="20" id="oQd-LB-Giv"/>
-                                                    <constraint firstAttribute="bottom" secondItem="PCr-7E-zV3" secondAttribute="bottom" constant="40" id="pkV-Ge-Lw8"/>
-                                                    <constraint firstAttribute="trailing" secondItem="PCr-7E-zV3" secondAttribute="trailing" constant="20" id="tAo-gg-OXh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="mLI-Cv-vpw" secondAttribute="trailing" id="uR1-SP-CZv"/>
                                                     <constraint firstItem="2Bf-sV-ajR" firstAttribute="leading" secondItem="xYa-bJ-JHD" secondAttribute="leading" constant="20" id="ybm-Ya-NhK"/>
                                                 </constraints>
                                             </view>
@@ -146,8 +143,8 @@
                     <connections>
                         <outlet property="cancelButton" destination="FvT-wG-XXd" id="p5Y-7D-OQE"/>
                         <outlet property="descriptionTextView" destination="2Bf-sV-ajR" id="qZ9-Fe-pUm"/>
+                        <outlet property="milestonePicker" destination="xSQ-MQ-LIT" id="JuA-En-94P"/>
                         <outlet property="selectLabelsButton" destination="0MP-XU-oRi" id="6KP-uD-4Eg"/>
-                        <outlet property="selectMilestoneButton" destination="PCr-7E-zV3" id="kdQ-Wd-Lm9"/>
                         <outlet property="submitButton" destination="RhI-xI-Xd4" id="uFH-ce-HBI"/>
                         <outlet property="tapGestureRecognizer" destination="zpb-7l-pDF" id="M9g-h7-YMP"/>
                         <outlet property="titleTextField" destination="NbT-NI-gNV" id="mzC-rQ-GS7"/>

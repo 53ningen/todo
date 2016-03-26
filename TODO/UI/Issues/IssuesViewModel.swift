@@ -17,7 +17,7 @@ final class IssuesViewModel {
     func updateIssues() {
         switch query {
         case .LabelQuery(let label): issues.value = issueRepository.findByLabel(label, state: segment.value)
-        case .MilestoneQuery(_): issues.value = issueRepository.findAll(segment.value)
+        case .MilestoneQuery(let milestone): issues.value = issueRepository.findByMilestone(milestone, state: segment.value)
         case .KeywordQuery(let keyword): issues.value = issueRepository.findByKeyword(keyword)
         }
     }

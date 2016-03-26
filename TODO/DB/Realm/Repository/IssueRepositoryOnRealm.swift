@@ -46,6 +46,21 @@ public class IssueRepositoryOnRealm: IssueRepository {
             }
     }
     
+    public func findByMilestone(milestone: Milestone, state: IssueState) -> [Issue] {
+        let pred = NSPredicate(format: "id == %@", milestone.id.value)
+        return realm.objects(MilestoneObject)
+            .filter(pred)
+            .flatMap { $0.issues }
+            .flatMap { $0.toIssue }
+            .filter {
+                switch ($0.info.state, state) {
+                case (.Open, .Open): return true
+                case (.Closed(_), .Closed(_)): return true
+                default: return false
+                }
+        }
+    }
+    
     public func add(info: IssueInfo) {
         try! realm.write {
             realm.add(IssueObject.of(nextId, info: info))

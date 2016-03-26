@@ -8,15 +8,16 @@ final class AddIssueViewController: BaseViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var selectLabelsButton: UIButton!
-    @IBOutlet weak var selectMilestoneButton: UIButton!
     @IBOutlet weak var submitButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
+    @IBOutlet weak var milestonePicker: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // View の 初期化
-        [titleTextField, descriptionTextView, selectMilestoneButton, selectLabelsButton].forEach {
+        milestonePicker.dataSource = self
+        milestonePicker.delegate = self
+        [titleTextField, descriptionTextView, selectLabelsButton].forEach {
             $0.roundedCorners(5)
             $0.border(1, color: UIColor.borderColor.CGColor)
         }
@@ -26,6 +27,7 @@ final class AddIssueViewController: BaseViewController {
         super.viewWillAppear(animated)
         bind()
         subscribeEvents()
+        viewModel.updateMilestones()
     }
     
     private func subscribeEvents() {
@@ -55,12 +57,39 @@ final class AddIssueViewController: BaseViewController {
     }
     
     private func bind() {
+        // ViewModel ~> View
+        viewModel.submittable.bindTo(submitButton.rx_enabled).addDisposableTo(disposeBag)
+        viewModel.milestones.asObservable().map { _ in () }.subscribeNext(milestonePicker.reloadAllComponents).addDisposableTo(disposeBag)
+
         // View ~> ViewModel
         titleTextField.rx_text.bindTo(viewModel.title).addDisposableTo(disposeBag)
         descriptionTextView.rx_text.bindTo(viewModel.desc).addDisposableTo(disposeBag)
-        
-        // ViewModel ~> View
-        viewModel.submittable.bindTo(submitButton.rx_enabled).addDisposableTo(disposeBag)
+        //milestonePicker.rx_
+    }
+    
+}
+
+extension AddIssueViewController: UIPickerViewDataSource {
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return viewModel.milestones.value.count + 1
+    }
+    
+}
+
+extension AddIssueViewController: UIPickerViewDelegate {
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        viewModel.milestone.value = viewModel.milestones.value.safeIndex(row - 1)
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let text = viewModel.milestones.value.safeIndex(row - 1)?.id.value ?? "Issue with no milestone"
+        return NSAttributedString(string: text)
     }
     
 }

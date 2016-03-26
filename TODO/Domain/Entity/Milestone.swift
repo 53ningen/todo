@@ -56,7 +56,7 @@ public final class Milestone: Entity, Equatable {
     public var progress: Float {
         guard let openIssuesCount = info.openIssuesCount, closedIssuesCount = info.closedIssuesCount else { return 1 }
         let total = Float(openIssuesCount) + Float(closedIssuesCount)
-        return openIssuesCount == 0 ? 1 : Float(openIssuesCount) / total
+        return openIssuesCount == 0 ? 1 : Float(closedIssuesCount) / total
     }
     
 }

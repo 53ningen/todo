@@ -16,6 +16,9 @@ public protocol IssueRepository {
     /// ラベルに紐付いているIssueを探す
     func findByLabel(label: Label, state: IssueState) -> [Issue]
     
+    /// マイルストンに紐付いているIssueを探す
+    func findByMilestone(milestone: Milestone, state: IssueState) -> [Issue]
+    
     /// Issueを追加する
     func add(info: IssueInfo)
     
