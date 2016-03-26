@@ -13,6 +13,7 @@ final class AddLabelViewController: BaseViewController {
     @IBOutlet weak var bSlider: UISlider!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,12 @@ final class AddLabelViewController: BaseViewController {
         gSlider.rx_value.subscribeNext { [weak self] g in self?.viewModel.nextColor(nil, g: g, b: nil) }.addDisposableTo(disposeBag)
         bSlider.rx_value.subscribeNext { [weak self] b in self?.viewModel.nextColor(nil, g: nil, b: b) }.addDisposableTo(disposeBag)
         cancelButton.rx_tap.subscribeNext { [weak self] _ in self?.dismissViewControllerAnimated(true, completion: nil) }.addDisposableTo(disposeBag)
+        tapGestureRecognizer.rx_event
+            .subscribeNext { [weak self] _ in
+                self?.nameTextField.resignFirstResponder()
+            }
+            .addDisposableTo(disposeBag)
+        
     }
     
 }

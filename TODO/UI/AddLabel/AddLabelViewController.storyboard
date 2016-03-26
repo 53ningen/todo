@@ -33,7 +33,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zt8-UV-DNj">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                                 <subviews>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="wq8-wj-Kin">
                                                         <rect key="frame" x="49" y="90" width="347" height="31"/>
@@ -76,7 +76,7 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstItem="YD4-Q6-C2a" firstAttribute="centerY" secondItem="ViN-on-3HY" secondAttribute="centerY" id="A2P-7C-9LF"/>
                                                     <constraint firstItem="YD4-Q6-C2a" firstAttribute="leading" secondItem="ViN-on-3HY" secondAttribute="trailing" constant="20" id="AFL-62-y4c"/>
@@ -91,7 +91,7 @@
                                                     <constraint firstItem="wq8-wj-Kin" firstAttribute="centerY" secondItem="oFE-yg-Y9I" secondAttribute="centerY" id="e8c-O5-ie2"/>
                                                     <constraint firstAttribute="trailing" secondItem="xrA-br-3zn" secondAttribute="trailing" constant="20" id="e8h-JB-O2m"/>
                                                     <constraint firstAttribute="trailing" secondItem="Dyd-Q3-3YX" secondAttribute="trailing" constant="20" id="mDt-cq-Ym9"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Dyd-Q3-3YX" secondAttribute="bottom" constant="40" id="pNx-ZZ-cvY"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Dyd-Q3-3YX" secondAttribute="bottom" constant="80" id="pNx-ZZ-cvY"/>
                                                     <constraint firstItem="oFE-yg-Y9I" firstAttribute="leading" secondItem="zt8-UV-DNj" secondAttribute="leading" constant="20" id="pWr-Q3-5L5"/>
                                                     <constraint firstItem="Dyd-Q3-3YX" firstAttribute="top" secondItem="YD4-Q6-C2a" secondAttribute="bottom" constant="20" id="rau-PH-Zv5"/>
                                                     <constraint firstAttribute="trailing" secondItem="YD4-Q6-C2a" secondAttribute="trailing" constant="20" id="tKU-w0-SYG"/>
@@ -100,6 +100,9 @@
                                                     <constraint firstItem="Dyd-Q3-3YX" firstAttribute="leading" secondItem="1GD-oz-jek" secondAttribute="trailing" constant="20" id="xCk-9h-SzD"/>
                                                     <constraint firstItem="hsy-W9-zHD" firstAttribute="leading" secondItem="zt8-UV-DNj" secondAttribute="leading" constant="20" id="xqb-YN-g3C"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="22Z-fO-i02" appends="YES" id="QKV-uJ-hWW"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -110,7 +113,6 @@
                                         </constraints>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="u0S-Ck-2Df" firstAttribute="top" secondItem="gD4-69-h2C" secondAttribute="top" id="7Zd-0e-ugf"/>
                                     <constraint firstAttribute="bottom" secondItem="u0S-Ck-2Df" secondAttribute="bottom" id="IRr-KT-XMo"/>
@@ -141,9 +143,11 @@
                         <outlet property="gSlider" destination="YD4-Q6-C2a" id="9qs-HR-DoS"/>
                         <outlet property="nameTextField" destination="xrA-br-3zn" id="2Hb-IK-i10"/>
                         <outlet property="rSlider" destination="wq8-wj-Kin" id="QmW-La-lbh"/>
+                        <outlet property="tapGestureRecognizer" destination="22Z-fO-i02" id="jru-gb-Iuj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1Y-QR-ifU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="22Z-fO-i02"/>
             </objects>
             <point key="canvasLocation" x="910" y="525"/>
         </scene>
