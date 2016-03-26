@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YFd-EL-EVa">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Main Milestones View Controller-->
+        <scene sceneID="r0J-Gg-gi7">
+            <objects>
+                <viewController storyboardIdentifier="MainMilestonesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YFd-EL-EVa" customClass="MainMilestonesViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YcI-cc-lW0"/>
+                        <viewControllerLayoutGuide type="bottom" id="hPV-ra-XyA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ryL-uf-TAM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bK3-CR-whP">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="nxQ-hL-g0E">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="jj6-Rb-sk9">
+                                            <rect key="frame" x="180" y="7.5" width="240" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Open"/>
+                                                <segment title="Closed"/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="5Fb-YJ-BBQ">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hPV-ra-XyA" firstAttribute="top" secondItem="5Fb-YJ-BBQ" secondAttribute="bottom" id="3OH-u1-1tf"/>
+                            <constraint firstItem="bK3-CR-whP" firstAttribute="top" secondItem="YcI-cc-lW0" secondAttribute="bottom" id="5Zt-I1-oPm"/>
+                            <constraint firstAttribute="trailing" secondItem="bK3-CR-whP" secondAttribute="trailing" id="LyO-Sl-Oz8"/>
+                            <constraint firstItem="bK3-CR-whP" firstAttribute="leading" secondItem="ryL-uf-TAM" secondAttribute="leading" id="PK7-7H-cnl"/>
+                            <constraint firstAttribute="trailing" secondItem="5Fb-YJ-BBQ" secondAttribute="trailing" id="gLo-bq-blE"/>
+                            <constraint firstItem="5Fb-YJ-BBQ" firstAttribute="top" secondItem="bK3-CR-whP" secondAttribute="bottom" id="kFT-gA-GNi"/>
+                            <constraint firstItem="5Fb-YJ-BBQ" firstAttribute="leading" secondItem="ryL-uf-TAM" secondAttribute="leading" id="lT7-wD-Z5x"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="b82-dp-H8p">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xhI-fC-tHY"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="createNewButton" destination="xhI-fC-tHY" id="fmU-QC-Te5"/>
+                        <outlet property="segmentedControl" destination="jj6-Rb-sk9" id="j6i-oW-31v"/>
+                        <outlet property="tableView" destination="5Fb-YJ-BBQ" id="sEo-Y5-ZAn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SvN-G0-TXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3053" y="886"/>
+        </scene>
+    </scenes>
+</document>

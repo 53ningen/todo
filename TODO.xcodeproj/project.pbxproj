@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FF0DED981C998B1200B8FE77 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED971C998B1200B8FE77 /* UIState.swift */; };
 		FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */; };
+		FF1B94FF1CA6EEE300E3C2BC /* MainLabelsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1B94FE1CA6EEE300E3C2BC /* MainLabelsViewController.storyboard */; };
+		FF1B95011CA6EFE000E3C2BC /* MainMilestonesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1B95001CA6EFE000E3C2BC /* MainMilestonesViewController.storyboard */; };
 		FF33831F1C990BB300D73743 /* MainIssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33831E1C990BB300D73743 /* MainIssuesViewController.swift */; };
 		FF45B7411CA643F000BAD306 /* SelectLabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF45B7401CA643F000BAD306 /* SelectLabelsViewController.swift */; };
 		FF45B7431CA6442F00BAD306 /* SelectLabelsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF45B7421CA6442F00BAD306 /* SelectLabelsViewController.storyboard */; };
@@ -27,7 +29,11 @@
 		FF58D4551CA4711F00D58B26 /* LICENSES in Resources */ = {isa = PBXBuildFile; fileRef = FF58D4541CA4711F00D58B26 /* LICENSES */; };
 		FF58D45E1CA5555800D58B26 /* AppModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D45D1CA5555800D58B26 /* AppModules.swift */; };
 		FF5B22361CA659ED005572DE /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B22351CA659ED005572DE /* Controllers.swift */; };
+		FF62057B1CA6F04D0058BEB5 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF62057A1CA6F04D0058BEB5 /* SettingsViewController.storyboard */; };
 		FF8325181CA5CC690028167B /* MainLabelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8325171CA5CC690028167B /* MainLabelsViewModel.swift */; };
+		FF9801B91CA6DD3F00AD1BBD /* MilestoneCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9801B81CA6DD3F00AD1BBD /* MilestoneCellView.xib */; };
+		FF9801BB1CA6E3E300AD1BBD /* MilestoneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9801BA1CA6E3E300AD1BBD /* MilestoneCellView.swift */; };
+		FF9801BF1CA6EADC00AD1BBD /* MainIssuesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9801BE1CA6EADC00AD1BBD /* MainIssuesViewController.storyboard */; };
 		FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */; };
 		FFA390651C9C1969000A0CA4 /* MainLabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390641C9C1969000A0CA4 /* MainLabelsViewController.swift */; };
 		FFA390671C9C1A73000A0CA4 /* MainIssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390661C9C1A73000A0CA4 /* MainIssuesViewModel.swift */; };
@@ -95,6 +101,8 @@
 /* Begin PBXFileReference section */
 		FF0DED971C998B1200B8FE77 /* UIState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		FF1B94FE1CA6EEE300E3C2BC /* MainLabelsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainLabelsViewController.storyboard; sourceTree = "<group>"; };
+		FF1B95001CA6EFE000E3C2BC /* MainMilestonesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainMilestonesViewController.storyboard; sourceTree = "<group>"; };
 		FF33831E1C990BB300D73743 /* MainIssuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainIssuesViewController.swift; sourceTree = "<group>"; };
 		FF45B7401CA643F000BAD306 /* SelectLabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLabelsViewController.swift; sourceTree = "<group>"; };
 		FF45B7421CA6442F00BAD306 /* SelectLabelsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectLabelsViewController.storyboard; sourceTree = "<group>"; };
@@ -113,7 +121,11 @@
 		FF58D4541CA4711F00D58B26 /* LICENSES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSES; sourceTree = "<group>"; };
 		FF58D45D1CA5555800D58B26 /* AppModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppModules.swift; path = ../../../../../Documents/AppModules.swift; sourceTree = "<group>"; };
 		FF5B22351CA659ED005572DE /* Controllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
+		FF62057A1CA6F04D0058BEB5 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		FF8325171CA5CC690028167B /* MainLabelsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLabelsViewModel.swift; sourceTree = "<group>"; };
+		FF9801B81CA6DD3F00AD1BBD /* MilestoneCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MilestoneCellView.xib; sourceTree = "<group>"; };
+		FF9801BA1CA6E3E300AD1BBD /* MilestoneCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestoneCellView.swift; sourceTree = "<group>"; };
+		FF9801BE1CA6EADC00AD1BBD /* MainIssuesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainIssuesViewController.storyboard; sourceTree = "<group>"; };
 		FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestonesViewController.swift; sourceTree = "<group>"; };
 		FFA390641C9C1969000A0CA4 /* MainLabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLabelsViewController.swift; sourceTree = "<group>"; };
 		FFA390661C9C1A73000A0CA4 /* MainIssuesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainIssuesViewModel.swift; sourceTree = "<group>"; };
@@ -204,6 +216,7 @@
 			children = (
 				FFF8607F1C97B68600C16794 /* IssueCellView.swift */,
 				FFF8607D1C97B06300C16794 /* IssueCellView.xib */,
+				FF9801BE1CA6EADC00AD1BBD /* MainIssuesViewController.storyboard */,
 				FF33831E1C990BB300D73743 /* MainIssuesViewController.swift */,
 				FFA390661C9C1A73000A0CA4 /* MainIssuesViewModel.swift */,
 			);
@@ -243,6 +256,7 @@
 		FF58D44A1CA46A4800D58B26 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				FF62057A1CA6F04D0058BEB5 /* SettingsViewController.storyboard */,
 				FF58D44B1CA46A5700D58B26 /* SettingsViewController.swift */,
 			);
 			path = Settings;
@@ -270,6 +284,9 @@
 		FFA3905F1C9C111D000A0CA4 /* Milestones */ = {
 			isa = PBXGroup;
 			children = (
+				FF1B95001CA6EFE000E3C2BC /* MainMilestonesViewController.storyboard */,
+				FF9801BA1CA6E3E300AD1BBD /* MilestoneCellView.swift */,
+				FF9801B81CA6DD3F00AD1BBD /* MilestoneCellView.xib */,
 				FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */,
 			);
 			path = Milestones;
@@ -280,6 +297,7 @@
 			children = (
 				FFF860821C97B95F00C16794 /* LabelCellView.swift */,
 				FFF860831C97B95F00C16794 /* LabelCellView.xib */,
+				FF1B94FE1CA6EEE300E3C2BC /* MainLabelsViewController.storyboard */,
 				FFA390641C9C1969000A0CA4 /* MainLabelsViewController.swift */,
 				FF8325171CA5CC690028167B /* MainLabelsViewModel.swift */,
 			);
@@ -611,14 +629,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFE38D7E1C9302070045F8D1 /* LaunchScreen.storyboard in Resources */,
+				FF9801B91CA6DD3F00AD1BBD /* MilestoneCellView.xib in Resources */,
 				FFF860851C97B95F00C16794 /* LabelCellView.xib in Resources */,
 				FFA390981CA2887C000A0CA4 /* IssueViewController.storyboard in Resources */,
 				FFA390A01CA2C35E000A0CA4 /* AddIssueViewController.storyboard in Resources */,
 				FFE38D7B1C9302070045F8D1 /* Assets.xcassets in Resources */,
+				FF62057B1CA6F04D0058BEB5 /* SettingsViewController.storyboard in Resources */,
 				FF58D4531CA4704D00D58B26 /* LicensesViewController.storyboard in Resources */,
 				FFE38D791C9302070045F8D1 /* Main.storyboard in Resources */,
 				FFF8607E1C97B06300C16794 /* IssueCellView.xib in Resources */,
+				FF1B95011CA6EFE000E3C2BC /* MainMilestonesViewController.storyboard in Resources */,
 				FF58D4401CA41BFC00D58B26 /* AddLabelViewController.storyboard in Resources */,
+				FF1B94FF1CA6EEE300E3C2BC /* MainLabelsViewController.storyboard in Resources */,
+				FF9801BF1CA6EADC00AD1BBD /* MainIssuesViewController.storyboard in Resources */,
 				FF45B7431CA6442F00BAD306 /* SelectLabelsViewController.storyboard in Resources */,
 				FF58D4471CA42EE700D58B26 /* AddMilestoneViewController.storyboard in Resources */,
 				FF58D4551CA4711F00D58B26 /* LICENSES in Resources */,
@@ -684,6 +707,7 @@
 				FF58D43B1CA4128A00D58B26 /* UIButtonPlus.swift in Sources */,
 				FFA3909D1CA295DD000A0CA4 /* OptinalExtensions.swift in Sources */,
 				FFE38D741C9302070045F8D1 /* AppDelegate.swift in Sources */,
+				FF9801BB1CA6E3E300AD1BBD /* MilestoneCellView.swift in Sources */,
 				FFA390A21CA2C385000A0CA4 /* AddIssueViewController.swift in Sources */,
 				FFA390691C9C2527000A0CA4 /* FooterCellView.swift in Sources */,
 				FFF8606D1C96BF1F00C16794 /* UIUtils.swift in Sources */,
@@ -807,7 +831,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -846,7 +870,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
