@@ -3,9 +3,11 @@
 public final class LabelInfo: EntityInfo {
     
     public let color: Color
+    public let numberOfIssues: Int?
     
-    public init(color: Color) {
+    public init(color: Color, numberOfIssues: Int? = nil) {
         self.color = color
+        self.numberOfIssues = numberOfIssues
     }
     
 }
@@ -13,6 +15,7 @@ public final class LabelInfo: EntityInfo {
 extension LabelInfo: Equatable {}
 public func ==(lhs: LabelInfo, rhs: LabelInfo) -> Bool {
     return lhs.color == rhs.color
+        && lhs.numberOfIssues == rhs.numberOfIssues
 }
 
 public final class Label: Entity, Equatable {
