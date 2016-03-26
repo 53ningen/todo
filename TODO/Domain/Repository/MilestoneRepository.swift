@@ -5,6 +5,9 @@ public protocol MilestoneRepository {
     func findById(id: Id<Milestone>) -> Milestone?
     
     /// Milestoneの全件取得
-    func findAll() -> [Milestone]
+    func findAll(state: MilestoneState) -> [Milestone]
+    
+    /// Milestoneの追加
+    func add(milestone: Milestone)
         
 }

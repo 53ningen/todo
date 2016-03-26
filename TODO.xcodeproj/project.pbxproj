@@ -30,11 +30,12 @@
 		FF58D45E1CA5555800D58B26 /* AppModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D45D1CA5555800D58B26 /* AppModules.swift */; };
 		FF5B22361CA659ED005572DE /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B22351CA659ED005572DE /* Controllers.swift */; };
 		FF62057B1CA6F04D0058BEB5 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF62057A1CA6F04D0058BEB5 /* SettingsViewController.storyboard */; };
+		FF62057D1CA6FD480058BEB5 /* MainMilestonesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62057C1CA6FD480058BEB5 /* MainMilestonesViewModel.swift */; };
 		FF8325181CA5CC690028167B /* MainLabelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8325171CA5CC690028167B /* MainLabelsViewModel.swift */; };
 		FF9801B91CA6DD3F00AD1BBD /* MilestoneCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9801B81CA6DD3F00AD1BBD /* MilestoneCellView.xib */; };
 		FF9801BB1CA6E3E300AD1BBD /* MilestoneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9801BA1CA6E3E300AD1BBD /* MilestoneCellView.swift */; };
 		FF9801BF1CA6EADC00AD1BBD /* MainIssuesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9801BE1CA6EADC00AD1BBD /* MainIssuesViewController.storyboard */; };
-		FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */; };
+		FFA390631C9C1935000A0CA4 /* MainMilestonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390621C9C1935000A0CA4 /* MainMilestonesViewController.swift */; };
 		FFA390651C9C1969000A0CA4 /* MainLabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390641C9C1969000A0CA4 /* MainLabelsViewController.swift */; };
 		FFA390671C9C1A73000A0CA4 /* MainIssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390661C9C1A73000A0CA4 /* MainIssuesViewModel.swift */; };
 		FFA390691C9C2527000A0CA4 /* FooterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390681C9C2527000A0CA4 /* FooterCellView.swift */; };
@@ -122,11 +123,12 @@
 		FF58D45D1CA5555800D58B26 /* AppModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppModules.swift; path = ../../../../../Documents/AppModules.swift; sourceTree = "<group>"; };
 		FF5B22351CA659ED005572DE /* Controllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
 		FF62057A1CA6F04D0058BEB5 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		FF62057C1CA6FD480058BEB5 /* MainMilestonesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMilestonesViewModel.swift; sourceTree = "<group>"; };
 		FF8325171CA5CC690028167B /* MainLabelsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLabelsViewModel.swift; sourceTree = "<group>"; };
 		FF9801B81CA6DD3F00AD1BBD /* MilestoneCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MilestoneCellView.xib; sourceTree = "<group>"; };
 		FF9801BA1CA6E3E300AD1BBD /* MilestoneCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestoneCellView.swift; sourceTree = "<group>"; };
 		FF9801BE1CA6EADC00AD1BBD /* MainIssuesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainIssuesViewController.storyboard; sourceTree = "<group>"; };
-		FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestonesViewController.swift; sourceTree = "<group>"; };
+		FFA390621C9C1935000A0CA4 /* MainMilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMilestonesViewController.swift; sourceTree = "<group>"; };
 		FFA390641C9C1969000A0CA4 /* MainLabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLabelsViewController.swift; sourceTree = "<group>"; };
 		FFA390661C9C1A73000A0CA4 /* MainIssuesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainIssuesViewModel.swift; sourceTree = "<group>"; };
 		FFA390681C9C2527000A0CA4 /* FooterCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterCellView.swift; sourceTree = "<group>"; };
@@ -285,9 +287,10 @@
 			isa = PBXGroup;
 			children = (
 				FF1B95001CA6EFE000E3C2BC /* MainMilestonesViewController.storyboard */,
+				FFA390621C9C1935000A0CA4 /* MainMilestonesViewController.swift */,
+				FF62057C1CA6FD480058BEB5 /* MainMilestonesViewModel.swift */,
 				FF9801BA1CA6E3E300AD1BBD /* MilestoneCellView.swift */,
 				FF9801B81CA6DD3F00AD1BBD /* MilestoneCellView.xib */,
-				FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */,
 			);
 			path = Milestones;
 			sourceTree = "<group>";
@@ -702,7 +705,7 @@
 				FF58D4511CA4701E00D58B26 /* LicensesViewController.swift in Sources */,
 				FFA390961CA28866000A0CA4 /* IssueViewController.swift in Sources */,
 				FFE38DB31C9312300045F8D1 /* Aliases.swift in Sources */,
-				FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */,
+				FFA390631C9C1935000A0CA4 /* MainMilestonesViewController.swift in Sources */,
 				FF45B7451CA644AA00BAD306 /* SelectViewModel.swift in Sources */,
 				FF58D43B1CA4128A00D58B26 /* UIButtonPlus.swift in Sources */,
 				FFA3909D1CA295DD000A0CA4 /* OptinalExtensions.swift in Sources */,
@@ -711,6 +714,7 @@
 				FFA390A21CA2C385000A0CA4 /* AddIssueViewController.swift in Sources */,
 				FFA390691C9C2527000A0CA4 /* FooterCellView.swift in Sources */,
 				FFF8606D1C96BF1F00C16794 /* UIUtils.swift in Sources */,
+				FF62057D1CA6FD480058BEB5 /* MainMilestonesViewModel.swift in Sources */,
 				FF0DED981C998B1200B8FE77 /* UIState.swift in Sources */,
 				FF5B22361CA659ED005572DE /* Controllers.swift in Sources */,
 				FFA3907C1C9D1018000A0CA4 /* MilestoneObject.swift in Sources */,

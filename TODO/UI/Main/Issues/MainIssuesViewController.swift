@@ -37,37 +37,28 @@ final class MainIssuesViewController: BaseViewController {
 
     private func bind() {
         /// model ~> view
-        viewModel.issues.asObservable().subscribeNext {
-            [weak self] _ in self?.tableView.reloadData()
-        }.addDisposableTo(disposeBag)
-        viewModel.segment.asObservable().map {
-            $0.toSegment
-        }.bindTo(segmentedControl.rx_value).addDisposableTo(disposeBag)
+        viewModel.issues.asObservable().subscribeNext { [weak self] _ in self?.tableView.reloadData() }.addDisposableTo(disposeBag)
+        viewModel.segment.asObservable().map { $0.toSegment }.bindTo(segmentedControl.rx_value).addDisposableTo(disposeBag)
 
         // view ~> model
-        segmentedControl.rx_value.map {
-            IssueState.of($0)
-        }.bindTo(viewModel.segment).addDisposableTo(disposeBag)
+        segmentedControl.rx_value.map { IssueState.of($0) }.bindTo(viewModel.segment).addDisposableTo(disposeBag)
     }
 
     private func subscribeEvents() {
-        segmentedControl.rx_value.map {
-            _ in ()
-        }.subscribeNext(viewModel.updateIssues).addDisposableTo(disposeBag)
+        segmentedControl.rx_value.map { _ in () }.subscribeNext(viewModel.updateIssues).addDisposableTo(disposeBag)
         tableView.rx_itemSelected.single()
-        .subscribeNext {
-            [weak self] indexPath in
-            let vc = UIViewController.of(IssueViewController.self)
-            vc.hidesBottomBarWhenPushed = true
-            self?.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-            self?.navigationController?.pushViewController(vc, animated: true)
-        }
-        .addDisposableTo(disposeBag)
+            .subscribeNext { [weak self] indexPath in
+                let vc = UIViewController.of(IssueViewController.self)
+                vc.hidesBottomBarWhenPushed = true
+                self?.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+            .addDisposableTo(disposeBag)
         createNewButton.rx_tap.single()
-        .subscribeNext {
-            [weak self] _ in self?.presentViewController(UIViewController.of(AddIssueViewController.self), animated: true, completion: nil)
-        }
-        .addDisposableTo(disposeBag)
+            .subscribeNext { [weak self] _ in
+                self?.presentViewController(UIViewController.of(AddIssueViewController.self), animated: true, completion: nil)
+            }
+            .addDisposableTo(disposeBag)
     }
 
 }

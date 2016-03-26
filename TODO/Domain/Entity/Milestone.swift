@@ -6,9 +6,9 @@ public final class MilestoneInfo: EntityInfo {
     public let description: String
     public let createdAt: Date
     public let updatedAt: Date
-    public let dueOn: Date
+    public let dueOn: Date?
     
-    public init(state: MilestoneState, description: String, createdAt: Date, updatedAt: Date, dueOn: Date) {
+    public init(state: MilestoneState, description: String, createdAt: Date, updatedAt: Date, dueOn: Date?) {
         self.state = state
         self.description = description
         self.createdAt = createdAt
@@ -49,17 +49,18 @@ public final class Milestone: Entity, Equatable {
     
 }
 
-public enum MilestoneState {
-    case Open
-    case Closed
+public enum MilestoneState: String {
+    case Open = "open"
+    case Closed = "closed"
     
     public static func of(rawValue: String) -> MilestoneState? {
         switch rawValue {
-        case "open": return .Open
-        case "closed": return .Closed
+        case MilestoneState.Open.rawValue: return .Open
+        case MilestoneState.Closed.rawValue: return .Closed
         default: return nil
         }
     }
+    
 }
 
 extension MilestoneState: Equatable {}

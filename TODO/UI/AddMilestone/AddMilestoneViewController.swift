@@ -18,6 +18,9 @@ final class AddMilestoneViewController: BaseViewController {
             $0.roundedCorners(5)
             $0.border(1, color: UIColor.borderColor.CGColor)
         }
+        titleTextField.text = viewModel.title.value
+        descriptionTextView.text = viewModel.desc.value
+        viewModel.dueOn.value.forEach { self.datePicker.date = $0 }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -27,16 +30,18 @@ final class AddMilestoneViewController: BaseViewController {
     }
     
     private func bind() {
+        // view ~> model
         titleTextField.rx_text.bindTo(viewModel.title).addDisposableTo(disposeBag)
         descriptionTextView.rx_text.bindTo(viewModel.desc).addDisposableTo(disposeBag)
-        datePicker.rx_date.bindTo(viewModel.dueOn).addDisposableTo(disposeBag)
+        datePicker.rx_date.skip(1).map { $0 }.bindTo(viewModel.dueOn).addDisposableTo(disposeBag)
         viewModel.title.asObservable().map { !$0.isEmpty }.bindTo(createNewButton.rx_enabled).addDisposableTo(disposeBag)
     }
     
     private func subscribeEvent() {
         createNewButton.rx_tap
             .subscribeNext { [weak self] _ in
-                self?.dismissViewControllerAnimated(true, completion: self?.viewModel.submit)
+                self?.viewModel.submit()
+                self?.dismissViewControllerAnimated(true, completion: nil)
             }
             .addDisposableTo(disposeBag)
         cancelButton.rx_tap
