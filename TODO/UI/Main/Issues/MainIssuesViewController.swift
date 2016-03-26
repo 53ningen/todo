@@ -2,12 +2,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class IssuesViewController: BaseTableViewController {
+final class MainIssuesViewController: BaseTableViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var createNewButton: UIBarButtonItem!
     
-    private let viewModel: IssuesViewModel = IssuesViewModel()
+    private let viewModel: MainIssuesViewModel = MainIssuesViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

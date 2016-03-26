@@ -1,6 +1,6 @@
 import RxSwift
 
-final class IssuesViewModel {
+final class MainIssuesViewModel {
     
     private lazy var issueRepository: IssueRepository = AppModules.issueRepository
 

@@ -1,8 +1,8 @@
 import UIKit
 
-final class LabelsViewController: BaseTableViewController {
+final class MainLabelsViewController: BaseTableViewController {
     
-    private let viewModel: LabelsViewModel = LabelsViewModel()
+    private let viewModel: MainLabelsViewModel = MainLabelsViewModel()
     
     @IBOutlet weak var createNewButton: UIBarButtonItem!
     

@@ -1,6 +1,6 @@
 import UIKit
 
-final class MilestonesViewController: BaseTableViewController {
+final class MainMilestonesViewController: BaseTableViewController {
     
     @IBOutlet weak var createNewButton: UIBarButtonItem!
     

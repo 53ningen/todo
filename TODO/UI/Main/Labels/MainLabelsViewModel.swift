@@ -1,6 +1,6 @@
 import RxSwift
 
-final class LabelsViewModel {
+final class MainLabelsViewModel {
     
     private lazy var labelRepository: LabelRepository = AppModules.labelRepository
     

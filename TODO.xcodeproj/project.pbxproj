@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		FF0DED981C998B1200B8FE77 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED971C998B1200B8FE77 /* UIState.swift */; };
 		FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */; };
-		FF33831F1C990BB300D73743 /* IssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33831E1C990BB300D73743 /* IssuesViewController.swift */; };
+		FF33831F1C990BB300D73743 /* MainIssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33831E1C990BB300D73743 /* MainIssuesViewController.swift */; };
 		FF45B7411CA643F000BAD306 /* SelectLabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF45B7401CA643F000BAD306 /* SelectLabelsViewController.swift */; };
 		FF45B7431CA6442F00BAD306 /* SelectLabelsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF45B7421CA6442F00BAD306 /* SelectLabelsViewController.storyboard */; };
 		FF45B7451CA644AA00BAD306 /* SelectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF45B7441CA644AA00BAD306 /* SelectViewModel.swift */; };
@@ -27,10 +27,10 @@
 		FF58D4551CA4711F00D58B26 /* LICENSES in Resources */ = {isa = PBXBuildFile; fileRef = FF58D4541CA4711F00D58B26 /* LICENSES */; };
 		FF58D45E1CA5555800D58B26 /* AppModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D45D1CA5555800D58B26 /* AppModules.swift */; };
 		FF5B22361CA659ED005572DE /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B22351CA659ED005572DE /* Controllers.swift */; };
-		FF8325181CA5CC690028167B /* LabelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8325171CA5CC690028167B /* LabelsViewModel.swift */; };
+		FF8325181CA5CC690028167B /* MainLabelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8325171CA5CC690028167B /* MainLabelsViewModel.swift */; };
 		FFA390631C9C1935000A0CA4 /* MilestonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */; };
-		FFA390651C9C1969000A0CA4 /* LabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */; };
-		FFA390671C9C1A73000A0CA4 /* IssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */; };
+		FFA390651C9C1969000A0CA4 /* MainLabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390641C9C1969000A0CA4 /* MainLabelsViewController.swift */; };
+		FFA390671C9C1A73000A0CA4 /* MainIssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390661C9C1A73000A0CA4 /* MainIssuesViewModel.swift */; };
 		FFA390691C9C2527000A0CA4 /* FooterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390681C9C2527000A0CA4 /* FooterCellView.swift */; };
 		FFA3906C1C9C254F000A0CA4 /* FooterCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA3906B1C9C254F000A0CA4 /* FooterCellView.xib */; };
 		FFA390721C9D0DE5000A0CA4 /* IssueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390711C9D0DE5000A0CA4 /* IssueObject.swift */; };
@@ -92,7 +92,7 @@
 /* Begin PBXFileReference section */
 		FF0DED971C998B1200B8FE77 /* UIState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		FF33831E1C990BB300D73743 /* IssuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewController.swift; sourceTree = "<group>"; };
+		FF33831E1C990BB300D73743 /* MainIssuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainIssuesViewController.swift; sourceTree = "<group>"; };
 		FF45B7401CA643F000BAD306 /* SelectLabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLabelsViewController.swift; sourceTree = "<group>"; };
 		FF45B7421CA6442F00BAD306 /* SelectLabelsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectLabelsViewController.storyboard; sourceTree = "<group>"; };
 		FF45B7441CA644AA00BAD306 /* SelectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewModel.swift; sourceTree = "<group>"; };
@@ -110,10 +110,10 @@
 		FF58D4541CA4711F00D58B26 /* LICENSES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSES; sourceTree = "<group>"; };
 		FF58D45D1CA5555800D58B26 /* AppModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppModules.swift; path = ../../../../../Documents/AppModules.swift; sourceTree = "<group>"; };
 		FF5B22351CA659ED005572DE /* Controllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
-		FF8325171CA5CC690028167B /* LabelsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsViewModel.swift; sourceTree = "<group>"; };
+		FF8325171CA5CC690028167B /* MainLabelsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLabelsViewModel.swift; sourceTree = "<group>"; };
 		FFA390621C9C1935000A0CA4 /* MilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestonesViewController.swift; sourceTree = "<group>"; };
-		FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsViewController.swift; sourceTree = "<group>"; };
-		FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewModel.swift; sourceTree = "<group>"; };
+		FFA390641C9C1969000A0CA4 /* MainLabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLabelsViewController.swift; sourceTree = "<group>"; };
+		FFA390661C9C1A73000A0CA4 /* MainIssuesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainIssuesViewModel.swift; sourceTree = "<group>"; };
 		FFA390681C9C2527000A0CA4 /* FooterCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterCellView.swift; sourceTree = "<group>"; };
 		FFA3906B1C9C254F000A0CA4 /* FooterCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterCellView.xib; sourceTree = "<group>"; };
 		FFA3906D1C9D07E0000A0CA4 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -198,8 +198,8 @@
 			children = (
 				FFF8607F1C97B68600C16794 /* IssueCellView.swift */,
 				FFF8607D1C97B06300C16794 /* IssueCellView.xib */,
-				FF33831E1C990BB300D73743 /* IssuesViewController.swift */,
-				FFA390661C9C1A73000A0CA4 /* IssuesViewModel.swift */,
+				FF33831E1C990BB300D73743 /* MainIssuesViewController.swift */,
+				FFA390661C9C1A73000A0CA4 /* MainIssuesViewModel.swift */,
 			);
 			path = Issues;
 			sourceTree = "<group>";
@@ -274,8 +274,8 @@
 			children = (
 				FFF860821C97B95F00C16794 /* LabelCellView.swift */,
 				FFF860831C97B95F00C16794 /* LabelCellView.xib */,
-				FFA390641C9C1969000A0CA4 /* LabelsViewController.swift */,
-				FF8325171CA5CC690028167B /* LabelsViewModel.swift */,
+				FFA390641C9C1969000A0CA4 /* MainLabelsViewController.swift */,
+				FF8325171CA5CC690028167B /* MainLabelsViewModel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -651,8 +651,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF33831F1C990BB300D73743 /* IssuesViewController.swift in Sources */,
-				FF8325181CA5CC690028167B /* LabelsViewModel.swift in Sources */,
+				FF33831F1C990BB300D73743 /* MainIssuesViewController.swift in Sources */,
+				FF8325181CA5CC690028167B /* MainLabelsViewModel.swift in Sources */,
 				FFA390931CA26D98000A0CA4 /* MilestoneRepositoryOnRealm.swift in Sources */,
 				FF58D43E1CA41BBF00D58B26 /* AddLabelViewController.swift in Sources */,
 				FFA3908A1CA26505000A0CA4 /* LabelRepository.swift in Sources */,
@@ -676,13 +676,13 @@
 				FF58D4491CA4339300D58B26 /* AddMilestoneViewModel.swift in Sources */,
 				FFA390911CA26B1B000A0CA4 /* LabelRepositoryOnRealm.swift in Sources */,
 				FF58D4391CA40DED00D58B26 /* AddIssueViewModel.swift in Sources */,
-				FFA390671C9C1A73000A0CA4 /* IssuesViewModel.swift in Sources */,
+				FFA390671C9C1A73000A0CA4 /* MainIssuesViewModel.swift in Sources */,
 				FFA3909B1CA294C0000A0CA4 /* ArrayExtensions.swift in Sources */,
 				FFA3908C1CA26556000A0CA4 /* MilestoneRepository.swift in Sources */,
 				FFA390781C9D0F73000A0CA4 /* RealmCommon.swift in Sources */,
 				FFA3907A1C9D0FE0000A0CA4 /* LabelObject.swift in Sources */,
 				FFF860791C96DEEA00C16794 /* Issue.swift in Sources */,
-				FFA390651C9C1969000A0CA4 /* LabelsViewController.swift in Sources */,
+				FFA390651C9C1969000A0CA4 /* MainLabelsViewController.swift in Sources */,
 				FFA390881CA263CE000A0CA4 /* IssueRepository.swift in Sources */,
 				FFA3908F1CA266FB000A0CA4 /* IssueRepositoryOnRealm.swift in Sources */,
 				FF58D4421CA41EB300D58B26 /* AddLabelViewModel.swift in Sources */,
