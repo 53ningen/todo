@@ -31,6 +31,11 @@ public class IssueRepositoryOnRealm: IssueRepository {
         return realm.objects(IssueObject).filter(pred).flatMap { $0.toIssue }
     }
     
+    public func findByLabel(label: Label, state: IssueState) -> [Issue] {
+        let pred = NSPredicate(format: "label == %@ AND state == %@", label.id.value, state.rawValue)
+        return realm.objects(IssueObject).filter(pred).flatMap { $0.toIssue }
+    }
+    
     public func add(info: IssueInfo) {
         try! realm.write {
             realm.add(IssueObject.of(nextId, info: info))

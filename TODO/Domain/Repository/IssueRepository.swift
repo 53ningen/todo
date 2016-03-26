@@ -13,12 +13,14 @@ public protocol IssueRepository {
     /// タイトル、説明文からキーワード検索でIssueを探す
     func findByKeyword(keyword: String) -> [Issue]
     
+    /// ラベルに紐付いているIssueを探す
+    func findByLabel(label: Label, state: IssueState) -> [Issue]
+    
     /// Issueを追加する
     func add(info: IssueInfo)
     
     /// Issueを閉じる
     func close(id: Id<Issue>)
-    
     
     /// Issueを追加する
     func open(id: Id<Issue>)
