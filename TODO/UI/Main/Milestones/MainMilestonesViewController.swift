@@ -40,7 +40,6 @@ final class MainMilestonesViewController: BaseViewController {
         
         // view ~> model
         segmentedControl.rx_value.map { MilestoneState.of($0) }.bindTo(viewModel.segment).addDisposableTo(disposeBag)
-        
     }
     
     private func subscribeEvents() {

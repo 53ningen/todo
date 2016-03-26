@@ -18,6 +18,10 @@ final class MilestoneCellView: UITableViewCell {
     func bind(milestone: Milestone) {
         titleLabel.text = milestone.id.value
         dueLabel.text = milestone.info.dueOn?.formattedString ?? "No due date"
+        openCountLabel.text = milestone.info.openIssuesCount.map { String($0) }
+        closedCountLabel.text = milestone.info.closedIssuesCount.map { String($0) }
+        completedLabel.text = "\(Int(milestone.progress * 100))%"
+        progressView.progress = milestone.progress
     }
 
 }

@@ -26,7 +26,7 @@ extension MilestoneObject {
     
     var toMilestone: Milestone? {
         guard let s = MilestoneState.of(state) else { return nil }
-        let info = MilestoneInfo(state: s, description: desc, createdAt: createdAt, updatedAt: updatedAt, dueOn: dueOn.value)
+        let info = MilestoneInfo(state: s, description: desc, createdAt: createdAt, updatedAt: updatedAt, dueOn: dueOn.value, openIssuesCount: openIssuesCount, closedIssuesCount: closedIssuesCount)
         return Milestone(id: Id<Milestone>(value: id), info: info)
     }
     

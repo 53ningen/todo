@@ -7,13 +7,17 @@ public final class MilestoneInfo: EntityInfo {
     public let createdAt: Date
     public let updatedAt: Date
     public let dueOn: Date?
-    
-    public init(state: MilestoneState, description: String, createdAt: Date, updatedAt: Date, dueOn: Date?) {
+    public let openIssuesCount: Int?
+    public let closedIssuesCount: Int?
+
+    public init(state: MilestoneState, description: String, createdAt: Date, updatedAt: Date, dueOn: Date?, openIssuesCount: Int? = nil, closedIssuesCount: Int? = nil) {
         self.state = state
         self.description = description
         self.createdAt = createdAt
         self.updatedAt = updatedAt
         self.dueOn = dueOn
+        self.openIssuesCount = openIssuesCount
+        self.closedIssuesCount = closedIssuesCount
     }
     
 }
@@ -25,6 +29,8 @@ public func ==(lhs: MilestoneInfo, rhs: MilestoneInfo) -> Bool {
         && lhs.createdAt == rhs.createdAt
         && lhs.updatedAt == rhs.updatedAt
         && lhs.dueOn == rhs.dueOn
+        && lhs.openIssuesCount == rhs.openIssuesCount
+        && lhs.closedIssuesCount == rhs.closedIssuesCount
 }
 
 public final class Milestone: Entity, Equatable {
@@ -45,6 +51,12 @@ public final class Milestone: Entity, Equatable {
     
     public func isPastDue(now: Date) -> Bool {
         return now > info.dueOn
+    }
+    
+    public var progress: Float {
+        guard let openIssuesCount = info.openIssuesCount, closedIssuesCount = info.closedIssuesCount else { return 1 }
+        let total = Float(openIssuesCount) + Float(closedIssuesCount)
+        return openIssuesCount == 0 ? 1 : Float(openIssuesCount) / total
     }
     
 }
