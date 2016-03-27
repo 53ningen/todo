@@ -3,11 +3,13 @@
 public final class LabelInfo: EntityInfo {
     
     public let color: Color
-    public let numberOfIssues: Int?
+    public let openIssuesCount: Int?
+    public let closedIssuesCount: Int?
     
-    public init(color: Color, numberOfIssues: Int? = nil) {
+    public init(color: Color, openIssuesCount: Int? = nil, closedIssuesCount: Int? = nil) {
         self.color = color
-        self.numberOfIssues = numberOfIssues
+        self.openIssuesCount = openIssuesCount
+        self.closedIssuesCount = closedIssuesCount
     }
     
 }
@@ -15,7 +17,8 @@ public final class LabelInfo: EntityInfo {
 extension LabelInfo: Equatable {}
 public func ==(lhs: LabelInfo, rhs: LabelInfo) -> Bool {
     return lhs.color == rhs.color
-        && lhs.numberOfIssues == rhs.numberOfIssues
+        && lhs.openIssuesCount == rhs.openIssuesCount
+        && lhs.closedIssuesCount == rhs.closedIssuesCount
 }
 
 public final class Label: Entity, Equatable {

@@ -11,6 +11,14 @@ class LabelObject: Object {
     var issues: [IssueObject] {
         return linkingObjects(IssueObject.self, forProperty: "labels")
     }
+    
+    var openIssuesCount: Int {
+        return issues.filter { $0.state == MilestoneState.Open.rawValue }.count
+    }
+    
+    var closedIssuesCount: Int {
+        return issues.filter { $0.state == MilestoneState.Closed.rawValue }.count
+    }
 
     static func of(id: Id<Label>, info: LabelInfo) -> LabelObject {
         let object = LabelObject()
