@@ -67,6 +67,14 @@ public class IssueRepositoryOnRealm: IssueRepository {
         }
     }
     
+    public func update(issue: Issue) {
+        try! realm.write {
+            if let obj = realm.objectForPrimaryKey(IssueObject.self, key: issue.id.value) {
+                obj.update(issue.info)
+            }
+        }
+    }
+    
     public func open(id: Id<Issue>) {
         try! realm.write {
             if let obj = realm.objectForPrimaryKey(IssueObject.self, key: id.value) where obj.state == IssueState.Closed(closedAt: 0).rawValue {

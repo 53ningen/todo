@@ -22,6 +22,9 @@ public protocol IssueRepository {
     /// Issueを追加する
     func add(info: IssueInfo)
     
+    /// Issueを更新する
+    func update(issue: Issue)
+    
     /// Issueを閉じる
     func close(id: Id<Issue>)
     

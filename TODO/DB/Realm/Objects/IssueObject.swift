@@ -50,5 +50,20 @@ class IssueObject: Object {
         self.closedAt.value = nil
         self.updatedAt = Int64(NSDate().timeIntervalSince1970)
     }
+    
+    func update(info: IssueInfo) {
+        title = info.title
+        desc = info.desc
+        state = info.state.rawValue
+        let realm = try! Realm()
+        let labelObjs = info.labels.flatMap { realm.objectForPrimaryKey(LabelObject.self, key: $0.id.value) }
+        labels.removeAll()
+        labels.appendContentsOf(labelObjs)
+        info.milestone.forEach { self.milestone = realm.objectForPrimaryKey(MilestoneObject.self, key: $0.id.value) }
+        locked = info.locked
+        createdAt = info.createdAt
+        updatedAt = info.updatedAt
+        closedAt.value = info.state.closedAt
+    }
 
 }

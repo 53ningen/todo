@@ -56,7 +56,7 @@ final class MainIssuesViewController: BaseViewController {
             .addDisposableTo(disposeBag)
         createNewButton.rx_tap.single()
             .subscribeNext { [weak self] _ in
-                self?.presentViewController(UIStoryboard.editIssueViewController, animated: true, completion: nil)
+                self?.presentViewController(UIStoryboard.editIssueViewController(), animated: true, completion: nil)
             }
             .addDisposableTo(disposeBag)
     }

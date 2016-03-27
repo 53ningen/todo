@@ -17,8 +17,10 @@ extension UIStoryboard {
         return vc
     }
     
-    static var editIssueViewController: EditIssueViewController {
-        return UIViewController.of(EditIssueViewController.self)
+    static func editIssueViewController(issue: Issue? = nil) -> EditIssueViewController {
+        let vc = UIViewController.of(EditIssueViewController.self)
+        issue.forEach { vc.setViewModel(EditIssueViewModel(issue: $0)) }
+        return vc
     }
     
     static var addLabelViewController: AddLabelViewController {

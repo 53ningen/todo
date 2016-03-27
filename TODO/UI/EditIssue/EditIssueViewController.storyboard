@@ -144,6 +144,7 @@
                         <outlet property="cancelButton" destination="FvT-wG-XXd" id="p5Y-7D-OQE"/>
                         <outlet property="descriptionTextView" destination="2Bf-sV-ajR" id="qZ9-Fe-pUm"/>
                         <outlet property="milestonePicker" destination="xSQ-MQ-LIT" id="JuA-En-94P"/>
+                        <outlet property="navTitleItem" destination="gXl-N1-7BG" id="n9M-zM-E5I"/>
                         <outlet property="selectLabelsButton" destination="0MP-XU-oRi" id="6KP-uD-4Eg"/>
                         <outlet property="submitButton" destination="RhI-xI-Xd4" id="uFH-ce-HBI"/>
                         <outlet property="tapGestureRecognizer" destination="zpb-7l-pDF" id="M9g-h7-YMP"/>

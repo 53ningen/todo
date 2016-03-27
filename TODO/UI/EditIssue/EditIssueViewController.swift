@@ -3,7 +3,10 @@ import Foundation
 
 final class EditIssueViewController: BaseViewController {
     
-    private let viewModel: EditIssueViewModel = EditIssueViewModel()
+    private lazy var viewModel: EditIssueViewModel = EditIssueViewModel()
+    func setViewModel(viewModel: EditIssueViewModel) {
+        self.viewModel = viewModel
+    }
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -12,6 +15,8 @@ final class EditIssueViewController: BaseViewController {
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var milestonePicker: UIPickerView!
+    @IBOutlet weak var navTitleItem: UINavigationItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +26,18 @@ final class EditIssueViewController: BaseViewController {
             $0.roundedCorners(5)
             $0.border(1, color: UIColor.borderColor.CGColor)
         }
+        navTitleItem.title = viewModel.isNewIssue ? "Submit new issue" : "Edit issue"
+        titleTextField.text = viewModel.title.value
+        descriptionTextView.text = viewModel.desc.value
+        viewModel.milestone.value.flatMap(viewModel.milestones.value.indexOf).forEach {
+            self.milestonePicker.selectRow($0 + 1, inComponent: 0, animated: true)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         bind()
         subscribeEvents()
-        viewModel.updateMilestones()
     }
     
     private func subscribeEvents() {

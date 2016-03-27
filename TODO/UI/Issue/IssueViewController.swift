@@ -9,6 +9,7 @@ final class IssueViewController: BaseViewController {
     }
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,15 @@ final class IssueViewController: BaseViewController {
                     break
                 default:
                     break
+                }
+            }
+            .addDisposableTo(disposeBag)
+        editButton.rx_tap
+            .subscribeNext { [weak self] _ in
+                self?.viewModel?.issue.value.forEach {
+                    let vc = UIStoryboard.editIssueViewController()
+                    vc.setViewModel(EditIssueViewModel(issue: $0))
+                    self?.presentViewController(vc, animated: true, completion: nil)
                 }
             }
             .addDisposableTo(disposeBag)

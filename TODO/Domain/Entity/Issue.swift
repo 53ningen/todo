@@ -69,7 +69,7 @@ extension Issue: CustomDebugStringConvertible {
 extension IssueInfo: CustomDebugStringConvertible {
     
     public var debugDescription: String {
-        return "title:\(title),desc:\(desc),state:\(state.rawValue),labels:\(labels),milestone:\(milestone),locked:\(locked),createdAt:\(createdAt),updatedAt:\(updatedAt)"
+        return "title:\(title),desc:\(desc),state:\(state.rawValue),labels:\(labels),milestone:\(milestone.debugDescription),locked:\(locked),createdAt:\(createdAt),updatedAt:\(updatedAt)"
     }
     
 }
