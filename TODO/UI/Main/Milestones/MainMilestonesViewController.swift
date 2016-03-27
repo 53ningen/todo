@@ -88,11 +88,24 @@ extension MainMilestonesViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        return [UITableViewRowAction(style: .Default, title: viewModel.segment.value == .Open ? "close" : "open", handler: { [weak self] _ in
+        let closeAction = UITableViewRowAction(style: .Normal, title: viewModel.segment.value == .Open ? "close" : "open", handler: { [weak self] _ in
             if let milestone = self?.viewModel.milestones.value.safeIndex(indexPath.item) {
                 self?.viewModel.toggleMilestoneState(milestone.id)
-            }
-        })]
+            }}
+        )
+        let deleteAction = UITableViewRowAction(style: .Default, title: "delete", handler: { [weak self] _ in
+            if let milestone = self?.viewModel.milestones.value.safeIndex(indexPath.item) {
+                let alert = UIAlertController(title: "Delete a label", message: "Once you delete a milestone, there is no going back. Please be certain.", preferredStyle: .Alert)
+                let ok = UIAlertAction(title: "OK", style: .Default, handler: { _ in
+                    self?.viewModel.remove(milestone.id)
+                })
+                let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                alert.addAction(cancel)
+                alert.addAction(ok)
+                self?.presentViewController(alert, animated: true, completion: nil)
+            }}
+        )
+        return [closeAction, deleteAction]
     }
     
 }

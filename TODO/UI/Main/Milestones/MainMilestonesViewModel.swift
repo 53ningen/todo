@@ -20,4 +20,9 @@ final class MainMilestonesViewModel {
         updateMilestones()
     }
     
+    func remove(id: Id<Milestone>) {
+        milestoneRepository.remove(id)
+        updateMilestones()
+    }
+    
 }

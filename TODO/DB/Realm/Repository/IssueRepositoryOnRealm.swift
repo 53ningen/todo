@@ -65,7 +65,6 @@ public class IssueRepositoryOnRealm: IssueRepository {
         try! realm.write {
             realm.add(IssueObject.of(nextId, info: info))
         }
-        NSLog("[issue] add \(info.title)")
     }
     
     public func open(id: Id<Issue>) {

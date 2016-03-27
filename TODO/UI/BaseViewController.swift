@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import Foundation
 
 class BaseViewController: UIViewController {
 
