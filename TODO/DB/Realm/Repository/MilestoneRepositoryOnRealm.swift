@@ -9,6 +9,10 @@ public class MilestoneRepositoryOnRealm: MilestoneRepository {
         return realm.objectForPrimaryKey(MilestoneObject.self, key: id.value)?.toMilestone
     }
     
+    public func findAll() -> [Milestone] {
+        return realm.objects(MilestoneObject).flatMap { $0.toMilestone }
+    }
+    
     public func findAll(state: MilestoneState) -> [Milestone] {
         let pred = NSPredicate(format: "state == %@", state.rawValue)
         return realm.objects(MilestoneObject).filter(pred).flatMap { $0.toMilestone }

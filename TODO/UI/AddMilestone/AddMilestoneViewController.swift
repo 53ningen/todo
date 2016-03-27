@@ -34,7 +34,9 @@ final class AddMilestoneViewController: BaseViewController {
         titleTextField.rx_text.bindTo(viewModel.title).addDisposableTo(disposeBag)
         descriptionTextView.rx_text.bindTo(viewModel.desc).addDisposableTo(disposeBag)
         datePicker.rx_date.skip(1).map { $0 }.bindTo(viewModel.dueOn).addDisposableTo(disposeBag)
-        viewModel.title.asObservable().map { !$0.isEmpty }.bindTo(createNewButton.rx_enabled).addDisposableTo(disposeBag)
+        
+        // model ~> view
+        viewModel.submittable.bindTo(createNewButton.rx_enabled).addDisposableTo(disposeBag)
     }
     
     private func subscribeEvent() {

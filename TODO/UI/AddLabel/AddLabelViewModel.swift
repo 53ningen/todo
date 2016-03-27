@@ -2,10 +2,15 @@ import RxSwift
 
 final class AddLabelViewModel {
     
-    private lazy var labelRepository: LabelRepository = AppModules.labelRepository
+    private let labelRepository: LabelRepository = AppModules.labelRepository
     
     let name: Variable<String> = Variable<String>("")
     let color: Variable<Color> = Variable<Color>((127, 127, 127, 1))
+    let labels: [Label]
+    
+    init() {
+        self.labels = self.labelRepository.findAll()
+    }
     
     convenience init(name: String, color: Color) {
         self.init()
@@ -18,7 +23,8 @@ final class AddLabelViewModel {
     }
     
     var submittable: Observable<Bool> {
-        return name.asObservable().shareReplay(1).map { !$0.isEmpty }
+        return name.asObservable().shareReplay(1)
+            .map { !$0.isEmpty && !self.labels.map { $0.id.value }.any(self.name.value) }
     }
     
     func submit() {

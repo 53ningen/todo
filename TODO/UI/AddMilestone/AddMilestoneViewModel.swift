@@ -3,11 +3,21 @@ import Foundation
 
 final class AddMilestoneViewModel {
     
-    private lazy var milestoneRepository: MilestoneRepository = AppModules.milestoneRepository
+    private let milestoneRepository: MilestoneRepository = AppModules.milestoneRepository
     
     let title: Variable<String> = Variable<String>("")
     let desc: Variable<String> = Variable<String>("")
     let dueOn: Variable<NSDate?> = Variable<NSDate?>(nil)
+    let milestones: [Milestone]
+    
+    init() {
+        self.milestones = milestoneRepository.findAll()
+    }
+    
+    var submittable: Observable<Bool> {
+        return title.asObservable().shareReplay(1)
+            .map { !$0.isEmpty && !self.milestones.map { $0.id.value }.any(self.title.value) }
+    }
     
     func submit() {
         let now: Date = Int64(NSDate().timeIntervalSince1970)
