@@ -70,7 +70,7 @@ public class IssueRepositoryOnRealm: IssueRepository {
     
     public func open(id: Id<Issue>) {
         try! realm.write {
-            if let obj = realm.objectForPrimaryKey(IssueObject.self, key: id.value) {
+            if let obj = realm.objectForPrimaryKey(IssueObject.self, key: id.value) where obj.state == IssueState.Closed(closedAt: 0).rawValue {
                 obj.open()
             }
         }
@@ -78,7 +78,7 @@ public class IssueRepositoryOnRealm: IssueRepository {
     
     public func close(id: Id<Issue>) {
         try! realm.write {
-            if let obj = realm.objectForPrimaryKey(IssueObject.self, key: id.value) {
+            if let obj = realm.objectForPrimaryKey(IssueObject.self, key: id.value) where obj.state == IssueState.Open.rawValue {
                 obj.close(Int64(NSDate().timeIntervalSince1970))
             }
         }

@@ -28,6 +28,22 @@ public class MilestoneRepositoryOnRealm: MilestoneRepository {
         }
     }
     
+    public func open(id: Id<Milestone>) {
+        try! realm.write {
+            if let obj = realm.objectForPrimaryKey(MilestoneObject.self, key: id.value) where obj.state == MilestoneState.Closed.rawValue {
+                obj.open()
+            }
+        }
+    }
+    
+    public func close(id: Id<Milestone>) {
+        try! realm.write {
+            if let obj = realm.objectForPrimaryKey(MilestoneObject.self, key: id.value) where obj.state == MilestoneState.Open.rawValue {
+                obj.close()
+            }
+        }
+    }
+    
 }
 
 extension MilestoneObject {

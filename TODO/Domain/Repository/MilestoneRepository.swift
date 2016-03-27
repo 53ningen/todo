@@ -12,5 +12,11 @@ public protocol MilestoneRepository {
     
     /// Milestoneの削除
     func remove(id: Id<Milestone>)
+    
+    /// Milestoneのclose
+    func close(id: Id<Milestone>)
+    
+    /// Milestoneのopen
+    func open(id: Id<Milestone>)
         
 }

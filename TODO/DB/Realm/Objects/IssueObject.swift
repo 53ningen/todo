@@ -40,11 +40,13 @@ class IssueObject: Object {
     func close(at: RealmDate) {
         self.state = IssueState.Closed(closedAt: at).rawValue
         self.closedAt.value = at
+        self.updatedAt = at
     }
     
     func open() {
         self.state = IssueState.Open.rawValue
         self.closedAt.value = nil
+        self.updatedAt = Int64(NSDate().timeIntervalSince1970)
     }
 
 }

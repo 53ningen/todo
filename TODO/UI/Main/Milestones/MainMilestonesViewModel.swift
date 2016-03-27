@@ -11,5 +11,13 @@ final class MainMilestonesViewModel {
     func updateMilestones() {
         milestones.value = milestoneRepository.findAll(segment.value)
     }
-        
+    
+    func toggleMilestoneState(id: Id<Milestone>) {
+        switch segment.value {
+        case .Open: milestoneRepository.close(id)
+        case .Closed: milestoneRepository.open(id)
+        }
+        updateMilestones()
+    }
+    
 }

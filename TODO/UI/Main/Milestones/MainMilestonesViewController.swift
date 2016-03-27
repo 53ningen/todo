@@ -87,6 +87,14 @@ extension MainMilestonesViewController: UITableViewDelegate {
         return 82
     }
     
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        return [UITableViewRowAction(style: .Default, title: viewModel.segment.value == .Open ? "close" : "open", handler: { [weak self] _ in
+            if let milestone = self?.viewModel.milestones.value.safeIndex(indexPath.item) {
+                self?.viewModel.toggleMilestoneState(milestone.id)
+            }
+        })]
+    }
+    
 }
 
 extension MilestoneState {

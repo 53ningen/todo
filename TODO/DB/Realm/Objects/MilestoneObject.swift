@@ -40,4 +40,14 @@ class MilestoneObject: Object {
         return ["id"]
     }
     
+    func open() {
+        self.state = MilestoneState.Open.rawValue
+        self.updatedAt = Int64(NSDate().timeIntervalSince1970)
+    }
+    
+    func close() {
+        self.state = MilestoneState.Closed.rawValue
+        self.updatedAt = Int64(NSDate().timeIntervalSince1970)
+    }
+    
 }
