@@ -48,7 +48,9 @@ final class IssuesViewController: BaseViewController {
         tableView.rx_itemSelected.single()
             .subscribeNext { [weak self] indexPath in
                 self?.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-                self?.navigationController?.pushViewController(UIStoryboard.issueViewController, animated: true)
+                self?.viewModel?.issues.value.safeIndex(indexPath.item).forEach { issue in
+                    self?.navigationController?.pushViewController(UIStoryboard.issueViewController(issue.id), animated: true)
+                }
             }
             .addDisposableTo(disposeBag)
     }

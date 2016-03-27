@@ -3,6 +3,7 @@
 public final class IssueInfo: EntityInfo {
 
     public let title: String
+    public let desc: String
     public let state: IssueState
     public let labels: [Label]
     public let milestone: Milestone?
@@ -10,8 +11,9 @@ public final class IssueInfo: EntityInfo {
     public let createdAt: Date
     public let updatedAt: Date
     
-    public init(title: String, state: IssueState, labels: [Label], milestone: Milestone?, locked: Bool, createdAt: Date, updatedAt: Date) {
+    public init(title: String, desc: String, state: IssueState, labels: [Label], milestone: Milestone?, locked: Bool, createdAt: Date, updatedAt: Date) {
         self.title = title
+        self.desc = desc
         self.state = state
         self.labels = labels
         self.milestone = milestone
@@ -25,6 +27,7 @@ public final class IssueInfo: EntityInfo {
 extension IssueInfo: Equatable {}
 public func ==(lhs: IssueInfo, rhs: IssueInfo) -> Bool {
     return lhs.title == rhs.title
+        && lhs.desc == rhs.desc
         && lhs.state == rhs.state
         && lhs.labels == rhs.labels
         && lhs.milestone == rhs.milestone
@@ -66,7 +69,7 @@ extension Issue: CustomDebugStringConvertible {
 extension IssueInfo: CustomDebugStringConvertible {
     
     public var debugDescription: String {
-        return "title:\(title),state:\(state.rawValue),labels:\(labels),milestone:\(milestone),locked:\(locked),createdAt:\(createdAt),updatedAt:\(updatedAt)"
+        return "title:\(title),desc:\(desc),state:\(state.rawValue),labels:\(labels),milestone:\(milestone),locked:\(locked),createdAt:\(createdAt),updatedAt:\(updatedAt)"
     }
     
 }

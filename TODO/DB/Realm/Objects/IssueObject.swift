@@ -5,6 +5,7 @@ class IssueObject: Object {
     
     dynamic var id: String = ""
     dynamic var title: String = ""
+    dynamic var desc: String = ""
     dynamic var state: String = ""
     let labels: List<LabelObject> = List<LabelObject>()
     dynamic var milestone: MilestoneObject? = nil
@@ -17,6 +18,7 @@ class IssueObject: Object {
         let obj = IssueObject()
         obj.id = id
         obj.title = info.title
+        obj.desc = info.desc
         obj.state = info.state.rawValue
         let realm = try! Realm()
         let labelObjs = info.labels.flatMap { realm.objectForPrimaryKey(LabelObject.self, key: $0.id.value) }

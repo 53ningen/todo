@@ -95,7 +95,7 @@ extension IssueObject {
     
     var toIssue: Issue? {
         guard let state = IssueState.of(state, closedAt: closedAt.value) else { return nil }
-        let info = IssueInfo(title: title, state: state, labels: labels.flatMap { $0.toLabel }, milestone: nil, locked: locked, createdAt: createdAt, updatedAt: updatedAt)
+        let info = IssueInfo(title: title, desc: desc ,state: state, labels: labels.flatMap { $0.toLabel }, milestone: milestone.flatMap { $0.toMilestone }, locked: locked, createdAt: createdAt, updatedAt: updatedAt)
         return Issue(id: Id<Issue>(value: id), info: info)
     }
     

@@ -22,7 +22,7 @@ class AddIssueViewModel {
     
     func submit() {
         let now: Date = Int64(NSDate().timeIntervalSince1970)
-        let info = IssueInfo(title: title.value, state: .Open, labels: labels.value, milestone: milestone.value, locked: false, createdAt: now, updatedAt: now)
+        let info = IssueInfo(title: title.value, desc: desc.value, state: .Open, labels: labels.value, milestone: milestone.value, locked: false, createdAt: now, updatedAt: now)
         issueRepository.add(info)
     }
     

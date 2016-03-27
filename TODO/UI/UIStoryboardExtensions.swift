@@ -10,8 +10,9 @@ extension UIStoryboard {
         return vc
     }
     
-    static var issueViewController: IssueViewController {
+    static func issueViewController(id: Id<Issue>) -> IssueViewController {
         let vc = UIViewController.of(IssueViewController.self)
+        vc.setViewModel(IssueViewModel(id: id))
         vc.hidesBottomBarWhenPushed = true
         return vc
     }
