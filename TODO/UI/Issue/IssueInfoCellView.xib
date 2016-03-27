@@ -23,32 +23,35 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEE-8H-H0a">
-                    <rect key="frame" x="20" y="101" width="560" height="77"/>
-                    <string key="text">Issue Description. Issue Description. Issue Description. Issue Description. Issue Description. Issue Description. Issue Description. Issue Description. Issue Description. Issue Description. Issue Description. Issue Description.Issue Description. Issue Description.Issue Description. Issue Description.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4ej-Pw-byw">
+                    <rect key="frame" x="16" y="101" width="568" height="80"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="1wo-sM-rSc"/>
+                    </constraints>
+                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <constraints>
+                <constraint firstItem="4ej-Pw-byw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="4zL-Bs-iRt"/>
                 <constraint firstItem="1Dz-Si-8rS" firstAttribute="top" secondItem="Y6h-gO-vCI" secondAttribute="bottom" constant="5" id="AI4-Gu-OFn"/>
-                <constraint firstItem="YEE-8H-H0a" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="RDY-Ed-iFb"/>
                 <constraint firstItem="Y6h-gO-vCI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Tmq-uD-b9x"/>
                 <constraint firstItem="1Dz-Si-8rS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="UWw-nU-39Z"/>
                 <constraint firstAttribute="trailing" secondItem="1Dz-Si-8rS" secondAttribute="trailing" constant="20" id="Us6-Fe-zrW"/>
                 <constraint firstItem="Y6h-gO-vCI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Z2x-K4-DqB"/>
-                <constraint firstItem="YEE-8H-H0a" firstAttribute="top" secondItem="1Dz-Si-8rS" secondAttribute="bottom" constant="20" id="bKZ-E6-ElE"/>
-                <constraint firstAttribute="trailing" secondItem="YEE-8H-H0a" secondAttribute="trailing" constant="20" id="mA0-j8-H8h"/>
+                <constraint firstAttribute="trailing" secondItem="4ej-Pw-byw" secondAttribute="trailing" constant="16" id="l9w-XK-xp5"/>
                 <constraint firstAttribute="trailing" secondItem="Y6h-gO-vCI" secondAttribute="trailing" constant="20" id="ot6-je-igr"/>
+                <constraint firstItem="4ej-Pw-byw" firstAttribute="top" secondItem="1Dz-Si-8rS" secondAttribute="bottom" constant="20" id="qq4-60-kaP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="descriptionLabel" destination="YEE-8H-H0a" id="IqR-Os-GSN"/>
+                <outlet property="descriptionTextView" destination="4ej-Pw-byw" id="KtG-x0-DLw"/>
                 <outlet property="idLabel" destination="Y6h-gO-vCI" id="DZS-8z-kuj"/>
                 <outlet property="titleLabel" destination="1Dz-Si-8rS" id="TWb-Lk-OcB"/>
             </connections>
-            <point key="canvasLocation" x="201" y="192.5"/>
+            <point key="canvasLocation" x="201" y="192"/>
         </view>
     </objects>
 </document>
