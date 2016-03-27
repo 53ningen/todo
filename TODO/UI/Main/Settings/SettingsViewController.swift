@@ -10,9 +10,12 @@ private struct SettingsViewItem {
 
 final class SettingsViewController: BaseTableViewController {
     
+    @IBOutlet weak var versionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Settings"
+        versionLabel.text = AppModules.applicationSettings.bundleShortVersionString
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -10,6 +10,7 @@
 		FF0DED981C998B1200B8FE77 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED971C998B1200B8FE77 /* UIState.swift */; };
 		FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */; };
 		FF0E988B1CA7D34200FA1224 /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E988A1CA7D34200FA1224 /* UIStoryboardExtensions.swift */; };
+		FF0E988D1CA7D92F00FA1224 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E988C1CA7D92F00FA1224 /* ApplicationSettings.swift */; };
 		FF1B94FF1CA6EEE300E3C2BC /* MainLabelsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1B94FE1CA6EEE300E3C2BC /* MainLabelsViewController.storyboard */; };
 		FF1B95011CA6EFE000E3C2BC /* MainMilestonesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1B95001CA6EFE000E3C2BC /* MainMilestonesViewController.storyboard */; };
 		FF33831F1C990BB300D73743 /* MainIssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33831E1C990BB300D73743 /* MainIssuesViewController.swift */; };
@@ -103,6 +104,7 @@
 		FF0DED971C998B1200B8FE77 /* UIState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		FF0E988A1CA7D34200FA1224 /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
+		FF0E988C1CA7D92F00FA1224 /* ApplicationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
 		FF1B94FE1CA6EEE300E3C2BC /* MainLabelsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainLabelsViewController.storyboard; sourceTree = "<group>"; };
 		FF1B95001CA6EFE000E3C2BC /* MainMilestonesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainMilestonesViewController.storyboard; sourceTree = "<group>"; };
 		FF33831E1C990BB300D73743 /* MainIssuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainIssuesViewController.swift; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				FF58D45D1CA5555800D58B26 /* AppModules.swift */,
+				FF0E988C1CA7D92F00FA1224 /* ApplicationSettings.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -594,7 +597,6 @@
 				TargetAttributes = {
 					FFE38D6F1C9302070045F8D1 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 3L7J7SPGDQ;
 					};
 					FFE38D831C9302070045F8D1 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -703,6 +705,7 @@
 				FFF860771C96D9EF00C16794 /* Milestone.swift in Sources */,
 				FF58D44C1CA46A5700D58B26 /* SettingsViewController.swift in Sources */,
 				FF58D4511CA4701E00D58B26 /* LicensesViewController.swift in Sources */,
+				FF0E988D1CA7D92F00FA1224 /* ApplicationSettings.swift in Sources */,
 				FFA390961CA28866000A0CA4 /* IssueViewController.swift in Sources */,
 				FFE38DB31C9312300045F8D1 /* Aliases.swift in Sources */,
 				FFA390631C9C1935000A0CA4 /* MainMilestonesViewController.swift in Sources */,
