@@ -43,7 +43,7 @@ final class AddIssueViewController: BaseViewController {
         selectLabelsButton.rx_tap
             .subscribeNext { [weak self] _ in
                 self.forEach {
-                    let vc = Controllers.selectLabelsViewController($0.viewModel.labels)
+                    let vc = UIStoryboard.selectLabelsViewController($0.viewModel.labels)
                     $0.presentViewController(vc, animated: true, completion: nil)
                 }
             }

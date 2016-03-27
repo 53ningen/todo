@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FF0DED981C998B1200B8FE77 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED971C998B1200B8FE77 /* UIState.swift */; };
 		FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */; };
+		FF0E988B1CA7D34200FA1224 /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E988A1CA7D34200FA1224 /* UIStoryboardExtensions.swift */; };
 		FF1B94FF1CA6EEE300E3C2BC /* MainLabelsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1B94FE1CA6EEE300E3C2BC /* MainLabelsViewController.storyboard */; };
 		FF1B95011CA6EFE000E3C2BC /* MainMilestonesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1B95001CA6EFE000E3C2BC /* MainMilestonesViewController.storyboard */; };
 		FF33831F1C990BB300D73743 /* MainIssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33831E1C990BB300D73743 /* MainIssuesViewController.swift */; };
@@ -28,7 +29,6 @@
 		FF58D4531CA4704D00D58B26 /* LicensesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58D4521CA4704D00D58B26 /* LicensesViewController.storyboard */; };
 		FF58D4551CA4711F00D58B26 /* LICENSES in Resources */ = {isa = PBXBuildFile; fileRef = FF58D4541CA4711F00D58B26 /* LICENSES */; };
 		FF58D45E1CA5555800D58B26 /* AppModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D45D1CA5555800D58B26 /* AppModules.swift */; };
-		FF5B22361CA659ED005572DE /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B22351CA659ED005572DE /* Controllers.swift */; };
 		FF62057B1CA6F04D0058BEB5 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF62057A1CA6F04D0058BEB5 /* SettingsViewController.storyboard */; };
 		FF62057D1CA6FD480058BEB5 /* MainMilestonesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62057C1CA6FD480058BEB5 /* MainMilestonesViewModel.swift */; };
 		FF8325181CA5CC690028167B /* MainLabelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8325171CA5CC690028167B /* MainLabelsViewModel.swift */; };
@@ -102,6 +102,7 @@
 /* Begin PBXFileReference section */
 		FF0DED971C998B1200B8FE77 /* UIState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		FF0E988A1CA7D34200FA1224 /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
 		FF1B94FE1CA6EEE300E3C2BC /* MainLabelsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainLabelsViewController.storyboard; sourceTree = "<group>"; };
 		FF1B95001CA6EFE000E3C2BC /* MainMilestonesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainMilestonesViewController.storyboard; sourceTree = "<group>"; };
 		FF33831E1C990BB300D73743 /* MainIssuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainIssuesViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +122,6 @@
 		FF58D4521CA4704D00D58B26 /* LicensesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LicensesViewController.storyboard; sourceTree = "<group>"; };
 		FF58D4541CA4711F00D58B26 /* LICENSES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSES; sourceTree = "<group>"; };
 		FF58D45D1CA5555800D58B26 /* AppModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppModules.swift; path = ../../../../../Documents/AppModules.swift; sourceTree = "<group>"; };
-		FF5B22351CA659ED005572DE /* Controllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
 		FF62057A1CA6F04D0058BEB5 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		FF62057C1CA6FD480058BEB5 /* MainMilestonesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMilestonesViewModel.swift; sourceTree = "<group>"; };
 		FF8325171CA5CC690028167B /* MainLabelsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLabelsViewModel.swift; sourceTree = "<group>"; };
@@ -497,9 +497,9 @@
 				FFA3906A1C9C252D000A0CA4 /* Shared */,
 				FFE38D7A1C9302070045F8D1 /* Assets.xcassets */,
 				FFF8606F1C96C21900C16794 /* BaseViewController.swift */,
-				FF5B22351CA659ED005572DE /* Controllers.swift */,
 				FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */,
 				FF0DED971C998B1200B8FE77 /* UIState.swift */,
+				FF0E988A1CA7D34200FA1224 /* UIStoryboardExtensions.swift */,
 				FFF8606C1C96BF1F00C16794 /* UIUtils.swift */,
 			);
 			path = UI;
@@ -713,10 +713,10 @@
 				FF9801BB1CA6E3E300AD1BBD /* MilestoneCellView.swift in Sources */,
 				FFA390A21CA2C385000A0CA4 /* AddIssueViewController.swift in Sources */,
 				FFA390691C9C2527000A0CA4 /* FooterCellView.swift in Sources */,
+				FF0E988B1CA7D34200FA1224 /* UIStoryboardExtensions.swift in Sources */,
 				FFF8606D1C96BF1F00C16794 /* UIUtils.swift in Sources */,
 				FF62057D1CA6FD480058BEB5 /* MainMilestonesViewModel.swift in Sources */,
 				FF0DED981C998B1200B8FE77 /* UIState.swift in Sources */,
-				FF5B22361CA659ED005572DE /* Controllers.swift in Sources */,
 				FFA3907C1C9D1018000A0CA4 /* MilestoneObject.swift in Sources */,
 				FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */,
 				FF58D4491CA4339300D58B26 /* AddMilestoneViewModel.swift in Sources */,

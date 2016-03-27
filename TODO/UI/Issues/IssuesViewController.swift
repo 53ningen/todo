@@ -47,10 +47,8 @@ final class IssuesViewController: BaseViewController {
         segmentedControl.rx_value.map { _ in () }.subscribeNext(viewModel.updateIssues).addDisposableTo(disposeBag)
         tableView.rx_itemSelected.single()
             .subscribeNext { [weak self] indexPath in
-                let vc = UIViewController.of(IssueViewController.self)
-                vc.hidesBottomBarWhenPushed = true
                 self?.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-                self?.navigationController?.pushViewController(vc, animated: true)
+                self?.navigationController?.pushViewController(UIStoryboard.issueViewController, animated: true)
             }
             .addDisposableTo(disposeBag)
     }

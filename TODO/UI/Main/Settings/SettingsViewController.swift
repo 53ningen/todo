@@ -26,9 +26,7 @@ final class SettingsViewController: BaseTableViewController {
             alert.addAction(ok)
             presentViewController(alert, animated: true, completion: nil)
         case SettingsViewItem.Licenses.indexPath:
-            let vc = UIViewController.of(LicensesViewController.self)
-            vc.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(vc, animated: true)
+            navigationController?.pushViewController(UIStoryboard.licenseViewController, animated: true)
         default:
             break
         }

@@ -47,16 +47,14 @@ final class MainMilestonesViewController: BaseViewController {
         tableView.rx_itemSelected.single()
             .subscribeNext { [weak self] indexPath in
                 if let milestone = self?.viewModel.milestones.value.safeIndex(indexPath.item) {
-                    let vc = UIViewController.of(IssuesViewController.self)
-                    vc.setViewModel(IssuesViewModel(query: IssuesQuery.MilestoneQuery(milestone: milestone)))
                     self?.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-                    self?.navigationController?.pushViewController(vc, animated: true)
+                    self?.navigationController?.pushViewController(UIStoryboard.issuesViewController(IssuesQuery.MilestoneQuery(milestone: milestone)), animated: true)
                 }
             }
             .addDisposableTo(disposeBag)
         createNewButton.rx_tap.single()
             .subscribeNext { [weak self] _ in
-                self?.presentViewController(UIViewController.of(AddMilestoneViewController.self), animated: true, completion: nil)
+                self?.presentViewController(UIStoryboard.addMilestoneViewController, animated: true, completion: nil)
             }
             .addDisposableTo(disposeBag)
     }
