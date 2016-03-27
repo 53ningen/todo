@@ -59,7 +59,11 @@ class IssueObject: Object {
         let labelObjs = info.labels.flatMap { realm.objectForPrimaryKey(LabelObject.self, key: $0.id.value) }
         labels.removeAll()
         labels.appendContentsOf(labelObjs)
-        info.milestone.forEach { self.milestone = realm.objectForPrimaryKey(MilestoneObject.self, key: $0.id.value) }
+        if let milestoneId = info.milestone?.id.value {
+            self.milestone = realm.objectForPrimaryKey(MilestoneObject.self, key: milestoneId)
+        } else {
+           self.milestone = nil
+        }
         locked = info.locked
         createdAt = info.createdAt
         updatedAt = info.updatedAt

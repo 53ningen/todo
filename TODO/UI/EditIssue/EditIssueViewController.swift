@@ -93,6 +93,7 @@ extension EditIssueViewController: UIPickerViewDataSource {
 extension EditIssueViewController: UIPickerViewDelegate {
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        NSLog("\(viewModel.milestones.value.safeIndex(row - 1))")
         viewModel.milestone.value = viewModel.milestones.value.safeIndex(row - 1)
     }
     
