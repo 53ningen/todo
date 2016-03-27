@@ -7,7 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="IssueInfoCellView" customModule="TODO" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="198"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="231"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dz-Si-8rS">
@@ -24,7 +24,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4ej-Pw-byw">
-                    <rect key="frame" x="16" y="101" width="568" height="80"/>
+                    <rect key="frame" x="16" y="136" width="568" height="80"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="1wo-sM-rSc"/>
@@ -33,25 +33,68 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E77-E4-JvW">
+                    <rect key="frame" x="20" y="86" width="90" height="30"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_issue_white" translatesAutoresizingMaskIntoConstraints="NO" id="sGY-mj-RaG">
+                            <rect key="frame" x="5" y="5" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="A2q-PQ-9oU"/>
+                                <constraint firstAttribute="width" constant="20" id="hxd-qs-z4H"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Closed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zo9-lp-a0V">
+                            <rect key="frame" x="30" y="6" width="48" height="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.41960784309999999" green="0.80000000000000004" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="sGY-mj-RaG" firstAttribute="leading" secondItem="E77-E4-JvW" secondAttribute="leading" constant="5" id="Ddv-p1-WbG"/>
+                        <constraint firstAttribute="bottom" secondItem="sGY-mj-RaG" secondAttribute="bottom" constant="5" id="DvF-Ws-aCP"/>
+                        <constraint firstItem="Zo9-lp-a0V" firstAttribute="leading" secondItem="sGY-mj-RaG" secondAttribute="trailing" constant="5" id="NTT-0C-OMh"/>
+                        <constraint firstItem="Zo9-lp-a0V" firstAttribute="centerY" secondItem="sGY-mj-RaG" secondAttribute="centerY" id="bnU-DV-yU7"/>
+                        <constraint firstAttribute="trailing" secondItem="Zo9-lp-a0V" secondAttribute="trailing" constant="12" id="muP-rH-efR"/>
+                        <constraint firstItem="sGY-mj-RaG" firstAttribute="top" secondItem="E77-E4-JvW" secondAttribute="top" constant="5" id="pDp-QR-vX9"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="opened this issue 3 days ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOY-mm-C9N">
+                    <rect key="frame" x="120" y="92" width="188" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <constraints>
                 <constraint firstItem="4ej-Pw-byw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="4zL-Bs-iRt"/>
                 <constraint firstItem="1Dz-Si-8rS" firstAttribute="top" secondItem="Y6h-gO-vCI" secondAttribute="bottom" constant="5" id="AI4-Gu-OFn"/>
                 <constraint firstItem="Y6h-gO-vCI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Tmq-uD-b9x"/>
+                <constraint firstItem="4ej-Pw-byw" firstAttribute="top" secondItem="E77-E4-JvW" secondAttribute="bottom" constant="20" id="UBz-tZ-8Hp"/>
                 <constraint firstItem="1Dz-Si-8rS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="UWw-nU-39Z"/>
                 <constraint firstAttribute="trailing" secondItem="1Dz-Si-8rS" secondAttribute="trailing" constant="20" id="Us6-Fe-zrW"/>
                 <constraint firstItem="Y6h-gO-vCI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Z2x-K4-DqB"/>
                 <constraint firstAttribute="trailing" secondItem="4ej-Pw-byw" secondAttribute="trailing" constant="16" id="l9w-XK-xp5"/>
+                <constraint firstItem="dOY-mm-C9N" firstAttribute="leading" secondItem="E77-E4-JvW" secondAttribute="trailing" constant="10" id="o9e-Vi-H1F"/>
                 <constraint firstAttribute="trailing" secondItem="Y6h-gO-vCI" secondAttribute="trailing" constant="20" id="ot6-je-igr"/>
-                <constraint firstItem="4ej-Pw-byw" firstAttribute="top" secondItem="1Dz-Si-8rS" secondAttribute="bottom" constant="20" id="qq4-60-kaP"/>
+                <constraint firstItem="E77-E4-JvW" firstAttribute="top" secondItem="1Dz-Si-8rS" secondAttribute="bottom" constant="5" id="pqE-od-79q"/>
+                <constraint firstItem="E77-E4-JvW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="yhX-Kp-NTE"/>
+                <constraint firstItem="dOY-mm-C9N" firstAttribute="centerY" secondItem="E77-E4-JvW" secondAttribute="centerY" id="zgg-BJ-mEA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="dateLabel" destination="dOY-mm-C9N" id="BYV-oN-lb6"/>
                 <outlet property="descriptionTextView" destination="4ej-Pw-byw" id="KtG-x0-DLw"/>
                 <outlet property="idLabel" destination="Y6h-gO-vCI" id="DZS-8z-kuj"/>
+                <outlet property="statusText" destination="Zo9-lp-a0V" id="0ob-Jf-511"/>
+                <outlet property="statusView" destination="E77-E4-JvW" id="G0t-w0-ht7"/>
                 <outlet property="titleLabel" destination="1Dz-Si-8rS" id="TWb-Lk-OcB"/>
             </connections>
-            <point key="canvasLocation" x="201" y="192"/>
+            <point key="canvasLocation" x="201" y="208.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_issue_white" width="36" height="36"/>
+    </resources>
 </document>

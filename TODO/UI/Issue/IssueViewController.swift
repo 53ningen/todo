@@ -139,7 +139,7 @@ private enum IssueViewSection: Int {
     
     var heightForHeaderInSection: CGFloat {
         switch self {
-        case .Info: return 198
+        case .Info: return 210
         case .Labels: return 56
         }
     }

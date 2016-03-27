@@ -75,6 +75,14 @@ extension UIColor {
         return UIColor(red: 76/255, green: 74/255, blue: 66/255, alpha: 1)
     }
     
+    static var issueOpenColor: UIColor {
+        return UIColor(red: 107/255, green: 204/255, blue: 73/255, alpha: 1)
+    }
+    
+    static var issueClosedColor: UIColor {
+        return UIColor(red: 189/255, green: 26/255, blue: 0/255, alpha: 1)
+    }
+    
 }
 
 extension Date {
