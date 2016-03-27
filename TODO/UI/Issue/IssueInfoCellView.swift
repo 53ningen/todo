@@ -26,7 +26,7 @@ final class IssueInfoCellView: UITableViewCell {
         statusText.text = issue.info.state.rawValue.capitalizedString
         let status = issue.info.state == .Open ? "opened" : "closed"
         let dateText = issue.info.state.closedAt?.formattedString ?? issue.info.createdAt.formattedString
-        dateLabel.text = "\(status) this issue at \(dateText)"
+        dateLabel.text = "\(status) this issue on \(dateText)"
     }
     
 }
