@@ -64,7 +64,6 @@ final class AddIssueViewController: BaseViewController {
         // View ~> ViewModel
         titleTextField.rx_text.bindTo(viewModel.title).addDisposableTo(disposeBag)
         descriptionTextView.rx_text.bindTo(viewModel.desc).addDisposableTo(disposeBag)
-        //milestonePicker.rx_
     }
     
 }
