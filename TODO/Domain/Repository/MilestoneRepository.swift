@@ -9,5 +9,8 @@ public protocol MilestoneRepository {
     
     /// Milestoneの追加
     func add(milestone: Milestone)
+    
+    /// Milestoneの削除
+    func remove(id: Id<Milestone>)
         
 }

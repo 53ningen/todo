@@ -20,6 +20,14 @@ public class MilestoneRepositoryOnRealm: MilestoneRepository {
         }
     }
     
+    public func remove(id: Id<Milestone>) {
+        try! realm.write {
+            realm.objectForPrimaryKey(MilestoneObject.self, key: id.value).forEach {
+                self.realm.delete($0)
+            }
+        }
+    }
+    
 }
 
 extension MilestoneObject {
