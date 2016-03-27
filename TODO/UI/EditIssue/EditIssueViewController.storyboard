@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Add Issue View Controller-->
+        <!--Edit Issue View Controller-->
         <scene sceneID="NdE-eF-bU3">
             <objects>
-                <viewController storyboardIdentifier="AddIssueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fhF-Hb-1x2" customClass="AddIssueViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditIssueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fhF-Hb-1x2" customClass="EditIssueViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ah6-uo-UZh"/>
                         <viewControllerLayoutGuide type="bottom" id="NFq-8e-nns"/>

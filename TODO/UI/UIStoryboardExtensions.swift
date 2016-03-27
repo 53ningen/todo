@@ -17,8 +17,8 @@ extension UIStoryboard {
         return vc
     }
     
-    static var addIssueViewController: AddIssueViewController {
-        return UIViewController.of(AddIssueViewController.self)
+    static var editIssueViewController: EditIssueViewController {
+        return UIViewController.of(EditIssueViewController.self)
     }
     
     static var addLabelViewController: AddLabelViewController {

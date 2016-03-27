@@ -1,9 +1,9 @@
 import UIKit
 import Foundation
 
-final class AddIssueViewController: BaseViewController {
+final class EditIssueViewController: BaseViewController {
     
-    private let viewModel: AddIssueViewModel = AddIssueViewModel()
+    private let viewModel: EditIssueViewModel = EditIssueViewModel()
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -68,7 +68,7 @@ final class AddIssueViewController: BaseViewController {
     
 }
 
-extension AddIssueViewController: UIPickerViewDataSource {
+extension EditIssueViewController: UIPickerViewDataSource {
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -80,7 +80,7 @@ extension AddIssueViewController: UIPickerViewDataSource {
     
 }
 
-extension AddIssueViewController: UIPickerViewDelegate {
+extension EditIssueViewController: UIPickerViewDelegate {
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         viewModel.milestone.value = viewModel.milestones.value.safeIndex(row - 1)

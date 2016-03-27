@@ -1,7 +1,7 @@
 import RxSwift
 import Foundation
 
-class AddIssueViewModel {
+class EditIssueViewModel {
     
     private lazy var issueRepository: IssueRepository = AppModules.issueRepository
     private lazy var milestoneRepository: MilestoneRepository = AppModules.milestoneRepository
