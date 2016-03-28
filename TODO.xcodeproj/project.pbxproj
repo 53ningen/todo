@@ -134,6 +134,9 @@
 		FF9801B81CA6DD3F00AD1BBD /* MilestoneCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MilestoneCellView.xib; sourceTree = "<group>"; };
 		FF9801BA1CA6E3E300AD1BBD /* MilestoneCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilestoneCellView.swift; sourceTree = "<group>"; };
 		FF9801BE1CA6EADC00AD1BBD /* MainIssuesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainIssuesViewController.storyboard; sourceTree = "<group>"; };
+		FF9D136E1CA911A500BE23E6 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
+		FF9D136F1CA911A500BE23E6 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
+		FF9D13701CA911A500BE23E6 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		FF9FA52A1CA82016000CE4CD /* HeaderCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCellView.swift; sourceTree = "<group>"; };
 		FF9FA52C1CA82026000CE4CD /* HeaderCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCellView.xib; sourceTree = "<group>"; };
 		FFA390621C9C1935000A0CA4 /* MainMilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMilestonesViewController.swift; sourceTree = "<group>"; };
@@ -414,6 +417,9 @@
 				FFE38D871C9302070045F8D1 /* TODOTests */,
 				FFE38D921C9302070045F8D1 /* TODOUITests */,
 				FFA3906D1C9D07E0000A0CA4 /* Cartfile */,
+				FF9D136E1CA911A500BE23E6 /* Cartfile.resolved */,
+				FF9D136F1CA911A500BE23E6 /* Gemfile */,
+				FF9D13701CA911A500BE23E6 /* Gemfile.lock */,
 				FFF860711C96CF4500C16794 /* LICENSE */,
 				FFF860721C96D40300C16794 /* README.md */,
 				FFA390751C9D0E11000A0CA4 /* Realm.framework */,
