@@ -29,6 +29,30 @@ class ArrayExtensionsSpec: QuickSpec {
                 expect([0, 1, 2, 3, 4, 5].safeIndex(NSIndexPath(forItem: Int.min, inSection: 0))).to(beNil())
             }
         }
+        describe("Array#any(Element->Bool)") {
+            it("true判定ケース") {
+                expect([0, 1, 2, 3, 4, 5].any { $0 == 0 }).to(beTrue())
+                expect([0, 1, 2, 3, 4, 5].any { $0 == 3 }).to(beTrue())
+                expect([0, 1, 2, 3, 4, 5].any { $0 == 5 }).to(beTrue())
+            }
+            it("false判定ケース") {
+                expect([0, 1, 2, 3, 4, 5].any { $0 == -1 }).to(beFalse())
+                expect([0, 1, 2, 3, 4, 5].any { $0 == 6 }).to(beFalse())
+                expect([].any { $0 == 0 }).to(beFalse())
+            }
+        }
+        describe("Array#any(Element)") {
+            it("true判定ケース") {
+                expect([0, 1, 2, 3, 4, 5].any(0)).to(beTrue())
+                expect([0, 1, 2, 3, 4, 5].any(3)).to(beTrue())
+                expect([0, 1, 2, 3, 4, 5].any(5)).to(beTrue())
+            }
+            it("false判定ケース") {
+                expect([0, 1, 2, 3, 4, 5].any(-1)).to(beFalse())
+                expect([0, 1, 2, 3, 4, 5].any(6)).to(beFalse())
+                expect([].any(0)).to(beFalse())
+            }
+        }
     }
 
 }
