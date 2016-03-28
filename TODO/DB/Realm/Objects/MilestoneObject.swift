@@ -1,6 +1,7 @@
 import Foundation
 import RealmSwift
 
+/// RealmのMilestoneテーブルスキーマを規定するRecordObject
 class MilestoneObject: Object {
     
     dynamic var id: String = ""

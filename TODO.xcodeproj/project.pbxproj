@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF0DED981C998B1200B8FE77 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED971C998B1200B8FE77 /* UIState.swift */; };
-		FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */; };
 		FF0E988B1CA7D34200FA1224 /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E988A1CA7D34200FA1224 /* UIStoryboardExtensions.swift */; };
 		FF0E988D1CA7D92F00FA1224 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E988C1CA7D92F00FA1224 /* ApplicationSettings.swift */; };
 		FF0E98931CA7F88B00FA1224 /* IssueInfoCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0E98921CA7F88B00FA1224 /* IssueInfoCellView.xib */; };
@@ -106,8 +104,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FF0DED971C998B1200B8FE77 /* UIState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
-		FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		FF0E988A1CA7D34200FA1224 /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
 		FF0E988C1CA7D92F00FA1224 /* ApplicationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
 		FF0E98921CA7F88B00FA1224 /* IssueInfoCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueInfoCellView.xib; sourceTree = "<group>"; };
@@ -515,8 +511,6 @@
 				FFA3906A1C9C252D000A0CA4 /* Shared */,
 				FFE38D7A1C9302070045F8D1 /* Assets.xcassets */,
 				FFF8606F1C96C21900C16794 /* BaseViewController.swift */,
-				FF0DED9B1C9A4F0C00B8FE77 /* Router.swift */,
-				FF0DED971C998B1200B8FE77 /* UIState.swift */,
 				FF0E988A1CA7D34200FA1224 /* UIStoryboardExtensions.swift */,
 				FFF8606C1C96BF1F00C16794 /* UIUtils.swift */,
 			);
@@ -738,9 +732,7 @@
 				FFF8606D1C96BF1F00C16794 /* UIUtils.swift in Sources */,
 				FF62057D1CA6FD480058BEB5 /* MainMilestonesViewModel.swift in Sources */,
 				FF0E98951CA7F8A900FA1224 /* IssueInfoCellView.swift in Sources */,
-				FF0DED981C998B1200B8FE77 /* UIState.swift in Sources */,
 				FFA3907C1C9D1018000A0CA4 /* MilestoneObject.swift in Sources */,
-				FF0DED9C1C9A4F0C00B8FE77 /* Router.swift in Sources */,
 				FF58D4491CA4339300D58B26 /* AddMilestoneViewModel.swift in Sources */,
 				FFA390911CA26B1B000A0CA4 /* LabelRepositoryOnRealm.swift in Sources */,
 				FF58D4391CA40DED00D58B26 /* EditIssueViewModel.swift in Sources */,

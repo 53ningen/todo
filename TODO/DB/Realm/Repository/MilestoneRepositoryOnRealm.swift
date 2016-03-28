@@ -1,6 +1,7 @@
 import RealmSwift
 import Foundation
 
+/// MilestoneRepositoryのRealm実装
 public class MilestoneRepositoryOnRealm: MilestoneRepository {
     
     private let realm: Realm = try! Realm()

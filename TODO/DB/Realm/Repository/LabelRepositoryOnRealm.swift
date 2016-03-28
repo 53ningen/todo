@@ -1,5 +1,6 @@
 import RealmSwift
 
+/// LabelRepositoryのRealm実装
 public class LabelRepositoryOnRealm: LabelRepository {
     
     private let realm: Realm = try! Realm()

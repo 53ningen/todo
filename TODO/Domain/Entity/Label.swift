@@ -1,4 +1,4 @@
-/// ラベルを表す
+/// ラベルを表すエンティティ
 
 public final class LabelInfo: EntityInfo {
     

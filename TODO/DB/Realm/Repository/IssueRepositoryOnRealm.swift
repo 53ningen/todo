@@ -1,6 +1,7 @@
 import Foundation
 import RealmSwift
 
+/// IssueRepositoryのRealm実装
 public class IssueRepositoryOnRealm: IssueRepository {
     
     private let realm: Realm = try! Realm()

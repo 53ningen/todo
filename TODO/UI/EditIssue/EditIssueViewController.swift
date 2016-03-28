@@ -40,6 +40,16 @@ final class EditIssueViewController: BaseViewController {
         subscribeEvents()
     }
     
+    private func bind() {
+        // ViewModel ~> View
+        viewModel.submittable.bindTo(submitButton.rx_enabled).addDisposableTo(disposeBag)
+        viewModel.milestones.asObservable().map { _ in () }.subscribeNext(milestonePicker.reloadAllComponents).addDisposableTo(disposeBag)
+        
+        // View ~> ViewModel
+        titleTextField.rx_text.bindTo(viewModel.title).addDisposableTo(disposeBag)
+        descriptionTextView.rx_text.bindTo(viewModel.desc).addDisposableTo(disposeBag)
+    }
+    
     private func subscribeEvents() {
         cancelButton.rx_tap.single()
             .subscribeNext { [weak self] _ in self?.dismissViewControllerAnimated(true, completion: nil) }
@@ -66,16 +76,6 @@ final class EditIssueViewController: BaseViewController {
             .addDisposableTo(disposeBag)
     }
     
-    private func bind() {
-        // ViewModel ~> View
-        viewModel.submittable.bindTo(submitButton.rx_enabled).addDisposableTo(disposeBag)
-        viewModel.milestones.asObservable().map { _ in () }.subscribeNext(milestonePicker.reloadAllComponents).addDisposableTo(disposeBag)
-
-        // View ~> ViewModel
-        titleTextField.rx_text.bindTo(viewModel.title).addDisposableTo(disposeBag)
-        descriptionTextView.rx_text.bindTo(viewModel.desc).addDisposableTo(disposeBag)
-    }
-    
 }
 
 extension EditIssueViewController: UIPickerViewDataSource {
@@ -93,7 +93,6 @@ extension EditIssueViewController: UIPickerViewDataSource {
 extension EditIssueViewController: UIPickerViewDelegate {
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        NSLog("\(viewModel.milestones.value.safeIndex(row - 1))")
         viewModel.milestone.value = viewModel.milestones.value.safeIndex(row - 1)
     }
     

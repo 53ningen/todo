@@ -1,4 +1,4 @@
-/// マイルストンを表す
+/// マイルストンを表すエンティティ
 
 public final class MilestoneInfo: EntityInfo {
     

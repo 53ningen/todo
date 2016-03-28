@@ -1,5 +1,4 @@
-/// Issue を表す
-
+/// イシューを表すエンティティ
 public final class IssueInfo: EntityInfo {
 
     public let title: String

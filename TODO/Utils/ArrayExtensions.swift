@@ -2,10 +2,12 @@ import Foundation
 
 extension Array {
     
+    /// IndexOutOfBoundsErrorを防ぐためのユーティリティメソッド
     func safeIndex(index: NSIndexPath) -> Element? {
         return safeIndex(index.item)
     }
-    
+
+    /// IndexOutOfBoundsErrorを防ぐためのユーティリティメソッド
     func safeIndex(index: Int) -> Element? {
         return index >= 0 && index < self.count ? self[index] : nil
     }

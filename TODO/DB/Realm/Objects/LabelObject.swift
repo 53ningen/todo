@@ -1,6 +1,7 @@
 import Foundation
 import RealmSwift
 
+/// RealmのLabelテーブルスキーマを規定するRecordObject
 class LabelObject: Object {
     
     dynamic var id: String = ""
