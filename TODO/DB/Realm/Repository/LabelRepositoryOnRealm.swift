@@ -27,6 +27,12 @@ public class LabelRepositoryOnRealm: LabelRepository {
         }
     }
     
+    internal func deleteAll() {
+        try! realm.write {
+            realm.deleteAll()
+        }
+    }
+    
 }
 
 extension LabelObject {

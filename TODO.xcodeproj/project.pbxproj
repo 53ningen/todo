@@ -44,6 +44,7 @@
 		FF9D13771CA91A6E00BE23E6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE38DA21C9305450045F8D1 /* RxCocoa.framework */; };
 		FF9D13791CA91B9A00BE23E6 /* ArrayExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D13721CA9190A00BE23E6 /* ArrayExtensionsSpec.swift */; };
 		FF9D137E1CA9209500BE23E6 /* IssueRepositoryOnRealmSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D137D1CA9209500BE23E6 /* IssueRepositoryOnRealmSpec.swift */; };
+		FF9D13801CA9260C00BE23E6 /* LabelRepositoryOnRealmSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D137F1CA9260C00BE23E6 /* LabelRepositoryOnRealmSpec.swift */; };
 		FF9FA52B1CA82016000CE4CD /* HeaderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9FA52A1CA82016000CE4CD /* HeaderCellView.swift */; };
 		FF9FA52D1CA82026000CE4CD /* HeaderCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9FA52C1CA82026000CE4CD /* HeaderCellView.xib */; };
 		FFA390631C9C1935000A0CA4 /* MainMilestonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390621C9C1935000A0CA4 /* MainMilestonesViewController.swift */; };
@@ -149,6 +150,7 @@
 		FF9D13701CA911A500BE23E6 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		FF9D13721CA9190A00BE23E6 /* ArrayExtensionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsSpec.swift; sourceTree = "<group>"; };
 		FF9D137D1CA9209500BE23E6 /* IssueRepositoryOnRealmSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueRepositoryOnRealmSpec.swift; sourceTree = "<group>"; };
+		FF9D137F1CA9260C00BE23E6 /* LabelRepositoryOnRealmSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelRepositoryOnRealmSpec.swift; sourceTree = "<group>"; };
 		FF9FA52A1CA82016000CE4CD /* HeaderCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCellView.swift; sourceTree = "<group>"; };
 		FF9FA52C1CA82026000CE4CD /* HeaderCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCellView.xib; sourceTree = "<group>"; };
 		FFA390621C9C1935000A0CA4 /* MainMilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMilestonesViewController.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				FF9D137D1CA9209500BE23E6 /* IssueRepositoryOnRealmSpec.swift */,
+				FF9D137F1CA9260C00BE23E6 /* LabelRepositoryOnRealmSpec.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -907,6 +910,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF9D13801CA9260C00BE23E6 /* LabelRepositoryOnRealmSpec.swift in Sources */,
 				FF9D13791CA91B9A00BE23E6 /* ArrayExtensionsSpec.swift in Sources */,
 				FF9D137E1CA9209500BE23E6 /* IssueRepositoryOnRealmSpec.swift in Sources */,
 				FFE38D891C9302070045F8D1 /* TODOTests.swift in Sources */,

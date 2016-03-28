@@ -17,8 +17,6 @@ public final class LabelInfo: EntityInfo {
 extension LabelInfo: Equatable {}
 public func ==(lhs: LabelInfo, rhs: LabelInfo) -> Bool {
     return lhs.color == rhs.color
-        && lhs.openIssuesCount == rhs.openIssuesCount
-        && lhs.closedIssuesCount == rhs.closedIssuesCount
 }
 
 public final class Label: Entity, Equatable {
