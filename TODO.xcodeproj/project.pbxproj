@@ -38,6 +38,11 @@
 		FF9801B91CA6DD3F00AD1BBD /* MilestoneCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9801B81CA6DD3F00AD1BBD /* MilestoneCellView.xib */; };
 		FF9801BB1CA6E3E300AD1BBD /* MilestoneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9801BA1CA6E3E300AD1BBD /* MilestoneCellView.swift */; };
 		FF9801BF1CA6EADC00AD1BBD /* MainIssuesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9801BE1CA6EADC00AD1BBD /* MainIssuesViewController.storyboard */; };
+		FF9D13741CA91A3600BE23E6 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA390751C9D0E11000A0CA4 /* Realm.framework */; };
+		FF9D13751CA91A5600BE23E6 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA390731C9D0E07000A0CA4 /* RealmSwift.framework */; };
+		FF9D13761CA91A6400BE23E6 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE38DA71C93075B0045F8D1 /* RxSwift.framework */; };
+		FF9D13771CA91A6E00BE23E6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE38DA21C9305450045F8D1 /* RxCocoa.framework */; };
+		FF9D13791CA91B9A00BE23E6 /* ArrayExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D13721CA9190A00BE23E6 /* ArrayExtensionsSpec.swift */; };
 		FF9FA52B1CA82016000CE4CD /* HeaderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9FA52A1CA82016000CE4CD /* HeaderCellView.swift */; };
 		FF9FA52D1CA82026000CE4CD /* HeaderCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9FA52C1CA82026000CE4CD /* HeaderCellView.xib */; };
 		FFA390631C9C1935000A0CA4 /* MainMilestonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA390621C9C1935000A0CA4 /* MainMilestonesViewController.swift */; };
@@ -141,6 +146,7 @@
 		FF9D136E1CA911A500BE23E6 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		FF9D136F1CA911A500BE23E6 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		FF9D13701CA911A500BE23E6 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
+		FF9D13721CA9190A00BE23E6 /* ArrayExtensionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsSpec.swift; sourceTree = "<group>"; };
 		FF9FA52A1CA82016000CE4CD /* HeaderCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCellView.swift; sourceTree = "<group>"; };
 		FF9FA52C1CA82026000CE4CD /* HeaderCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCellView.xib; sourceTree = "<group>"; };
 		FFA390621C9C1935000A0CA4 /* MainMilestonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMilestonesViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +221,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF9D13771CA91A6E00BE23E6 /* RxCocoa.framework in Frameworks */,
+				FF9D13761CA91A6400BE23E6 /* RxSwift.framework in Frameworks */,
+				FF9D13751CA91A5600BE23E6 /* RealmSwift.framework in Frameworks */,
+				FF9D13741CA91A3600BE23E6 /* Realm.framework in Frameworks */,
 				FECCC410F92736C1980C7E83 /* Pods_TODOTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +324,14 @@
 				FFA390771C9D0F73000A0CA4 /* RealmCommon.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		FF9D13711CA918F600BE23E6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FF9D13721CA9190A00BE23E6 /* ArrayExtensionsSpec.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		FFA3905F1C9C111D000A0CA4 /* Milestones */ = {
@@ -434,6 +452,8 @@
 		FFE38D671C9302070045F8D1 = {
 			isa = PBXGroup;
 			children = (
+				896D9F766B20BC9280ECAA6E /* Frameworks */,
+				72F8D4468A56EE3DD2B28A96 /* Pods */,
 				FFE38D711C9302070045F8D1 /* Products */,
 				FFE38D721C9302070045F8D1 /* TODO */,
 				FFE38D871C9302070045F8D1 /* TODOTests */,
@@ -448,8 +468,6 @@
 				FFA390731C9D0E07000A0CA4 /* RealmSwift.framework */,
 				FFE38DA21C9305450045F8D1 /* RxCocoa.framework */,
 				FFE38DA71C93075B0045F8D1 /* RxSwift.framework */,
-				72F8D4468A56EE3DD2B28A96 /* Pods */,
-				896D9F766B20BC9280ECAA6E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -481,6 +499,7 @@
 		FFE38D871C9302070045F8D1 /* TODOTests */ = {
 			isa = PBXGroup;
 			children = (
+				FF9D13711CA918F600BE23E6 /* Utils */,
 				FFE38D8A1C9302070045F8D1 /* Info.plist */,
 				FFE38D881C9302070045F8D1 /* TODOTests.swift */,
 			);
@@ -598,6 +617,7 @@
 				FFE38D821C9302070045F8D1 /* Resources */,
 				0C7CBBF8790C0B4F6293A9D6 /* Embed Pods Frameworks */,
 				E212EA54E425DF5870944457 /* Copy Pods Resources */,
+				FF9D13781CA91A7600BE23E6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -761,6 +781,23 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TODOTests/Pods-TODOTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FF9D13781CA91A7600BE23E6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		FFE38DA11C9304250045F8D1 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -843,6 +880,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF9D13791CA91B9A00BE23E6 /* ArrayExtensionsSpec.swift in Sources */,
 				FFE38D891C9302070045F8D1 /* TODOTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -985,6 +1023,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TODO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.gomi.TODO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1001,6 +1040,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TODO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.gomi.TODO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1012,6 +1052,10 @@
 			baseConfigurationReference = 3F950E32FB7C03E73FD9C2A5 /* Pods-TODOTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TODOTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.gomi.TODOTests;
@@ -1025,6 +1069,10 @@
 			baseConfigurationReference = F874FE2FAEB3513B3F7BAB92 /* Pods-TODOTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TODOTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.gomi.TODOTests;
