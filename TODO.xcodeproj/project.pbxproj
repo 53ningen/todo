@@ -21,9 +21,9 @@
 		FF45B7451CA644AA00BAD306 /* SelectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF45B7441CA644AA00BAD306 /* SelectViewModel.swift */; };
 		FF58D4391CA40DED00D58B26 /* EditIssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D4381CA40DED00D58B26 /* EditIssueViewModel.swift */; };
 		FF58D43B1CA4128A00D58B26 /* UIButtonPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D43A1CA4128A00D58B26 /* UIButtonPlus.swift */; };
-		FF58D43E1CA41BBF00D58B26 /* AddLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D43D1CA41BBF00D58B26 /* AddLabelViewController.swift */; };
-		FF58D4401CA41BFC00D58B26 /* AddLabelViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58D43F1CA41BFC00D58B26 /* AddLabelViewController.storyboard */; };
-		FF58D4421CA41EB300D58B26 /* AddLabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D4411CA41EB300D58B26 /* AddLabelViewModel.swift */; };
+		FF58D43E1CA41BBF00D58B26 /* EditLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D43D1CA41BBF00D58B26 /* EditLabelViewController.swift */; };
+		FF58D4401CA41BFC00D58B26 /* EditLabelViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58D43F1CA41BFC00D58B26 /* EditLabelViewController.storyboard */; };
+		FF58D4421CA41EB300D58B26 /* EditLabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D4411CA41EB300D58B26 /* EditLabelViewModel.swift */; };
 		FF58D4451CA42EB600D58B26 /* EditMilestoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D4441CA42EB600D58B26 /* EditMilestoneViewController.swift */; };
 		FF58D4471CA42EE700D58B26 /* EditMilestoneViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58D4461CA42EE700D58B26 /* EditMilestoneViewController.storyboard */; };
 		FF58D4491CA4339300D58B26 /* EditMilestoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58D4481CA4339300D58B26 /* EditMilestoneViewModel.swift */; };
@@ -128,9 +128,9 @@
 		FF45B7441CA644AA00BAD306 /* SelectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewModel.swift; sourceTree = "<group>"; };
 		FF58D4381CA40DED00D58B26 /* EditIssueViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditIssueViewModel.swift; sourceTree = "<group>"; };
 		FF58D43A1CA4128A00D58B26 /* UIButtonPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonPlus.swift; sourceTree = "<group>"; };
-		FF58D43D1CA41BBF00D58B26 /* AddLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLabelViewController.swift; sourceTree = "<group>"; };
-		FF58D43F1CA41BFC00D58B26 /* AddLabelViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddLabelViewController.storyboard; sourceTree = "<group>"; };
-		FF58D4411CA41EB300D58B26 /* AddLabelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLabelViewModel.swift; sourceTree = "<group>"; };
+		FF58D43D1CA41BBF00D58B26 /* EditLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditLabelViewController.swift; sourceTree = "<group>"; };
+		FF58D43F1CA41BFC00D58B26 /* EditLabelViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditLabelViewController.storyboard; sourceTree = "<group>"; };
+		FF58D4411CA41EB300D58B26 /* EditLabelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditLabelViewModel.swift; sourceTree = "<group>"; };
 		FF58D4441CA42EB600D58B26 /* EditMilestoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditMilestoneViewController.swift; sourceTree = "<group>"; };
 		FF58D4461CA42EE700D58B26 /* EditMilestoneViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditMilestoneViewController.storyboard; sourceTree = "<group>"; };
 		FF58D4481CA4339300D58B26 /* EditMilestoneViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditMilestoneViewModel.swift; sourceTree = "<group>"; };
@@ -282,14 +282,14 @@
 			path = SelectLabels;
 			sourceTree = "<group>";
 		};
-		FF58D43C1CA41B7800D58B26 /* AddLabel */ = {
+		FF58D43C1CA41B7800D58B26 /* EditLabel */ = {
 			isa = PBXGroup;
 			children = (
-				FF58D43F1CA41BFC00D58B26 /* AddLabelViewController.storyboard */,
-				FF58D43D1CA41BBF00D58B26 /* AddLabelViewController.swift */,
-				FF58D4411CA41EB300D58B26 /* AddLabelViewModel.swift */,
+				FF58D43F1CA41BFC00D58B26 /* EditLabelViewController.storyboard */,
+				FF58D43D1CA41BBF00D58B26 /* EditLabelViewController.swift */,
+				FF58D4411CA41EB300D58B26 /* EditLabelViewModel.swift */,
 			);
-			path = AddLabel;
+			path = EditLabel;
 			sourceTree = "<group>";
 		};
 		FF58D4431CA42EA300D58B26 /* EditMilestone */ = {
@@ -578,8 +578,8 @@
 		FFE38DB41C9698D00045F8D1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				FF58D43C1CA41B7800D58B26 /* AddLabel */,
 				FFA3909E1CA2C34A000A0CA4 /* EditIssue */,
+				FF58D43C1CA41B7800D58B26 /* EditLabel */,
 				FF58D4431CA42EA300D58B26 /* EditMilestone */,
 				FFA390941CA28854000A0CA4 /* Issue */,
 				FFCF38DB1CA673FE00DECC7A /* Issues */,
@@ -738,7 +738,7 @@
 				FFE38D791C9302070045F8D1 /* Main.storyboard in Resources */,
 				FFF8607E1C97B06300C16794 /* IssueCellView.xib in Resources */,
 				FF1B95011CA6EFE000E3C2BC /* MainMilestonesViewController.storyboard in Resources */,
-				FF58D4401CA41BFC00D58B26 /* AddLabelViewController.storyboard in Resources */,
+				FF58D4401CA41BFC00D58B26 /* EditLabelViewController.storyboard in Resources */,
 				FF1B94FF1CA6EEE300E3C2BC /* MainLabelsViewController.storyboard in Resources */,
 				FF9801BF1CA6EADC00AD1BBD /* MainIssuesViewController.storyboard in Resources */,
 				FF45B7431CA6442F00BAD306 /* SelectLabelsViewController.storyboard in Resources */,
@@ -856,7 +856,7 @@
 				FF33831F1C990BB300D73743 /* MainIssuesViewController.swift in Sources */,
 				FF8325181CA5CC690028167B /* MainLabelsViewModel.swift in Sources */,
 				FFA390931CA26D98000A0CA4 /* MilestoneRepositoryOnRealm.swift in Sources */,
-				FF58D43E1CA41BBF00D58B26 /* AddLabelViewController.swift in Sources */,
+				FF58D43E1CA41BBF00D58B26 /* EditLabelViewController.swift in Sources */,
 				FF0E98971CA8001400FA1224 /* IssueViewModel.swift in Sources */,
 				FFA3908A1CA26505000A0CA4 /* LabelRepository.swift in Sources */,
 				FFF860771C96D9EF00C16794 /* Milestone.swift in Sources */,
@@ -892,7 +892,7 @@
 				FFA390651C9C1969000A0CA4 /* MainLabelsViewController.swift in Sources */,
 				FFA390881CA263CE000A0CA4 /* IssueRepository.swift in Sources */,
 				FFA3908F1CA266FB000A0CA4 /* IssueRepositoryOnRealm.swift in Sources */,
-				FF58D4421CA41EB300D58B26 /* AddLabelViewModel.swift in Sources */,
+				FF58D4421CA41EB300D58B26 /* EditLabelViewModel.swift in Sources */,
 				FFA390721C9D0DE5000A0CA4 /* IssueObject.swift in Sources */,
 				FF58D4451CA42EB600D58B26 /* EditMilestoneViewController.swift in Sources */,
 				FFF860841C97B95F00C16794 /* LabelCellView.swift in Sources */,

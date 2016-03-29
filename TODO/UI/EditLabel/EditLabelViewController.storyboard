@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Add Label View Controller-->
+        <!--Edit Label View Controller-->
         <scene sceneID="yzd-A7-dwS">
             <objects>
-                <viewController storyboardIdentifier="AddLabelViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ltH-WO-aOg" customClass="AddLabelViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditLabelViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ltH-WO-aOg" customClass="EditLabelViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iq0-A2-dyO"/>
                         <viewControllerLayoutGuide type="bottom" id="tm3-7b-3l1"/>

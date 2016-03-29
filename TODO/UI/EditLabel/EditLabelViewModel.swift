@@ -1,6 +1,6 @@
 import RxSwift
 
-final class AddLabelViewModel {
+final class EditLabelViewModel {
     
     private let labelRepository: LabelRepository = AppModules.labelRepository
     

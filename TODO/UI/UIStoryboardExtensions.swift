@@ -23,8 +23,8 @@ extension UIStoryboard {
         return vc
     }
     
-    static var addLabelViewController: AddLabelViewController {
-        return UIViewController.of(AddLabelViewController.self)
+    static var addLabelViewController: EditLabelViewController {
+        return UIViewController.of(EditLabelViewController.self)
     }
     
     static var addMilestoneViewController: EditMilestoneViewController {

@@ -2,9 +2,9 @@ import UIKit
 import RxSwift
 import Foundation
 
-final class AddLabelViewController: BaseViewController {
+final class EditLabelViewController: BaseViewController {
 
-    private let viewModel: AddLabelViewModel = AddLabelViewModel()
+    private let viewModel: EditLabelViewModel = EditLabelViewModel()
     
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var nameTextField: UITextField!
