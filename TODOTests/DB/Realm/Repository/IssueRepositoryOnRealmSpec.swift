@@ -47,6 +47,10 @@ class IssueRepositoryOnRealmSpec: QuickSpec {
                 expect(repo.findAll().safeIndex(0)?.closed).to(beFalse())
             }
         }
+        
+        afterSuite {
+            repo.deleteAll()
+        }
     }
 
 }

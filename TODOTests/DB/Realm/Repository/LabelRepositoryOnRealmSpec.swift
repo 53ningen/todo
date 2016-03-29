@@ -39,6 +39,10 @@ class LabelRepositoryOnRealmSpec: QuickSpec {
                 expect(repo.findById(id1)).to(equal(label))
             }
         }
+        
+        afterSuite {
+            repo.deleteAll()
+        }
     }
 
 }
