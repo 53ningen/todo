@@ -82,6 +82,14 @@ extension IssuesViewController: UITableViewDelegate {
         return 75
     }
     
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return (viewModel?.issues.value.isEmpty ?? true) ? FooterCellView.noContentView() :FooterCellView.upToDateView()
+    }
+    
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         switch editingStyle {
         case .Delete: viewModel?.issues.value.safeIndex(indexPath.item).map { $0.id }.forEach { self.viewModel?.toggleIssueState($0) }

@@ -108,6 +108,14 @@ extension MainMilestonesViewController: UITableViewDelegate {
         return [closeAction, deleteAction]
     }
     
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return viewModel.milestones.value.isEmpty ? FooterCellView.noContentView() : FooterCellView.upToDateView()
+    }
+    
 }
 
 extension MilestoneState {

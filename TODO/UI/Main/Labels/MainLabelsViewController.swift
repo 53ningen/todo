@@ -74,5 +74,13 @@ final class MainLabelsViewController: BaseTableViewController {
             self.presentViewController(alert, animated: true, completion: nil)
         })]
     }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return viewModel.labels.value.isEmpty ? FooterCellView.noContentView() :FooterCellView.upToDateView()
+    }
 
 }

@@ -103,6 +103,14 @@ extension MainIssuesViewController: UITableViewDelegate {
             }
         })]
     }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return viewModel.issues.value.isEmpty ? FooterCellView.noContentView() : FooterCellView.upToDateView()
+    }
 
 }
 
