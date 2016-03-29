@@ -1,7 +1,7 @@
 import RxSwift
 import Foundation
 
-final class AddMilestoneViewModel {
+final class EditMilestoneViewModel {
     
     private let milestoneRepository: MilestoneRepository = AppModules.milestoneRepository
     

@@ -1,9 +1,9 @@
 import UIKit
 import RxSwift
 
-final class AddMilestoneViewController: BaseViewController {
+final class EditMilestoneViewController: BaseViewController {
     
-    private let viewModel: AddMilestoneViewModel = AddMilestoneViewModel()
+    private let viewModel: EditMilestoneViewModel = EditMilestoneViewModel()
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!

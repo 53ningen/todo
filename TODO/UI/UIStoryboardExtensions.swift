@@ -27,8 +27,8 @@ extension UIStoryboard {
         return UIViewController.of(AddLabelViewController.self)
     }
     
-    static var addMilestoneViewController: AddMilestoneViewController {
-        return UIViewController.of(AddMilestoneViewController.self)
+    static var addMilestoneViewController: EditMilestoneViewController {
+        return UIViewController.of(EditMilestoneViewController.self)
     }
     
     static func issuesViewController(query: IssuesQuery) -> IssuesViewController {

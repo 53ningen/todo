@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Add Milestone View Controller-->
+        <!--Edit Milestone View Controller-->
         <scene sceneID="mQl-iT-nuL">
             <objects>
-                <viewController storyboardIdentifier="AddMilestoneViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="89u-kh-vMs" customClass="AddMilestoneViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditMilestoneViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="89u-kh-vMs" customClass="EditMilestoneViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ra3-FZ-sUN"/>
                         <viewControllerLayoutGuide type="bottom" id="KnX-dz-RXD"/>
