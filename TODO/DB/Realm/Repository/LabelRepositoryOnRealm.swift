@@ -29,7 +29,7 @@ public class LabelRepositoryOnRealm: LabelRepository {
     
     internal func deleteAll() {
         try! realm.write {
-            realm.deleteAll()
+            realm.delete(realm.objects(LabelObject))
         }
     }
     
