@@ -14,6 +14,19 @@ class LabelRepositoryOnRealmSpec: QuickSpec {
             repo.deleteAll()
         }
         
+        describe("LabelRepositoryのWrite系が正常に動作する") {
+            it("add") {
+                expect(repo.findAll()).to(equal([]))
+                repo.add(label)
+                expect(repo.findAll()).to(equal([label]))
+            }
+            it("remove") {
+                repo.add(label)
+                expect(repo.findById(id1)).to(equal(label))
+                repo.remove(id1)
+                expect(repo.findAll()).to(equal([]))
+            }
+        }
         describe("LabelRepositoryのRead系が正常に動作する") {
             it("findAll") {
                 expect(repo.findAll()).to(equal([]))

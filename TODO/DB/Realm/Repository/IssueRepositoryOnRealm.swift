@@ -92,7 +92,7 @@ public class IssueRepositoryOnRealm: IssueRepository {
         }
     }
     
-    public func deleteAll() {
+    internal func deleteAll() {
         try! realm.write {
             realm.delete(realm.objects(IssueObject))
         }
