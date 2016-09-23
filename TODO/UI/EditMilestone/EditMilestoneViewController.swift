@@ -41,19 +41,19 @@ final class EditMilestoneViewController: BaseViewController {
     
     private func subscribeEvent() {
         createNewButton.rx_tap
-            .subscribeNext { [weak self] _ in
+            .subscribe(onNext: { [weak self] _ in
                 self?.viewModel.submit()
                 self?.dismissViewControllerAnimated(true, completion: nil)
-            }
+            })
             .addDisposableTo(disposeBag)
         cancelButton.rx_tap
-            .subscribeNext { [weak self] _ in self?.dismissViewControllerAnimated(true, completion: nil) }
+            .subscribe(onNext: { [weak self] _ in self?.dismissViewControllerAnimated(true, completion: nil) })
             .addDisposableTo(disposeBag)
         tapGestureRecognizer.rx_event
-            .subscribeNext { [weak self] _ in
+            .subscribe(onNext: { [weak self] _ in
                 self?.titleTextField.resignFirstResponder()
                 self?.descriptionTextView.resignFirstResponder()
-            }
+            })
             .addDisposableTo(disposeBag)
     }
 }

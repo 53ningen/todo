@@ -35,7 +35,7 @@ final class MainMilestonesViewController: BaseViewController {
     
     func bind() {
         /// model ~> view
-        viewModel.milestones.asObservable().subscribeNext { [weak self] _ in self?.tableView.reloadData() }.addDisposableTo(disposeBag)
+        viewModel.milestones.asObservable().subscribe(onNext: { [weak self] _ in self?.tableView.reloadData() }).addDisposableTo(disposeBag)
         viewModel.segment.asObservable().map { $0.toSegment }.bindTo(segmentedControl.rx_value).addDisposableTo(disposeBag)
         
         // view ~> model
@@ -43,19 +43,19 @@ final class MainMilestonesViewController: BaseViewController {
     }
     
     private func subscribeEvents() {
-        segmentedControl.rx_value.map { _ in () }.subscribeNext(viewModel.updateMilestones).addDisposableTo(disposeBag)
+        segmentedControl.rx_value.map { _ in () }.subscribe(onNext: viewModel.updateMilestones).addDisposableTo(disposeBag)
         tableView.rx_itemSelected.single()
-            .subscribeNext { [weak self] indexPath in
+            .subscribe(onNext: { [weak self] indexPath in
                 if let milestone = self?.viewModel.milestones.value.safeIndex(indexPath.item) {
                     self?.tableView.deselectRowAtIndexPath(indexPath, animated: true)
                     self?.navigationController?.pushViewController(UIStoryboard.issuesViewController(IssuesQuery.MilestoneQuery(milestone: milestone)), animated: true)
                 }
-            }
+            })
             .addDisposableTo(disposeBag)
         createNewButton.rx_tap.single()
-            .subscribeNext { [weak self] _ in
+            .subscribe(onNext: { [weak self] _ in
                 self?.presentViewController(UIStoryboard.addMilestoneViewController, animated: true, completion: nil)
-            }
+            })
             .addDisposableTo(disposeBag)
     }
     

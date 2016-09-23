@@ -43,7 +43,7 @@ final class EditIssueViewController: BaseViewController {
     private func bind() {
         // ViewModel ~> View
         viewModel.submittable.bindTo(submitButton.rx_enabled).addDisposableTo(disposeBag)
-        viewModel.milestones.asObservable().map { _ in () }.subscribeNext(milestonePicker.reloadAllComponents).addDisposableTo(disposeBag)
+        viewModel.milestones.asObservable().map { _ in () }.subscribe(onNext: milestonePicker.reloadAllComponents).addDisposableTo(disposeBag)
         
         // View ~> ViewModel
         titleTextField.rx_text.bindTo(viewModel.title).addDisposableTo(disposeBag)
@@ -52,27 +52,27 @@ final class EditIssueViewController: BaseViewController {
     
     private func subscribeEvents() {
         cancelButton.rx_tap.single()
-            .subscribeNext { [weak self] _ in self?.dismissViewControllerAnimated(true, completion: nil) }
+            .subscribe(onNext: { [weak self] _ in self?.dismissViewControllerAnimated(true, completion: nil) })
             .addDisposableTo(disposeBag)
         tapGestureRecognizer.rx_event
-            .subscribeNext { [weak self] _ in
+            .subscribe(onNext: { [weak self] _ in
                 self?.titleTextField.resignFirstResponder()
                 self?.descriptionTextView.resignFirstResponder()
-            }
+            })
             .addDisposableTo(disposeBag)
         selectLabelsButton.rx_tap
-            .subscribeNext { [weak self] _ in
+            .subscribe(onNext: { [weak self] _ in
                 self.forEach {
                     let vc = UIStoryboard.selectLabelsViewController($0.viewModel.labels)
                     $0.presentViewController(vc, animated: true, completion: nil)
                 }
-            }
+            })
             .addDisposableTo(disposeBag)
         submitButton.rx_tap.single()
-            .subscribeNext { [weak self] _ in
+            .subscribe(onNext: { [weak self] _ in
                 self?.viewModel.submit()
                 self?.dismissViewControllerAnimated(true, completion: nil)
-            }
+            })
             .addDisposableTo(disposeBag)
     }
     

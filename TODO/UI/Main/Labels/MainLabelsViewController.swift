@@ -26,20 +26,20 @@ final class MainLabelsViewController: BaseTableViewController {
     }
     
     private func bind() {
-        viewModel.labels.asObservable().map { _ in () }.subscribeNext(tableView.reloadData).addDisposableTo(disposeBag)
+        viewModel.labels.asObservable().map { _ in () }.subscribe(onNext: tableView.reloadData).addDisposableTo(disposeBag)
     }
     
     private func subscribeEvents() {
         createNewButton.rx_tap.single()
-            .subscribeNext { [weak self] _ in self?.presentViewController(UIStoryboard.addLabelViewController, animated: true, completion: nil) }
+            .subscribe(onNext: { [weak self] _ in self?.presentViewController(UIStoryboard.addLabelViewController, animated: true, completion: nil) })
             .addDisposableTo(disposeBag)
         tableView.rx_itemSelected
-            .subscribeNext { [weak self] indexPath in
+            .subscribe(onNext: { [weak self] indexPath in
                 if let label = self?.viewModel.labels.value.safeIndex(indexPath.item) {
                     self?.tableView.deselectRowAtIndexPath(indexPath, animated: true)
                     self?.navigationController?.pushViewController(UIStoryboard.issuesViewController(IssuesQuery.LabelQuery(label: label)), animated: true)
                 }
-            }
+            })
             .addDisposableTo(disposeBag)
     }
     

@@ -26,12 +26,12 @@ final class IssueViewController: BaseViewController {
     }
     
     private func bind() {
-        viewModel?.issue.asObservable().map { _ in () }.subscribeNext(tableView.reloadData).addDisposableTo(disposeBag)
+        viewModel?.issue.asObservable().map { _ in () }.subscribe(onNext: tableView.reloadData).addDisposableTo(disposeBag)
     }
     
     private func subscribeEvents() {
         tableView.rx_itemSelected
-            .subscribeNext { [weak self] indexPath in
+            .subscribe(onNext: { [weak self] indexPath in
                 self?.tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 switch IssueViewSection(rawValue: indexPath.section) {
                 case .Some(.Info):
@@ -48,16 +48,16 @@ final class IssueViewController: BaseViewController {
                 default:
                     break
                 }
-            }
+            })
             .addDisposableTo(disposeBag)
         editButton.rx_tap
-            .subscribeNext { [weak self] _ in
+            .subscribe(onNext: { [weak self] _ in
                 self?.viewModel?.issue.value.forEach {
                     let vc = UIStoryboard.editIssueViewController()
                     vc.setViewModel(EditIssueViewModel(issue: $0))
                     self?.presentViewController(vc, animated: true, completion: nil)
                 }
-            }
+            })
             .addDisposableTo(disposeBag)
     }
     

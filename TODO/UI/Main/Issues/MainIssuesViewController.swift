@@ -37,7 +37,7 @@ final class MainIssuesViewController: BaseViewController {
 
     private func bind() {
         /// model ~> view
-        viewModel.issues.asObservable().subscribeNext { [weak self] _ in self?.tableView.reloadData() }.addDisposableTo(disposeBag)
+        viewModel.issues.asObservable().subscribe(onNext: { [weak self] _ in self?.tableView.reloadData() }).addDisposableTo(disposeBag)
         viewModel.segment.asObservable().map { $0.toSegment }.bindTo(segmentedControl.rx_value).addDisposableTo(disposeBag)
 
         // view ~> model
@@ -45,19 +45,19 @@ final class MainIssuesViewController: BaseViewController {
     }
 
     private func subscribeEvents() {
-        segmentedControl.rx_value.map { _ in () }.subscribeNext(viewModel.updateIssues).addDisposableTo(disposeBag)
+        segmentedControl.rx_value.map { _ in () }.subscribe(onNext: viewModel.updateIssues).addDisposableTo(disposeBag)
         tableView.rx_itemSelected.single()
-            .subscribeNext { [weak self] indexPath in
+            .subscribe(onNext: { [weak self] indexPath in
                 self?.tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 self?.viewModel.issues.value.safeIndex(indexPath.item).forEach { issue in
                     self?.navigationController?.pushViewController(UIStoryboard.issueViewController(issue.id), animated: true)
                 }
-            }
+            })
             .addDisposableTo(disposeBag)
         createNewButton.rx_tap.single()
-            .subscribeNext { [weak self] _ in
+            .subscribe(onNext: { [weak self] _ in
                 self?.presentViewController(UIStoryboard.editIssueViewController(), animated: true, completion: nil)
-            }
+            })
             .addDisposableTo(disposeBag)
     }
 

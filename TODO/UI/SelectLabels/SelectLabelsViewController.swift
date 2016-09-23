@@ -33,21 +33,21 @@ final class SelectLabelsViewController: BaseViewController {
     }
     
     private func bind() {
-        tableView.rx_itemSelected.map { self.viewModel.labels.value.safeIndex($0.item) }.subscribeNext(viewModel.selectLabel).addDisposableTo(disposeBag)
-        viewModel.labels.asObservable().map { _ in () }.subscribeNext(tableView.reloadData).addDisposableTo(disposeBag)
+        tableView.rx_itemSelected.map { self.viewModel.labels.value.safeIndex($0.item) }.subscribe(onNext: viewModel.selectLabel).addDisposableTo(disposeBag)
+        viewModel.labels.asObservable().map { _ in () }.subscribe(onNext: tableView.reloadData).addDisposableTo(disposeBag)
     }
     
     private func subscribeEvents() {
         tableView.rx_itemSelected
-            .subscribeNext { [weak self] indexPath in
+            .subscribe(onNext: { [weak self] indexPath in
                 let accessory = self?.tableView.cellForRowAtIndexPath(indexPath)?.accessoryType
                 self?.tableView.cellForRowAtIndexPath(indexPath)?.accessoryType =
                     accessory == UITableViewCellAccessoryType.None ? .Checkmark : .None
                 self?.tableView.cellForRowAtIndexPath(indexPath)?.selected = false
-            }
+            })
             .addDisposableTo(disposeBag)
         doneButton.rx_tap.single()
-            .subscribeNext { self.dismissViewControllerAnimated(true, completion: nil) }
+            .subscribe(onNext: { self.dismissViewControllerAnimated(true, completion: nil) })
             .addDisposableTo(disposeBag)
     }
     
