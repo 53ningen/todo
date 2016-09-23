@@ -10,9 +10,8 @@ class MilestoneObject: Object {
     dynamic var createdAt: RealmDate = 0
     dynamic var updatedAt: RealmDate = 0
     let dueOn: RealmOptional<RealmDate> = RealmOptional<RealmDate>.init()
-    var issues: [IssueObject] {
-        return linkingObjects(IssueObject.self, forProperty: "milestone")
-    }
+    
+    let issues: LinkingObjects<IssueObject> = LinkingObjects(fromType: IssueObject.self, property: "milestone")
     
     var openIssuesCount: Int {
         return issues.filter { $0.state == MilestoneState.Open.rawValue }.count

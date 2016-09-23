@@ -9,9 +9,8 @@ class LabelObject: Object {
     dynamic var g: Int = 0
     dynamic var b: Int = 0
     dynamic var a: Int = 1
-    var issues: [IssueObject] {
-        return linkingObjects(IssueObject.self, forProperty: "labels")
-    }
+    
+    let issues: LinkingObjects<IssueObject> = LinkingObjects(fromType: IssueObject.self, property: "labels")
     
     var openIssuesCount: Int {
         return issues.filter { $0.state == MilestoneState.Open.rawValue }.count

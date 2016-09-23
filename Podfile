@@ -9,7 +9,7 @@ end
 target 'TODO' do
     pod 'RxSwift', '2.6.0'
     pod 'RxCocoa', '2.6.0'
-    pod 'RealmSwift', '0.98.5'
+    pod 'RealmSwift', '1.0.2'
 end
 
 target 'TODOTests' do
