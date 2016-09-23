@@ -18,7 +18,7 @@ public func ==<T>(lhs: Id<T>, rhs: Id<T>) -> Bool {
 /// Entityを表すインターフェース
 public protocol Entity {
     
-    typealias INFO = EntityInfo
+    associatedtype INFO = EntityInfo
     
     var id: Id<Self> { get }
     var info: INFO { get }

@@ -20,8 +20,8 @@ final class SelectLabelsViewController: BaseViewController {
         tableView.contentInset = UIEdgeInsets(top: -1, left: 0, bottom: 0, right: 0)
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.1))
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.1))
-        if tableView.respondsToSelector("separatorInset") { tableView.separatorInset = UIEdgeInsetsZero }
-        if tableView.respondsToSelector("layoutMargins") { tableView.layoutMargins = UIEdgeInsetsZero }
+        if tableView.respondsToSelector(Selector("separatorInset")) { tableView.separatorInset = UIEdgeInsetsZero }
+        if tableView.respondsToSelector(Selector("layoutMargins")) { tableView.layoutMargins = UIEdgeInsetsZero }
         navigationItem.title = "Select labels"
     }
     
