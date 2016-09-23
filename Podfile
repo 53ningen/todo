@@ -7,7 +7,9 @@ def testing_pods
 end
 
 target 'TODO' do
-
+    pod 'RxSwift', '2.6.0'
+    pod 'RxCocoa', '2.6.0'
+    pod 'RealmSwift', '0.98.5'
 end
 
 target 'TODOTests' do

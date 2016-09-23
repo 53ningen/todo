@@ -1,13 +1,28 @@
 PODS:
   - Nimble (3.0.0)
   - Quick (0.8.0)
+  - Realm (0.98.5):
+    - Realm/Headers (= 0.98.5)
+  - Realm/Headers (0.98.5)
+  - RealmSwift (0.98.5):
+    - Realm (= 0.98.5)
+  - RxCocoa (2.6.0):
+    - RxSwift (~> 2.5)
+  - RxSwift (2.6.0)
 
 DEPENDENCIES:
   - Nimble (= 3.0.0)
   - Quick (= 0.8.0)
+  - RealmSwift (= 0.98.5)
+  - RxCocoa (= 2.6.0)
+  - RxSwift (= 2.6.0)
 
 SPEC CHECKSUMS:
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
   Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
+  Realm: db08379969e45cea2edd1c3c0a090fe9e22d2d2f
+  RealmSwift: cb11ad1c35e15dc982f2dbf5afe2a3124193a358
+  RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
+  RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
 
 COCOAPODS: 0.39.0
