@@ -627,7 +627,6 @@
 				FFE38D801C9302070045F8D1 /* Sources */,
 				FFE38D811C9302070045F8D1 /* Frameworks */,
 				FFE38D821C9302070045F8D1 /* Resources */,
-				FF9D13781CA91A7600BE23E6 /* ShellScript */,
 				D942EB73676540ED79D50FE6 /* Embed Pods Frameworks */,
 				D382A457A223E171607D0F95 /* Copy Pods Resources */,
 			);
@@ -837,23 +836,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TODOTests/Pods-TODOTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		FF9D13781CA91A7600BE23E6 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1089,10 +1071,7 @@
 			baseConfigurationReference = 8D133ED2E4740B38B5701B95 /* Pods-TODOTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TODOTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.gomi.TODOTests;
@@ -1106,10 +1085,7 @@
 			baseConfigurationReference = 4D1447CDD2719D29F2959E5F /* Pods-TODOTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TODOTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.gomi.TODOTests;
