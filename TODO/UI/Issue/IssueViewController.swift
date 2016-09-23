@@ -3,8 +3,8 @@ import UIKit
 
 final class IssueViewController: BaseViewController {
     
-    private lazy var viewModel: IssueViewModel? = nil
-    func setViewModel(viewModel: IssueViewModel) {
+    fileprivate lazy var viewModel: IssueViewModel? = nil
+    func setViewModel(_ viewModel: IssueViewModel) {
         self.viewModel = viewModel
     }
     
@@ -18,7 +18,7 @@ final class IssueViewController: BaseViewController {
         tableView.registerNib(MilestoneCellView.self)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         bind()
         subscribeEvents()
@@ -30,18 +30,18 @@ final class IssueViewController: BaseViewController {
     }
     
     private func subscribeEvents() {
-        tableView.rx_itemSelected
+        tableView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
-                self?.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                self?.tableView.deselectRow(at: indexPath, animated: true)
                 switch IssueViewSection(rawValue: indexPath.section) {
-                case .Some(.Info):
+                case .some(.info):
                     self?.viewModel?.issue.value?.info.milestone.forEach {
-                        let vc = UIStoryboard.issuesViewController(IssuesQuery.MilestoneQuery(milestone: $0))
+                        let vc = UIStoryboard.issuesViewController(IssuesQuery.milestoneQuery(milestone: $0))
                         self?.navigationController?.pushViewController(vc, animated: true)
                     }
-                case .Some(.Labels):
+                case .some(.labels):
                     self?.viewModel?.issue.value?.info.labels.safeIndex(indexPath.item).forEach {
-                        let vc = UIStoryboard.issuesViewController(IssuesQuery.LabelQuery(label: $0))
+                        let vc = UIStoryboard.issuesViewController(IssuesQuery.labelQuery(label: $0))
                         self?.navigationController?.pushViewController(vc, animated: true)
                     }
                     break
@@ -50,12 +50,12 @@ final class IssueViewController: BaseViewController {
                 }
             })
             .addDisposableTo(disposeBag)
-        editButton.rx_tap
+        editButton.rx.tap
             .subscribe(onNext: { [weak self] _ in
                 self?.viewModel?.issue.value.forEach {
                     let vc = UIStoryboard.editIssueViewController()
                     vc.setViewModel(EditIssueViewModel(issue: $0))
-                    self?.presentViewController(vc, animated: true, completion: nil)
+                    self?.present(vc, animated: true, completion: nil)
                 }
             })
             .addDisposableTo(disposeBag)
@@ -65,25 +65,25 @@ final class IssueViewController: BaseViewController {
 
 extension IssueViewController: UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return IssueViewSection(rawValue: section).map {
             switch $0 {
-            case .Info: return viewModel?.issue.value?.info.milestone == nil ? 0 : 1
-            case .Labels: return viewModel?.issue.value?.info.labels.count ?? 0
+            case .info: return viewModel?.issue.value?.info.milestone == nil ? 0 : 1
+            case .labels: return viewModel?.issue.value?.info.labels.count ?? 0
             }
         } ?? 0
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return IssueViewSection(rawValue: indexPath.section).flatMap {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return IssueViewSection(rawValue: (indexPath as NSIndexPath).section).flatMap {
             switch $0 {
-            case .Info:
+            case .info:
                 let cell = UIView.getInstance(MilestoneCellView.self)
                 if let milestone = viewModel?.issue.value?.info.milestone {
                     cell?.bind(milestone)
                 }
                 return cell
-            case .Labels:
+            case .labels:
                 let cell = UIView.getInstance(LabelCellView.self)
                 if let label = viewModel?.issue.value?.info.labels.safeIndex(indexPath.item) {
                     cell?.bind(label)
@@ -94,7 +94,7 @@ extension IssueViewController: UITableViewDataSource {
     }
     
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
@@ -102,25 +102,25 @@ extension IssueViewController: UITableViewDataSource {
 
 extension IssueViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return IssueViewSection(rawValue: section).map {
             switch $0 {
-            case .Info: return 210
-            case .Labels: return 56
+            case .info: return 210
+            case .labels: return 56
             }
             } ?? 0
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return IssueViewSection(rawValue: section).flatMap { sec in
             switch sec {
-            case .Info:
+            case .info:
                 let cell = UIView.getInstance(IssueInfoCellView.self)
                 if let issue = self.viewModel?.issue.value {
                     cell?.bind(issue)
                 }
                 return cell
-            case .Labels:
+            case .labels:
                 let cell = UIView.getInstance(HeaderCellView.self)
                 cell?.bind("Labels")
                 return cell
@@ -128,20 +128,20 @@ extension IssueViewController: UITableViewDelegate {
         }
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return IssueViewSection(rawValue: indexPath.section).map {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return IssueViewSection(rawValue: (indexPath as NSIndexPath).section).map {
             switch $0 {
-            case .Info: return 82
-            case .Labels: return 75
+            case .info: return 82
+            case .labels: return 75
             }
         } ?? 0
     }
     
 }
 
-private enum IssueViewSection: Int {
+fileprivate enum IssueViewSection: Int {
     
-    case Info = 0
-    case Labels = 1
+    case info = 0
+    case labels = 1
     
 }

@@ -3,16 +3,16 @@ import Foundation
 extension Array {
     
     /// IndexOutOfBoundsErrorを防ぐためのユーティリティメソッド
-    func safeIndex(index: NSIndexPath) -> Element? {
-        return safeIndex(index.item)
+    func safeIndex(_ index: IndexPath) -> Element? {
+        return safeIndex((index as NSIndexPath).item)
     }
 
     /// IndexOutOfBoundsErrorを防ぐためのユーティリティメソッド
-    func safeIndex(index: Int) -> Element? {
+    func safeIndex(_ index: Int) -> Element? {
         return index >= 0 && index < self.count ? self[index] : nil
     }
     
-    func any(p: Element -> Bool) -> Bool {
+    func any(_ p: (Element) -> Bool) -> Bool {
         return filter(p).count > 0
     }
 
@@ -20,7 +20,7 @@ extension Array {
 
 extension Array where Element: Equatable {
     
-    func any(e: Element) -> Bool {
+    func any(_ e: Element) -> Bool {
         return any { e == $0 }
     }
     

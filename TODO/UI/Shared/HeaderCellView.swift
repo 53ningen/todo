@@ -5,7 +5,7 @@ final class HeaderCellView: UIView {
     
     @IBOutlet weak var headerLabel: UILabel!
 
-    func bind(text: String) {
+    func bind(_ text: String) {
         headerLabel.text = text
     }
     

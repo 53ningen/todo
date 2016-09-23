@@ -2,15 +2,15 @@
 public protocol LabelRepository {
     
     /// Idを指定してLabelを探す
-    func findById(id: Id<Label>) -> Label?
+    func findById(_ id: Id<Label>) -> Label?
     
     /// Labelの全件取得
     func findAll() -> [Label]
     
     /// Labelの追加
-    func add(label: Label)
+    func add(_ label: Label)
     
     /// Labelの削除
-    func remove(id: Id<Label>)
+    func remove(_ id: Id<Label>)
     
 }

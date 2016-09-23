@@ -22,20 +22,20 @@ public protocol Entity {
     
     var id: Id<Self> { get }
     var info: INFO { get }
-    func sameIdentityAs(other: Self) -> Bool
+    func sameIdentityAs(_ other: Self) -> Bool
     
 }
 
 extension Entity {
 
-    public func sameIdentityAs(other: Self) -> Bool {
+    public func sameIdentityAs(_ other: Self) -> Bool {
         return self.id  == other.id
     }
 
 }
 
 // EntityInfoがEquatableなときにEntity同士の比較が可能になる
-public func ==<T where T: Entity, T.INFO: Equatable>(lhs: T, rhs: T) -> Bool {
+public func ==<T>(lhs: T, rhs: T) -> Bool where T: Entity, T.INFO: Equatable {
     return lhs.sameIdentityAs(rhs) && lhs.info == rhs.info
 }
 

@@ -18,10 +18,10 @@ final class EditLabelViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.roundedCorners(5)
-        colorView.border(1, color: UIColor.borderColor.CGColor)
+        colorView.border(1, color: UIColor.borderColor.cgColor)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         bind()
         subscribeEvents()
@@ -29,29 +29,29 @@ final class EditLabelViewController: BaseViewController {
     
     private func bind() {
         let obs = viewModel.color.asObservable().shareReplay(1)
-        obs.map { Float($0.r) }.bindTo(rSlider.rx_value).addDisposableTo(disposeBag)
-        obs.map { Float($0.g) }.bindTo(gSlider.rx_value).addDisposableTo(disposeBag)
-        obs.map { Float($0.b) }.bindTo(bSlider.rx_value).addDisposableTo(disposeBag)
+        obs.map { Float($0.r) }.bindTo(rSlider.rx.value).addDisposableTo(disposeBag)
+        obs.map { Float($0.g) }.bindTo(gSlider.rx.value).addDisposableTo(disposeBag)
+        obs.map { Float($0.b) }.bindTo(bSlider.rx.value).addDisposableTo(disposeBag)
         obs.subscribe(onNext: { [weak self] color in
             self?.colorView.backgroundColor = UIColor(red: CGFloat(color.r) / 255, green: CGFloat(color.g) / 255, blue: CGFloat(color.b) / 255, alpha: 1)
         })
         .addDisposableTo(disposeBag)
-        nameTextField.rx_text.bindTo(viewModel.name).addDisposableTo(disposeBag)
-        viewModel.submittable.bindTo(addButton.rx_enabled).addDisposableTo(disposeBag)
+        nameTextField.rx.text.bindTo(viewModel.name).addDisposableTo(disposeBag)
+        viewModel.submittable.bindTo(addButton.rx.enabled).addDisposableTo(disposeBag)
     }
     
     private func subscribeEvents() {
-        addButton.rx_tap
+        addButton.rx.tap
             .subscribe(onNext: { [weak self] _ in
                 self?.viewModel.submit()
-                self?.dismissViewControllerAnimated(true, completion: nil)
+                self?.dismiss(animated: true, completion: nil)
             })
             .addDisposableTo(disposeBag)
-        rSlider.rx_value.subscribe(onNext: { [weak self] r in self?.viewModel.nextColor(r, g: nil, b: nil) }).addDisposableTo(disposeBag)
-        gSlider.rx_value.subscribe(onNext: { [weak self] g in self?.viewModel.nextColor(nil, g: g, b: nil) }).addDisposableTo(disposeBag)
-        bSlider.rx_value.subscribe(onNext: { [weak self] b in self?.viewModel.nextColor(nil, g: nil, b: b) }).addDisposableTo(disposeBag)
-        cancelButton.rx_tap.subscribe(onNext: { [weak self] _ in self?.dismissViewControllerAnimated(true, completion: nil) }).addDisposableTo(disposeBag)
-        tapGestureRecognizer.rx_event
+        rSlider.rx.value.subscribe(onNext: { [weak self] r in self?.viewModel.nextColor(r, g: nil, b: nil) }).addDisposableTo(disposeBag)
+        gSlider.rx.value.subscribe(onNext: { [weak self] g in self?.viewModel.nextColor(nil, g: g, b: nil) }).addDisposableTo(disposeBag)
+        bSlider.rx.value.subscribe(onNext: { [weak self] b in self?.viewModel.nextColor(nil, g: nil, b: b) }).addDisposableTo(disposeBag)
+        cancelButton.rx.tap.subscribe(onNext: { [weak self] _ in self?.dismiss(animated: true, completion: nil) }).addDisposableTo(disposeBag)
+        tapGestureRecognizer.rx.event
             .subscribe(onNext: { [weak self] _ in
                 self?.nameTextField.resignFirstResponder()
             })

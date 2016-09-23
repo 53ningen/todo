@@ -2,48 +2,48 @@ import RealmSwift
 import Foundation
 
 /// MilestoneRepositoryのRealm実装
-public class MilestoneRepositoryOnRealm: MilestoneRepository {
+class MilestoneRepositoryOnRealm: MilestoneRepository {
     
     private let realm: Realm = try! Realm()
     
-    public func findById(id: Id<Milestone>) -> Milestone? {
-        return realm.objectForPrimaryKey(MilestoneObject.self, key: id.value)?.toMilestone
+    func findById(_ id: Id<Milestone>) -> Milestone? {
+        return realm.object(ofType: MilestoneObject.self, forPrimaryKey: id.value as AnyObject)?.toMilestone
     }
     
-    public func findAll() -> [Milestone] {
-        return realm.objects(MilestoneObject).flatMap { $0.toMilestone }
+    func findAll() -> [Milestone] {
+        return realm.objects(MilestoneObject.self).flatMap { $0.toMilestone }
     }
     
-    public func findAll(state: MilestoneState) -> [Milestone] {
+    func findAll(_ state: MilestoneState) -> [Milestone] {
         let pred = NSPredicate(format: "state == %@", state.rawValue)
-        return realm.objects(MilestoneObject).filter(pred).flatMap { $0.toMilestone }
+        return realm.objects(MilestoneObject.self).filter(pred).flatMap { $0.toMilestone }
     }
     
-    public func add(milestone: Milestone) {
+    func add(_ milestone: Milestone) {
         try! realm.write {
             realm.add(MilestoneObject.of(milestone.id.value, info: milestone.info))
         }
     }
     
-    public func remove(id: Id<Milestone>) {
+    func remove(_ id: Id<Milestone>) {
         try! realm.write {
-            realm.objectForPrimaryKey(MilestoneObject.self, key: id.value).forEach {
+            realm.object(ofType: MilestoneObject.self, forPrimaryKey: id.value as AnyObject).forEach {
                 self.realm.delete($0)
             }
         }
     }
     
-    public func open(id: Id<Milestone>) {
+    func open(_ id: Id<Milestone>) {
         try! realm.write {
-            if let obj = realm.objectForPrimaryKey(MilestoneObject.self, key: id.value) where obj.state == MilestoneState.Closed.rawValue {
+            if let obj = realm.object(ofType: MilestoneObject.self, forPrimaryKey: id.value as AnyObject) , obj.state == MilestoneState.Closed.rawValue {
                 obj.open()
             }
         }
     }
     
-    public func close(id: Id<Milestone>) {
+    func close(_ id: Id<Milestone>) {
         try! realm.write {
-            if let obj = realm.objectForPrimaryKey(MilestoneObject.self, key: id.value) where obj.state == MilestoneState.Open.rawValue {
+            if let obj = realm.object(ofType: MilestoneObject.self, forPrimaryKey: id.value as AnyObject) , obj.state == MilestoneState.Open.rawValue {
                 obj.close()
             }
         }

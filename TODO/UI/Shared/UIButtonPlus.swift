@@ -6,12 +6,12 @@ final class UIButtonPlus: UIButton {
     @IBInspectable var disabledBackgroundColor :UIColor?
     @IBInspectable var highlightedBackgroundColor :UIColor?
     
-    override var enabled: Bool {
-        didSet { backgroundColor = enabled ? defaultBackgroundColor : disabledBackgroundColor }
+    override var isEnabled: Bool {
+        didSet { backgroundColor = isEnabled ? defaultBackgroundColor : disabledBackgroundColor }
     }
     
-    override var highlighted: Bool {
-        didSet { backgroundColor = highlighted ? highlightedBackgroundColor : defaultBackgroundColor }
+    override var isHighlighted: Bool {
+        didSet { backgroundColor = isHighlighted ? highlightedBackgroundColor : defaultBackgroundColor }
     }
     
 }

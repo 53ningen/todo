@@ -12,7 +12,7 @@ final class MainMilestonesViewModel {
         milestones.value = milestoneRepository.findAll(segment.value)
     }
     
-    func toggleMilestoneState(id: Id<Milestone>) {
+    func toggleMilestoneState(_ id: Id<Milestone>) {
         switch segment.value {
         case .Open: milestoneRepository.close(id)
         case .Closed: milestoneRepository.open(id)
@@ -20,7 +20,7 @@ final class MainMilestonesViewModel {
         updateMilestones()
     }
     
-    func remove(id: Id<Milestone>) {
+    func remove(_ id: Id<Milestone>) {
         milestoneRepository.remove(id)
         updateMilestones()
     }

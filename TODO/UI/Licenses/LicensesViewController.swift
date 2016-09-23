@@ -9,12 +9,12 @@ final class LicensesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Licenses"
-        licensesTextView.text = String(data: NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("LICENSES", ofType: nil)!)!, encoding: NSUTF8StringEncoding)
+        licensesTextView.text = String(data: try! Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "LICENSES", ofType: nil)!)), encoding: String.Encoding.utf8)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        licensesTextView.setContentOffset(CGPointZero, animated: false)
+        licensesTextView.setContentOffset(CGPoint.zero, animated: false)
     }
     
 }

@@ -6,7 +6,7 @@ final class IssuesViewModel {
     private lazy var issueRepository: IssueRepository = AppModules.issueRepository
     
     let issues: Variable<[Issue]> = Variable<[Issue]>([])
-    let segment: Variable<IssueState> = Variable<IssueState>(.Open)
+    let segment: Variable<IssueState> = Variable<IssueState>(.open)
     
     let query: IssuesQuery
     
@@ -16,16 +16,16 @@ final class IssuesViewModel {
     
     func updateIssues() {
         switch query {
-        case .LabelQuery(let label): issues.value = issueRepository.findByLabel(label, state: segment.value)
-        case .MilestoneQuery(let milestone): issues.value = issueRepository.findByMilestone(milestone, state: segment.value)
-        case .KeywordQuery(let keyword): issues.value = issueRepository.findByKeyword(keyword)
+        case .labelQuery(let label): issues.value = issueRepository.findByLabel(label, state: segment.value)
+        case .milestoneQuery(let milestone): issues.value = issueRepository.findByMilestone(milestone, state: segment.value)
+        case .keywordQuery(let keyword): issues.value = issueRepository.findByKeyword(keyword)
         }
     }
     
-    func toggleIssueState(id: Id<Issue>) {
+    func toggleIssueState(_ id: Id<Issue>) {
         switch segment.value {
-        case .Open: issueRepository.close(id)
-        case .Closed(closedAt: _): issueRepository.open(id)
+        case .open: issueRepository.close(id)
+        case .closed(closedAt: _): issueRepository.open(id)
         }
         updateIssues()
     }
@@ -33,7 +33,7 @@ final class IssuesViewModel {
 }
 
 enum IssuesQuery {
-    case LabelQuery(label: Label)
-    case MilestoneQuery(milestone: Milestone)
-    case KeywordQuery(keyword: String)
+    case labelQuery(label: Label)
+    case milestoneQuery(milestone: Milestone)
+    case keywordQuery(keyword: String)
 }

@@ -9,13 +9,13 @@ final class MilestoneCellView: UITableViewCell {
     @IBOutlet weak var closedCountLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     
-    override func willMoveToSuperview(newSuperview: UIView?) {
-        super.willMoveToSuperview(newSuperview)
-        progressView.transform = CGAffineTransformMakeScale(1.0, 5.0)
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+        progressView.transform = CGAffineTransform(scaleX: 1.0, y: 5.0)
         progressView.roundedCorners(5)
     }
     
-    func bind(milestone: Milestone) {
+    func bind(_ milestone: Milestone) {
         titleLabel.text = milestone.id.value
         dueLabel.text = milestone.info.dueOn?.formattedString ?? "No due date"
         openCountLabel.text = milestone.info.openIssuesCount.map { String($0) }

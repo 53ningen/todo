@@ -48,7 +48,7 @@ public final class Issue: Entity, Equatable {
     }
     
     public var closed: Bool {
-        return info.state != .Open
+        return info.state != .open
     }
     
     public var withNoMilestone: Bool {
@@ -75,28 +75,28 @@ extension IssueInfo: CustomDebugStringConvertible {
 
 /// Issueの状況
 public enum IssueState {
-    case Open
-    case Closed(closedAt: Date)
+    case open
+    case closed(closedAt: Date)
     
     public var rawValue: String {
         switch self {
-        case .Open: return "open"
-        case .Closed(closedAt: _): return "closed"
+        case .open: return "open"
+        case .closed(closedAt: _): return "closed"
         }
     }
     
     public var closedAt: Date? {
         switch self {
-        case .Open: return nil
-        case .Closed(closedAt: let date): return date
+        case .open: return nil
+        case .closed(closedAt: let date): return date
         }
     }
     
-    public static func of(rawValue: String, closedAt: Date?) -> IssueState? {
+    public static func of(_ rawValue: String, closedAt: Date?) -> IssueState? {
         if rawValue == "open" {
-            return .Open
+            return .open
         } else if rawValue == "closed" {
-            return closedAt.map { .Closed(closedAt: $0) }
+            return closedAt.map { .closed(closedAt: $0) }
         } else {
             return nil
         }
@@ -106,16 +106,16 @@ public enum IssueState {
 extension IssueState: Equatable {}
 public func ==(lhs: IssueState, rhs: IssueState) -> Bool {
     switch (lhs, rhs) {
-    case (.Open, .Open): return true
-    case (.Closed(let l), .Closed(closedAt: let r)): return l == r
+    case (.open, .open): return true
+    case (.closed(let l), .closed(closedAt: let r)): return l == r
     default: return false
     }
 }
 
 /// Issueのソート条件
 public enum IssueSort {
-    case CreatedAtDesc
-    case CreatedAtAsc
-    case UpdatedAtDesc
-    case UpdatedAtAsc
+    case createdAtDesc
+    case createdAtAsc
+    case updatedAtDesc
+    case updatedAtAsc
 }

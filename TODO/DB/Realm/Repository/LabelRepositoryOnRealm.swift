@@ -1,27 +1,27 @@
 import RealmSwift
 
 /// LabelRepositoryのRealm実装
-public class LabelRepositoryOnRealm: LabelRepository {
+class LabelRepositoryOnRealm: LabelRepository {
     
     private let realm: Realm = try! Realm()
     
-    public func findById(id: Id<Label>) -> Label? {
-        return realm.objectForPrimaryKey(LabelObject.self, key: id.value)?.toLabel
+    func findById(_ id: Id<Label>) -> Label? {
+        return realm.object(ofType: LabelObject.self, forPrimaryKey: id.value as AnyObject)?.toLabel
     }
     
-    public func findAll() -> [Label] {
-        return realm.objects(LabelObject).flatMap { $0.toLabel }
+    func findAll() -> [Label] {
+        return realm.objects(LabelObject.self).flatMap { $0.toLabel }
     }
     
-    public func add(label: Label) {
+    func add(_ label: Label) {
         try! realm.write {
             realm.add(LabelObject.of(label.id, info: label.info))
         }
     }
     
-    public func remove(id: Id<Label>) {
+    func remove(_ id: Id<Label>) {
         try! realm.write {
-            realm.objectForPrimaryKey(LabelObject.self, key: id.value).forEach {
+            realm.object(ofType: LabelObject.self, forPrimaryKey: id.value as AnyObject).forEach {
                 self.realm.delete($0)
             }
         }
@@ -29,7 +29,7 @@ public class LabelRepositoryOnRealm: LabelRepository {
     
     internal func deleteAll() {
         try! realm.write {
-            realm.delete(realm.objects(LabelObject))
+            realm.delete(realm.objects(LabelObject.self))
         }
     }
     

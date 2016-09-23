@@ -49,12 +49,12 @@ public final class Milestone: Entity, Equatable {
         return info.state != .Open
     }
     
-    public func isPastDue(now: Date) -> Bool {
-        return now > info.dueOn
+    public func isPastDue(_ now: Date) -> Bool {
+        return now > info.dueOn!
     }
     
     public var progress: Float {
-        guard let openIssuesCount = info.openIssuesCount, closedIssuesCount = info.closedIssuesCount else { return 1 }
+        guard let openIssuesCount = info.openIssuesCount, let closedIssuesCount = info.closedIssuesCount else { return 1 }
         let total = Float(openIssuesCount) + Float(closedIssuesCount)
         return openIssuesCount == 0 ? 1 : Float(closedIssuesCount) / total
     }
@@ -65,7 +65,7 @@ public enum MilestoneState: String {
     case Open = "open"
     case Closed = "closed"
     
-    public static func of(rawValue: String) -> MilestoneState? {
+    public static func of(_ rawValue: String) -> MilestoneState? {
         switch rawValue {
         case MilestoneState.Open.rawValue: return .Open
         case MilestoneState.Closed.rawValue: return .Closed

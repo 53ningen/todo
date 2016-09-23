@@ -20,7 +20,7 @@ class LabelObject: Object {
         return issues.filter { $0.state == MilestoneState.Closed.rawValue }.count
     }
 
-    static func of(id: Id<Label>, info: LabelInfo) -> LabelObject {
+    static func of(_ id: Id<Label>, info: LabelInfo) -> LabelObject {
         let object = LabelObject()
         object.id = id.value
         (object.r, object.g, object.b, object.a) = (info.color.r, info.color.g, info.color.b, info.color.a)

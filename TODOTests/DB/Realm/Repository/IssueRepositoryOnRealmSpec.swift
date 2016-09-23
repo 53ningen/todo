@@ -6,8 +6,8 @@ class IssueRepositoryOnRealmSpec: QuickSpec {
     
     override func spec() {
         let id1 = Id<Issue>(value: "1")
-        let issueInfo = IssueInfo(title: "", desc: "", state: .Open, labels: [], milestone: nil, locked: false, createdAt: 0, updatedAt: 0)
-        let closedIssueInfo = IssueInfo(title: "", desc: "", state: .Closed(closedAt: 0), labels: [], milestone: nil, locked: false, createdAt: 0, updatedAt: 0)
+        let issueInfo = IssueInfo(title: "", desc: "", state: .open, labels: [], milestone: nil, locked: false, createdAt: 0, updatedAt: 0)
+        let closedIssueInfo = IssueInfo(title: "", desc: "", state: .closed(closedAt: 0), labels: [], milestone: nil, locked: false, createdAt: 0, updatedAt: 0)
         let repo = IssueRepositoryOnRealm()
         
         beforeEach {
@@ -26,14 +26,14 @@ class IssueRepositoryOnRealmSpec: QuickSpec {
                 expect(repo.findById(id1)).to(equal(Issue(id: Id<Issue>(value: "1"), info: issueInfo)))
             }
             it("findAll(IssueState.Open)") {
-                expect(repo.findAll(.Open)).to(equal([]))
+                expect(repo.findAll(.open)).to(equal([]))
                 repo.add(issueInfo)
-                expect(repo.findAll(.Open)).to(equal([Issue(id: Id<Issue>(value: "1"), info: issueInfo)]))
+                expect(repo.findAll(.open)).to(equal([Issue(id: Id<Issue>(value: "1"), info: issueInfo)]))
             }
             it("findAll(IssueState.Closed)") {
-                expect(repo.findAll(.Closed(closedAt: 0))).to(equal([]))
+                expect(repo.findAll(.closed(closedAt: 0))).to(equal([]))
                 repo.add(closedIssueInfo)
-                expect(repo.findAll(.Closed(closedAt: 0))).to(equal([Issue(id: Id<Issue>(value: "1"), info: closedIssueInfo)]))
+                expect(repo.findAll(.closed(closedAt: 0))).to(equal([Issue(id: Id<Issue>(value: "1"), info: closedIssueInfo)]))
             }
         }
         

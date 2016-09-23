@@ -19,14 +19,14 @@ class ArrayExtensionsSpec: QuickSpec {
         }
         describe("Array#safeIndex(NSIndexPath)は安全に配列から値を取り出せる") {
             it("インデックス範囲内の値を取得できる") {
-                expect([0, 1, 2, 3, 4, 5].safeIndex(NSIndexPath(forItem: 0, inSection: 0))).to(equal(0))
-                expect([0, 1, 2, 3, 4, 5].safeIndex(NSIndexPath(forItem: 5, inSection: 0))).to(equal(5))
+                expect([0, 1, 2, 3, 4, 5].safeIndex(IndexPath(item: 0, section: 0))).to(equal(0))
+                expect([0, 1, 2, 3, 4, 5].safeIndex(IndexPath(item: 5, section: 0))).to(equal(5))
             }
             it("インデックス範囲外を指定するとnilが返る") {
-                expect([0, 1, 2, 3, 4, 5].safeIndex(NSIndexPath(forItem: Int.max, inSection: 0))).to(beNil())
-                expect([0, 1, 2, 3, 4, 5].safeIndex(NSIndexPath(forItem: 6, inSection: 0))).to(beNil())
-                expect([0, 1, 2, 3, 4, 5].safeIndex(NSIndexPath(forItem: -1, inSection: 0))).to(beNil())
-                expect([0, 1, 2, 3, 4, 5].safeIndex(NSIndexPath(forItem: Int.min, inSection: 0))).to(beNil())
+                expect([0, 1, 2, 3, 4, 5].safeIndex(IndexPath(item: Int.max, section: 0))).to(beNil())
+                expect([0, 1, 2, 3, 4, 5].safeIndex(IndexPath(item: 6, section: 0))).to(beNil())
+                expect([0, 1, 2, 3, 4, 5].safeIndex(IndexPath(item: -1, section: 0))).to(beNil())
+                expect([0, 1, 2, 3, 4, 5].safeIndex(IndexPath(item: Int.min, section: 0))).to(beNil())
             }
         }
         describe("Array#any(Element->Bool)") {

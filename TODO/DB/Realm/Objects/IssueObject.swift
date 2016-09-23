@@ -15,16 +15,16 @@ class IssueObject: Object {
     dynamic var updatedAt: RealmDate = 0
     let closedAt: RealmOptional<RealmDate> = RealmOptional<RealmDate>.init()
     
-    static func of(id: String, info: IssueInfo) -> IssueObject {
+    static func of(_ id: String, info: IssueInfo) -> IssueObject {
         let obj = IssueObject()
         obj.id = id
         obj.title = info.title
         obj.desc = info.desc
         obj.state = info.state.rawValue
         let realm = try! Realm()
-        let labelObjs = info.labels.flatMap { realm.objectForPrimaryKey(LabelObject.self, key: $0.id.value) }
-        obj.labels.appendContentsOf(labelObjs)
-        info.milestone.forEach { obj.milestone = realm.objectForPrimaryKey(MilestoneObject.self, key: $0.id.value) }
+        let labelObjs = info.labels.flatMap { realm.object(ofType: LabelObject.self, forPrimaryKey: $0.id.value as AnyObject) }
+        obj.labels.append(objectsIn: labelObjs)
+        info.milestone.forEach { obj.milestone = realm.object(ofType: MilestoneObject.self, forPrimaryKey: $0.id.value as AnyObject) }
         obj.locked = info.locked
         obj.createdAt = info.createdAt
         obj.updatedAt = info.updatedAt
@@ -40,28 +40,28 @@ class IssueObject: Object {
         return ["id", "title"]
     }
     
-    func close(at: RealmDate) {
-        self.state = IssueState.Closed(closedAt: at).rawValue
+    func close(_ at: RealmDate) {
+        self.state = IssueState.closed(closedAt: at).rawValue
         self.closedAt.value = at
         self.updatedAt = at
     }
     
     func open() {
-        self.state = IssueState.Open.rawValue
+        self.state = IssueState.open.rawValue
         self.closedAt.value = nil
-        self.updatedAt = Int64(NSDate().timeIntervalSince1970)
+        self.updatedAt = Int64(Foundation.Date().timeIntervalSince1970)
     }
     
-    func update(info: IssueInfo) {
+    func update(_ info: IssueInfo) {
         title = info.title
         desc = info.desc
         state = info.state.rawValue
         let realm = try! Realm()
-        let labelObjs = info.labels.flatMap { realm.objectForPrimaryKey(LabelObject.self, key: $0.id.value) }
+        let labelObjs = info.labels.flatMap { realm.object(ofType: LabelObject.self, forPrimaryKey: $0.id.value as AnyObject) }
         labels.removeAll()
-        labels.appendContentsOf(labelObjs)
+        labels.append(objectsIn: labelObjs)
         if let milestoneId = info.milestone?.id.value {
-            self.milestone = realm.objectForPrimaryKey(MilestoneObject.self, key: milestoneId)
+            self.milestone = realm.object(ofType: MilestoneObject.self, forPrimaryKey: milestoneId as AnyObject)
         } else {
            self.milestone = nil
         }

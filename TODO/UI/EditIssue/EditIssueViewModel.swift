@@ -33,8 +33,8 @@ class EditIssueViewModel {
     }
     
     func submit() {
-        let now: Date = Int64(NSDate().timeIntervalSince1970)
-        let info = IssueInfo(title: title.value, desc: desc.value, state: .Open, labels: labels.value, milestone: milestone.value, locked: false, createdAt: now, updatedAt: now)
+        let now: Date = Int64(Foundation.Date().timeIntervalSince1970)
+        let info = IssueInfo(title: title.value, desc: desc.value, state: .open, labels: labels.value, milestone: milestone.value, locked: false, createdAt: now, updatedAt: now)
         if let id = id {
             issueRepository.update(Issue(id: id, info: info))
         } else {

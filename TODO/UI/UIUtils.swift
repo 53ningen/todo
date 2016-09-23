@@ -6,11 +6,11 @@ import Foundation
 extension NSObject {
     
     static func getClassName() -> String {
-        return NSStringFromClass(self).componentsSeparatedByString(".").last! as String
+        return NSStringFromClass(self).components(separatedBy: ".").last! as String
     }
 
     func getClassName() -> String {
-        return NSStringFromClass(self.dynamicType).componentsSeparatedByString(".").last! as String
+        return NSStringFromClass(type(of: self)).components(separatedBy: ".").last! as String
     }
     
 }
@@ -18,19 +18,19 @@ extension NSObject {
 extension UIView {
     
     static func getUINib() -> UINib {
-        return UINib(nibName: getClassName(), bundle: NSBundle.mainBundle())
+        return UINib(nibName: getClassName(), bundle: Bundle.main)
     }
     
-    static func getInstance<T: UIView>(t: T.Type) -> T? {
-        return T.getUINib().instantiateWithOwner(nil, options: nil).first as? T
+    static func getInstance<T: UIView>(_ t: T.Type) -> T? {
+        return T.getUINib().instantiate(withOwner: nil, options: nil).first as? T
     }
     
-    func roundedCorners(cornerRadius: CGFloat) {
+    func roundedCorners(_ cornerRadius: CGFloat) {
         layer.cornerRadius = cornerRadius
         clipsToBounds = true
     }
     
-    func border(width: CGFloat, color: CGColor) {
+    func border(_ width: CGFloat, color: CGColor) {
         layer.borderWidth = width
         layer.borderColor = color
     }
@@ -47,16 +47,16 @@ extension UITableViewCell {
 
 extension UITableView {
     
-    func registerNib(cls: UITableViewCell.Type) {
-        registerNib(cls.getUINib(), forCellReuseIdentifier: cls.cellReuseIdentifier)
+    func registerNib(_ cls: UITableViewCell.Type) {
+        register(cls.getUINib(), forCellReuseIdentifier: cls.cellReuseIdentifier)
     }
     
 }
 
 extension UIViewController {
     
-    static func of<T: UIViewController>(cls: T.Type) -> T {
-        return UIStoryboard(name: cls.getClassName(), bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier(cls.getClassName()) as! T
+    static func of<T: UIViewController>(_ cls: T.Type) -> T {
+        return UIStoryboard(name: cls.getClassName(), bundle: Bundle.main).instantiateViewController(withIdentifier: cls.getClassName()) as! T
     }
     
 }
@@ -88,10 +88,10 @@ extension UIColor {
 extension Date {
     
     var formattedString: String {
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = .MediumStyle
-        formatter.timeStyle = .NoStyle
-        return formatter.stringFromDate(NSDate(timeIntervalSince1970: Double(self)))
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter.string(from: Foundation.Date(timeIntervalSince1970: Double(self)))
     }
     
 }

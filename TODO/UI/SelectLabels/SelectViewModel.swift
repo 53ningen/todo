@@ -16,7 +16,7 @@ final class SelectLabelsViewModel {
         labels.value = labelsRepository.findAll()
     }
     
-    func selectLabel(label: Label?) {
+    func selectLabel(_ label: Label?) {
         guard let label = label else { return }
         if selected.value.any(label) {
             selected.value = selected.value.filter { $0 != label }
@@ -25,7 +25,7 @@ final class SelectLabelsViewModel {
         }
     }
     
-    func isSelected(label: Label) -> Bool {
+    func isSelected(_ label: Label) -> Bool {
         return selected.value.any(label)
     }
     

@@ -3,8 +3,8 @@ import Foundation
 
 final class EditIssueViewController: BaseViewController {
     
-    private lazy var viewModel: EditIssueViewModel = EditIssueViewModel()
-    func setViewModel(viewModel: EditIssueViewModel) {
+    fileprivate lazy var viewModel: EditIssueViewModel = EditIssueViewModel()
+    func setViewModel(_ viewModel: EditIssueViewModel) {
         self.viewModel = viewModel
     }
     
@@ -22,19 +22,19 @@ final class EditIssueViewController: BaseViewController {
         super.viewDidLoad()
         milestonePicker.dataSource = self
         milestonePicker.delegate = self
-        [titleTextField, descriptionTextView, selectLabelsButton].forEach {
-            $0.roundedCorners(5)
-            $0.border(1, color: UIColor.borderColor.CGColor)
+        [titleTextField, descriptionTextView, selectLabelsButton].forEach { _ in
+            //$0.roundedCorners(5)
+            //$0.border(1, color: UIColor.borderColor.cgColor)
         }
         navTitleItem.title = viewModel.isNewIssue ? "Submit new issue" : "Edit issue"
         titleTextField.text = viewModel.title.value
         descriptionTextView.text = viewModel.desc.value
-        viewModel.milestone.value.flatMap(viewModel.milestones.value.indexOf).forEach {
+        viewModel.milestone.value.flatMap(viewModel.milestones.value.index).forEach {
             self.milestonePicker.selectRow($0 + 1, inComponent: 0, animated: true)
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         bind()
         subscribeEvents()
@@ -42,36 +42,36 @@ final class EditIssueViewController: BaseViewController {
     
     private func bind() {
         // ViewModel ~> View
-        viewModel.submittable.bindTo(submitButton.rx_enabled).addDisposableTo(disposeBag)
+        viewModel.submittable.bindTo(submitButton.rx.enabled).addDisposableTo(disposeBag)
         viewModel.milestones.asObservable().map { _ in () }.subscribe(onNext: milestonePicker.reloadAllComponents).addDisposableTo(disposeBag)
         
         // View ~> ViewModel
-        titleTextField.rx_text.bindTo(viewModel.title).addDisposableTo(disposeBag)
-        descriptionTextView.rx_text.bindTo(viewModel.desc).addDisposableTo(disposeBag)
+        titleTextField.rx.text.bindTo(viewModel.title).addDisposableTo(disposeBag)
+        descriptionTextView.rx.text.bindTo(viewModel.desc).addDisposableTo(disposeBag)
     }
     
     private func subscribeEvents() {
-        cancelButton.rx_tap.single()
-            .subscribe(onNext: { [weak self] _ in self?.dismissViewControllerAnimated(true, completion: nil) })
+        cancelButton.rx.tap.single()
+            .subscribe(onNext: { [weak self] _ in self?.dismiss(animated: true, completion: nil) })
             .addDisposableTo(disposeBag)
-        tapGestureRecognizer.rx_event
+        tapGestureRecognizer.rx.event
             .subscribe(onNext: { [weak self] _ in
                 self?.titleTextField.resignFirstResponder()
                 self?.descriptionTextView.resignFirstResponder()
             })
             .addDisposableTo(disposeBag)
-        selectLabelsButton.rx_tap
+        selectLabelsButton.rx.tap
             .subscribe(onNext: { [weak self] _ in
                 self.forEach {
                     let vc = UIStoryboard.selectLabelsViewController($0.viewModel.labels)
-                    $0.presentViewController(vc, animated: true, completion: nil)
+                    $0.present(vc, animated: true, completion: nil)
                 }
             })
             .addDisposableTo(disposeBag)
-        submitButton.rx_tap.single()
+        submitButton.rx.tap.single()
             .subscribe(onNext: { [weak self] _ in
                 self?.viewModel.submit()
-                self?.dismissViewControllerAnimated(true, completion: nil)
+                self?.dismiss(animated: true, completion: nil)
             })
             .addDisposableTo(disposeBag)
     }
@@ -80,11 +80,11 @@ final class EditIssueViewController: BaseViewController {
 
 extension EditIssueViewController: UIPickerViewDataSource {
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return viewModel.milestones.value.count + 1
     }
     
@@ -92,11 +92,11 @@ extension EditIssueViewController: UIPickerViewDataSource {
 
 extension EditIssueViewController: UIPickerViewDelegate {
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         viewModel.milestone.value = viewModel.milestones.value.safeIndex(row - 1)
     }
     
-    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let text = viewModel.milestones.value.safeIndex(row - 1)?.id.value ?? "Issue with no milestone"
         return NSAttributedString(string: text)
     }

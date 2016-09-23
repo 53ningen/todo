@@ -21,7 +21,7 @@ class MilestoneObject: Object {
         return issues.filter { $0.state == MilestoneState.Closed.rawValue }.count
     }
     
-    static func of(id: String, info: MilestoneInfo) -> MilestoneObject {
+    static func of(_ id: String, info: MilestoneInfo) -> MilestoneObject {
         let object = MilestoneObject()
         object.id = id
         object.state = info.state.rawValue
@@ -42,12 +42,12 @@ class MilestoneObject: Object {
     
     func open() {
         self.state = MilestoneState.Open.rawValue
-        self.updatedAt = Int64(NSDate().timeIntervalSince1970)
+        self.updatedAt = Int64(Foundation.Date().timeIntervalSince1970)
     }
     
     func close() {
         self.state = MilestoneState.Closed.rawValue
-        self.updatedAt = Int64(NSDate().timeIntervalSince1970)
+        self.updatedAt = Int64(Foundation.Date().timeIntervalSince1970)
     }
     
 }

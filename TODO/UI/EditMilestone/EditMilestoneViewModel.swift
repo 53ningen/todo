@@ -7,7 +7,7 @@ final class EditMilestoneViewModel {
     
     let title: Variable<String> = Variable<String>("")
     let desc: Variable<String> = Variable<String>("")
-    let dueOn: Variable<NSDate?> = Variable<NSDate?>(nil)
+    let dueOn: Variable<Foundation.Date?> = Variable<Foundation.Date?>(nil)
     let milestones: [Milestone]
     
     init() {
@@ -20,7 +20,7 @@ final class EditMilestoneViewModel {
     }
     
     func submit() {
-        let now: Date = Int64(NSDate().timeIntervalSince1970)
+        let now: Date = Int64(Foundation.Date().timeIntervalSince1970)
         let dueOn: Date? = (self.dueOn.value?.timeIntervalSince1970).map { Int64($0) }
         let info = MilestoneInfo(state: .Open, description: desc.value, createdAt: now, updatedAt: now, dueOn: dueOn)
         let milestone = Milestone(id: Id<Milestone>(value: title.value), info: info)

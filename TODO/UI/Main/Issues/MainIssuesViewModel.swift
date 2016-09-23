@@ -5,16 +5,16 @@ final class MainIssuesViewModel {
     private lazy var issueRepository: IssueRepository = AppModules.issueRepository
 
     let issues: Variable<[Issue]> = Variable<[Issue]>([])
-    let segment: Variable<IssueState> = Variable<IssueState>(.Open)
+    let segment: Variable<IssueState> = Variable<IssueState>(.open)
     
     func updateIssues() {
         issues.value = issueRepository.findAll(segment.value)
     }
     
-    func toggleIssueState(id: Id<Issue>) {
+    func toggleIssueState(_ id: Id<Issue>) {
         switch segment.value {
-        case .Open: issueRepository.close(id)
-        case .Closed(closedAt: _): issueRepository.open(id)
+        case .open: issueRepository.close(id)
+        case .closed(closedAt: _): issueRepository.open(id)
         }
         updateIssues()
     }    

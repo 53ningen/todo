@@ -2,91 +2,91 @@ import Foundation
 import RealmSwift
 
 /// IssueRepositoryのRealm実装
-public class IssueRepositoryOnRealm: IssueRepository {
+class IssueRepositoryOnRealm: IssueRepository {
     
     private let realm: Realm = try! Realm()
     
     private var nextId: String {
-        if let id = (realm.objects(IssueObject).last.flatMap { Int($0.id) }) {
+        if let id = (realm.objects(IssueObject.self).last.flatMap { Int($0.id) }) {
             return String(id + 1)
         } else {
             return "1"
         }
     }
     
-    public func findById(id: Id<Issue>) -> Issue? {
-        return realm.objectForPrimaryKey(IssueObject.self, key: id.value)?.toIssue
+    func findById(_ id: Id<Issue>) -> Issue? {
+        return realm.object(ofType: IssueObject.self, forPrimaryKey: id.value as AnyObject)?.toIssue
     }
     
-    public func findAll() -> [Issue] {
-        return realm.objects(IssueObject).flatMap { $0.toIssue }
+    func findAll() -> [Issue] {
+        return realm.objects(IssueObject.self).flatMap { $0.toIssue }
     }
     
-    public func findAll(state: IssueState) -> [Issue] {
+    func findAll(_ state: IssueState) -> [Issue] {
         let pred = NSPredicate(format: "state == %@", state.rawValue)
-        return realm.objects(IssueObject).filter(pred).flatMap { $0.toIssue }
+        return realm.objects(IssueObject.self).filter(pred).flatMap { $0.toIssue }
     }
     
-    public func findByKeyword(keyword: String) -> [Issue] {
+    func findByKeyword(_ keyword: String) -> [Issue] {
         let pred = NSPredicate(format: "title CONTAINS '%@' OR desc CONTAINS '%@'", keyword, keyword)
-        return realm.objects(IssueObject).filter(pred).flatMap { $0.toIssue }
+        return realm.objects(IssueObject.self).filter(pred).flatMap { $0.toIssue }
     }
     
-    public func findByLabel(label: Label, state: IssueState) -> [Issue] {
+    func findByLabel(_ label: Label, state: IssueState) -> [Issue] {
         let pred = NSPredicate(format: "id == %@", label.id.value)
-        return realm.objects(LabelObject)
+        return realm.objects(LabelObject.self)
             .filter(pred)
             .flatMap { $0.issues }
             .flatMap { $0.toIssue }
             .filter {
                 switch ($0.info.state, state) {
-                case (.Open, .Open): return true
-                case (.Closed(_), .Closed(_)): return true
+                case (.open, .open): return true
+                case (.closed(_), .closed(_)): return true
                 default: return false
                 }
             }
     }
     
-    public func findByMilestone(milestone: Milestone, state: IssueState) -> [Issue] {
+    func findByMilestone(_ milestone: Milestone, state: IssueState) -> [Issue] {
         let pred = NSPredicate(format: "id == %@", milestone.id.value)
-        return realm.objects(MilestoneObject)
+        return realm.objects(MilestoneObject.self)
             .filter(pred)
             .flatMap { $0.issues }
             .flatMap { $0.toIssue }
             .filter {
                 switch ($0.info.state, state) {
-                case (.Open, .Open): return true
-                case (.Closed(_), .Closed(_)): return true
+                case (.open, .open): return true
+                case (.closed(_), .closed(_)): return true
                 default: return false
                 }
         }
     }
     
-    public func add(info: IssueInfo) {
+    func add(_ info: IssueInfo) {
         try! realm.write {
             realm.add(IssueObject.of(nextId, info: info))
         }
     }
     
-    public func update(issue: Issue) {
+    func update(_ issue: Issue) {
         try! realm.write {
-            if let obj = realm.objectForPrimaryKey(IssueObject.self, key: issue.id.value) {
+            if let obj = realm.object(ofType: IssueObject.self, forPrimaryKey: issue.id.value as AnyObject) {
                 obj.update(issue.info)
             }
         }
     }
     
-    public func open(id: Id<Issue>) {
+    func open(_ id: Id<Issue>) {
         try! realm.write {
-            if let obj = realm.objectForPrimaryKey(IssueObject.self, key: id.value) where obj.state == IssueState.Closed(closedAt: 0).rawValue {
+            if let obj = realm.object(ofType: IssueObject.self, forPrimaryKey: id.value as AnyObject) , obj.state == IssueState.closed(closedAt: 0).rawValue {
                 obj.open()
             }
         }
     }
     
-    public func close(id: Id<Issue>) {
+    func close(_ id: Id<Issue>) {
         try! realm.write {
-            if let obj = realm.objectForPrimaryKey(IssueObject.self, key: id.value) where obj.state == IssueState.Open.rawValue {
+            if let obj = realm.object(ofType: IssueObject.self, forPrimaryKey: id.value as AnyObject) , obj.state == IssueState.open.rawValue {
                 obj.close(Int64(NSDate().timeIntervalSince1970))
             }
         }
@@ -94,7 +94,7 @@ public class IssueRepositoryOnRealm: IssueRepository {
     
     internal func deleteAll() {
         try! realm.write {
-            realm.delete(realm.objects(IssueObject))
+            realm.delete(realm.objects(IssueObject.self))
         }
     }
     

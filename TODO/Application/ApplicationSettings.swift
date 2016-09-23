@@ -12,11 +12,11 @@ public struct DefaultApplicationSettings: ApplicationSettings {}
 extension ApplicationSettings {
     
     public var bundleVersionString: String {
-        return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as! String
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
     }
     
     public var bundleShortVersionString: String {
-        return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     }
     
 }

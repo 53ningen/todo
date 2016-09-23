@@ -13,12 +13,12 @@ final class MainLabelsViewController: BaseTableViewController {
         tableView.contentInset = UIEdgeInsets(top: -1, left: 0, bottom: 0, right: 0)
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.1))
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.1))
-        if tableView.respondsToSelector(Selector("separatorInset")) { tableView.separatorInset = UIEdgeInsetsZero }
-        if tableView.respondsToSelector(Selector("layoutMargins")) { tableView.layoutMargins = UIEdgeInsetsZero }
+        if tableView.responds(to: #selector(getter: UITableViewCell.separatorInset)) { tableView.separatorInset = UIEdgeInsets.zero }
+        if tableView.responds(to: #selector(getter: UIView.layoutMargins)) { tableView.layoutMargins = UIEdgeInsets.zero }
         navigationItem.title = "Labels"
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         bind()
         subscribeEvents()
@@ -30,56 +30,56 @@ final class MainLabelsViewController: BaseTableViewController {
     }
     
     private func subscribeEvents() {
-        createNewButton.rx_tap.single()
-            .subscribe(onNext: { [weak self] _ in self?.presentViewController(UIStoryboard.addLabelViewController, animated: true, completion: nil) })
+        createNewButton.rx.tap.single()
+            .subscribe(onNext: { [weak self] _ in self?.present(UIStoryboard.addLabelViewController, animated: true, completion: nil) })
             .addDisposableTo(disposeBag)
-        tableView.rx_itemSelected
+        tableView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
                 if let label = self?.viewModel.labels.value.safeIndex(indexPath.item) {
-                    self?.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-                    self?.navigationController?.pushViewController(UIStoryboard.issuesViewController(IssuesQuery.LabelQuery(label: label)), animated: true)
+                    self?.tableView.deselectRow(at: indexPath, animated: true)
+                    self?.navigationController?.pushViewController(UIStoryboard.issuesViewController(IssuesQuery.labelQuery(label: label)), animated: true)
                 }
             })
             .addDisposableTo(disposeBag)
     }
     
     // DataSource
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.labels.value.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(LabelCellView.cellReuseIdentifier, forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: LabelCellView.cellReuseIdentifier, for: indexPath)
         viewModel.labels.value.safeIndex(indexPath.row).forEach {
             (cell as? LabelCellView)?.bind($0)
         }
         return cell
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {}
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {}
     
-    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        return [UITableViewRowAction(style: .Default, title: "delete", handler: { _ in
-            let alert = UIAlertController(title: "Delete a label", message: "Once you delete a label, there is no going back. Please be certain.", preferredStyle: .Alert)
-            let ok = UIAlertAction(title: "OK", style: .Default, handler: { _ in
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        return [UITableViewRowAction(style: .default, title: "delete", handler: { _ in
+            let alert = UIAlertController(title: "Delete a label", message: "Once you delete a label, there is no going back. Please be certain.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { _ in
                 self.viewModel.labels.value.safeIndex(indexPath.item).map { $0.id }.forEach(self.viewModel.remove)
             })
-            let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             alert.addAction(cancel)
             alert.addAction(ok)
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         })]
     }
     
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 30
     }
     
-    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return viewModel.labels.value.isEmpty ? FooterCellView.noContentView() :FooterCellView.upToDateView()
     }
 

@@ -18,7 +18,7 @@ final class EditLabelViewModel {
         self.color.value = color
     }
     
-    func nextColor(r: Float?, g: Float?, b: Float?) {
+    func nextColor(_ r: Float?, g: Float?, b: Float?) {
         color.value = (r.map { Int($0) } ?? color.value.r, g.map { Int($0) } ?? color.value.g, b.map { Int($0) } ?? color.value.b, 1)
     }
     
