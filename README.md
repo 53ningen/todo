@@ -1,6 +1,6 @@
 # TODO
 
-TODO Application written in Swift 3.x
+TODO Application written in Swift 3.x(Xcode 8.2)
 
 [icons by google/material-design-icons (CC BY 4.0)](https://github.com/google/material-design-icons)
 
@@ -11,3 +11,4 @@ TODO Application written in Swift 3.x
 # LICENSE
 
 MIT
+
